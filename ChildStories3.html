@@ -1,0 +1,1056 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="The Quiet Between Bells — A Resonant Cognition Series Book (Single-Page Manuscript + Illustration Prompts)" />
+  <title>The Quiet Between Bells — Single Page Manuscript</title>
+
+  <style>
+    :root{
+      --bg:#0b0d10;
+      --panel:#111623;
+      --panel2:#0f1420;
+      --fg:#e9eef5;
+      --muted:#aab6c5;
+      --soft:#1b2230;
+      --line:#2a3447;
+      --accent:#cfd8e6;
+      --good:#9be3b1;
+      --warn:#ffd37a;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 980px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 15% -10%, rgba(207,216,230,.12), transparent 60%),
+                  radial-gradient(900px 700px at 110% 10%, rgba(155,227,177,.08), transparent 55%),
+                  var(--bg);
+      color:var(--fg);
+      font: 16px/1.55 var(--sans);
+    }
+
+    a{ color:inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 18px 90px;
+    }
+
+    header{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      padding: 22px 22px 18px;
+      background: linear-gradient(180deg, rgba(27,34,48,.92), rgba(17,22,35,.92));
+      border: 1px solid rgba(42,52,71,.9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .titleblock{
+      min-width: 280px;
+      flex: 1 1 520px;
+    }
+
+    h1{
+      margin: 0 0 6px;
+      font-size: clamp(28px, 3.2vw, 40px);
+      line-height: 1.12;
+      letter-spacing: .2px;
+    }
+
+    .subtitle{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .meta{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 10px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(42,52,71,.95);
+      background: rgba(15,20,32,.8);
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .pill b{ color: var(--fg); font-weight: 650; }
+
+    .controls{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content:flex-end;
+      align-self:flex-start;
+    }
+
+    button{
+      appearance:none;
+      border: 1px solid rgba(42,52,71,.95);
+      background: rgba(15,20,32,.9);
+      color: var(--fg);
+      padding: 9px 12px;
+      border-radius: 12px;
+      cursor:pointer;
+      font: 600 13px/1 var(--sans);
+      letter-spacing:.2px;
+    }
+    button:hover{ border-color: rgba(207,216,230,.55); }
+    button:active{ transform: translateY(1px); }
+    button.secondary{ color: var(--muted); font-weight: 600; }
+
+    nav.toc{
+      margin-top: 16px;
+      padding: 16px 18px;
+      border: 1px solid rgba(42,52,71,.9);
+      border-radius: var(--radius);
+      background: rgba(17,22,35,.78);
+      box-shadow: 0 8px 22px rgba(0,0,0,.25);
+    }
+
+    .tocgrid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px 14px;
+    }
+
+    .toc a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(42,52,71,.75);
+      background: rgba(11,13,16,.35);
+    }
+    .toc a:hover{
+      border-color: rgba(207,216,230,.5);
+      background: rgba(27,34,48,.5);
+      text-decoration:none;
+    }
+    .toc .n{ color: var(--muted); font-family: var(--mono); font-size: 12px; }
+    .toc .t{ font-size: 13px; }
+
+    @media (max-width: 820px){
+      .tocgrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 520px){
+      .tocgrid{ grid-template-columns: 1fr; }
+    }
+
+    main{
+      margin-top: 18px;
+      display:grid;
+      gap: 14px;
+    }
+
+    section.card{
+      padding: 18px 18px 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(42,52,71,.92);
+      background: rgba(17,22,35,.78);
+      box-shadow: 0 8px 22px rgba(0,0,0,.22);
+      scroll-margin-top: 18px;
+    }
+
+    .cardhead{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .pagenum{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(42,52,71,.85);
+      background: rgba(11,13,16,.35);
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .pagetitle{
+      margin: 0;
+      font-size: 16px;
+      font-weight: 750;
+      letter-spacing: .2px;
+    }
+
+    .text{
+      margin: 0;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(11,13,16,.28);
+      border: 1px solid rgba(42,52,71,.55);
+      white-space: pre-wrap;
+    }
+
+    .prompt details{
+      margin-top: 10px;
+      border-radius: 14px;
+      border: 1px dashed rgba(207,216,230,.35);
+      background: rgba(15,20,32,.55);
+      overflow:hidden;
+    }
+
+    .prompt summary{
+      cursor:pointer;
+      padding: 10px 12px;
+      list-style:none;
+      user-select:none;
+      font-weight: 650;
+      color: var(--accent);
+      border-bottom: 1px dashed rgba(207,216,230,.20);
+    }
+    .prompt summary::-webkit-details-marker{ display:none; }
+
+    .prompt .body{
+      padding: 10px 12px 12px;
+      color: var(--muted);
+      white-space: pre-wrap;
+    }
+
+    .two{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 14px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .two{ grid-template-columns: 1fr; }
+    }
+
+    .aside{
+      padding: 14px 14px 12px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(42,52,71,.92);
+      background: rgba(15,20,32,.55);
+    }
+    .aside h3{
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing:.2px;
+    }
+    .aside p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .kv{
+      display:grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .kv .row{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      justify-content:space-between;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(11,13,16,.28);
+      border: 1px solid rgba(42,52,71,.55);
+    }
+    .kv code{
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--fg);
+    }
+    .kv span{
+      color: var(--muted);
+      font-size: 13px;
+      text-align:right;
+      max-width: 70%;
+    }
+
+    .divider{
+      height:1px;
+      background: rgba(42,52,71,.85);
+      margin: 14px 0;
+    }
+
+    footer{
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align:center;
+      opacity: .9;
+    }
+
+    /* Global toggles */
+    body.hide-prompts .prompt{ display:none; }
+    body.hide-notes .notes{ display:none; }
+
+    /* Print */
+    @media print{
+      :root{ --bg:#fff; --fg:#111; --muted:#333; --panel:#fff; --panel2:#fff; --line:#ddd; }
+      body{ background:#fff; color:#111; }
+      header, nav.toc, .controls{ display:none !important; }
+      section.card{ box-shadow:none; border:1px solid #ddd; background:#fff; }
+      .prompt details{ border: 1px dashed #bbb; background:#fafafa; }
+      .text{ background:#fff; border:1px solid #ddd; }
+      a{ text-decoration:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header id="top">
+      <div class="titleblock">
+        <h1>The Quiet Between Bells</h1>
+        <p class="subtitle">A Resonant Cognition Series Book — Single-page manuscript with illustration prompts</p>
+
+        <div class="meta" aria-label="Book metadata">
+          <div class="pill"><b>Target</b> Ages 8–11 (3rd–5th grade)</div>
+          <div class="pill"><b>Length</b> 24 pages (+ optional back matter)</div>
+          <div class="pill"><b>Core concept</b> Null (Ø) as “nothing tugging right now”</div>
+        </div>
+      </div>
+
+      <div class="controls" aria-label="Page controls">
+        <button class="secondary" id="togglePrompts" type="button" aria-pressed="false">Hide illustration prompts</button>
+        <button class="secondary" id="toggleNotes" type="button" aria-pressed="false">Hide production notes</button>
+        <button id="expandAll" type="button">Expand all prompts</button>
+        <button id="collapseAll" type="button">Collapse all prompts</button>
+        <button id="printBtn" type="button">Print</button>
+      </div>
+    </header>
+
+    <nav class="toc" aria-label="Table of contents">
+      <div class="tocgrid">
+        <a href="#cover"><span class="t">Cover</span><span class="n">COVER</span></a>
+        <a href="#p1"><span class="t">Title Page</span><span class="n">p.1</span></a>
+        <a href="#p2"><span class="t">No strings tugging</span><span class="n">p.2</span></a>
+        <a href="#p3"><span class="t">Nice… then strange</span><span class="n">p.3</span></a>
+        <a href="#p4"><span class="t">Early to class</span><span class="n">p.4</span></a>
+        <a href="#p5"><span class="t">“Do something.”</span><span class="n">p.5</span></a>
+        <a href="#p6"><span class="t">The boredom string</span><span class="n">p.6</span></a>
+        <a href="#p7"><span class="t">Other kids’ worlds</span><span class="n">p.7</span></a>
+        <a href="#p8"><span class="t">“Fix it fast.”</span><span class="n">p.8</span></a>
+        <a href="#p9"><span class="t">Helper Strings aren’t bosses</span><span class="n">p.9</span></a>
+        <a href="#p10"><span class="t">Notice. Name. Loosen.</span><span class="n">p.10</span></a>
+        <a href="#p11"><span class="t">Still boring</span><span class="n">p.11</span></a>
+        <a href="#p12"><span class="t">Talking to Jay</span><span class="n">p.12</span></a>
+        <a href="#p13"><span class="t">Puppy brain</span><span class="n">p.13</span></a>
+        <a href="#p14"><span class="t">“Give me a job!”</span><span class="n">p.14</span></a>
+        <a href="#p15"><span class="t">Quiet can be a job</span><span class="n">p.15</span></a>
+        <a href="#p16"><span class="t">The question</span><span class="n">p.16</span></a>
+        <a href="#p17"><span class="t">Lunch line</span><span class="n">p.17</span></a>
+        <a href="#p18"><span class="t">Mini inner worlds</span><span class="n">p.18</span></a>
+        <a href="#p19"><span class="t">Not about Maya</span><span class="n">p.19</span></a>
+        <a href="#p20"><span class="t">Quiet sounds</span><span class="n">p.20</span></a>
+        <a href="#p21"><span class="t">“Okay. You can be here.”</span><span class="n">p.21</span></a>
+        <a href="#p22"><span class="t">Reset between bells</span><span class="n">p.22</span></a>
+        <a href="#p23"><span class="t">The job is resting</span><span class="n">p.23</span></a>
+        <a href="#p24"><span class="t">Quiet can breathe</span><span class="n">p.24</span></a>
+        <a href="#back-matter"><span class="t">Back matter (optional)</span><span class="n">NOTE</span></a>
+      </div>
+    </nav>
+
+    <main aria-label="Manuscript content">
+
+      <!-- COVER -->
+      <section class="card" id="cover">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle" style="margin:0 0 2px;">COVER</p>
+            <div class="pagenum">Cover</div>
+          </div>
+          <a class="pagenum" href="#top" aria-label="Back to top">↑ Top</a>
+        </div>
+
+        <div class="two">
+          <div>
+            <p class="text"><b>Title:</b> The Quiet Between Bells
+<b>Subtitle:</b> A Story About Boredom, Waiting, and the Space Inside a Day</p>
+
+            <div class="prompt">
+              <details open>
+                <summary>Illustration prompt</summary>
+                <div class="body">School hallway with lockers. Two bell icons (or a clock and a bell) lightly glowing. Maya stands calmly near a window. Around her, faint “helper strings” drift, but they are loose. The scene feels still and spacious, not lonely.</div>
+              </details>
+            </div>
+          </div>
+
+          <aside class="aside" aria-label="Core concept quick reference">
+            <h3>Core concept: Null (Ø)</h3>
+            <p><b>Null (Ø)</b> means “nothing tugging right now.” It is not empty in a scary way; it is a safe baseline when no urgency is running.</p>
+            <div class="kv" role="list">
+              <div class="row" role="listitem"><code>Ø</code><span>No loop running (quiet baseline)</span></div>
+              <div class="row" role="listitem"><code>⊘</code><span>Interference loops</span></div>
+              <div class="row" role="listitem"><code>·</code><span>Awareness resting in quiet</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- PAGE 1 -->
+      <section class="card" id="p1">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 1 (Title Page)</p>
+            <div class="pagenum">p. 1</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">The Quiet Between Bells</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Simple image: a school clock, a hallway, a bench by a window, soft light.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 2 -->
+      <section class="card" id="p2">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 2</p>
+            <div class="pagenum">p. 2</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">After learning about Helper Strings, Maya noticed something else.
+Sometimes… there were no strings tugging at all.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Maya sitting on a bench; strings barely visible and slack, floating like gentle ribbons.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 3 -->
+      <section class="card" id="p3">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 3</p>
+            <div class="pagenum">p. 3</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">At first, that felt nice.
+Then it felt… strange.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Split-panel: left side Maya smiling softly; right side Maya with a puzzled expression, a tiny “?” above her head.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 4 -->
+      <section class="card" id="p4">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 4</p>
+            <div class="pagenum">p. 4</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">One morning, Maya arrived early to class.
+The room was quiet. The teacher wasn’t there yet.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Empty classroom with morning light. Desks neat. Maya standing at the doorway.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 5 -->
+      <section class="card" id="p5">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 5</p>
+            <div class="pagenum">p. 5</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Nothing was wrong.
+Nothing needed fixing.
+But Maya’s brain whispered, “Do something.”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">A small whisper bubble near Maya’s head: “Do something.” No scary tone—just insistent.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 6 -->
+      <section class="card" id="p6">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 6</p>
+            <div class="pagenum">p. 6</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">A new string appeared—not tight, but itchy.
+It whispered, “This is boring.”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">A fuzzy, wiggly string (different texture than the others) hovering near Maya’s shoulder. Label-free, but visually “itchy.”</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 7 -->
+      <section class="card" id="p7">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 7</p>
+            <div class="pagenum">p. 7</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Maya looked around.
+Other kids were doing their own things:
+shuffling papers, tying shoes, staring at the clock.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Several kids in the room, each in their own little world. Small “spotlights” suggested faintly above each child.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 8 -->
+      <section class="card" id="p8">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 8</p>
+            <div class="pagenum">p. 8</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Maya thought, “Maybe they’re bored too.”
+Then her itchy string whispered, “Fix it fast.”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Itchy string tugging gently toward Maya’s backpack pocket (where a phone might be). Maya’s hand hovering.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 9 -->
+      <section class="card" id="p9">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 9</p>
+            <div class="pagenum">p. 9</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Maya reached for her phone.
+Then she stopped.
+She remembered:
+Helper Strings aren’t bosses.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Maya’s hand midway to the phone; a small memory bubble of Book 1: “Notice. Name. Loosen.”</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 10 -->
+      <section class="card" id="p10">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 10</p>
+            <div class="pagenum">p. 10</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Maya tried her three tiny steps:
+Notice. Name. Loosen.
+She named the itchy feeling:
+“This is the boredom string.”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Three small corner icons: eye (Notice), tag (Name), open hand (Loosen). The itchy string gets a gentle little “boredom” tag (subtle).</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 11 -->
+      <section class="card" id="p11">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 11</p>
+            <div class="pagenum">p. 11</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">But the boredom string didn’t disappear.
+It said, “Still boring.”
+Maya sighed.
+“So… what am I supposed to do now?”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Maya sitting at her desk, chin in hand, looking slightly annoyed but curious. String floats nearby.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 12 -->
+      <section class="card" id="p12">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 12</p>
+            <div class="pagenum">p. 12</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">After school, Maya told her brother Jay,
+“I hate waiting. My brain feels itchy.”
+Jay nodded.
+“That makes sense.”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Home scene: Maya on couch, Jay nearby with a calm expression, maybe holding a snack or book.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 13 -->
+      <section class="card" id="p13">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 13</p>
+            <div class="pagenum">p. 13</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Jay said, “Your brain is like a puppy.
+When it has energy and no job, it chews your shoelaces.”
+Maya blinked.
+“My brain is a puppy?”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Cute metaphor illustration: a friendly puppy tugging shoelaces while Maya laughs. Keep it playful, not silly.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 14 -->
+      <section class="card" id="p14">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 14</p>
+            <div class="pagenum">p. 14</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Jay said, “Boredom is the puppy saying,
+‘Give me a job!’”
+Maya asked, “But what if there’s no job?”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Jay pointing gently to the “puppy brain” metaphor. A small thought bubble: puppy sitting, looking expectant.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 15 -->
+      <section class="card" id="p15">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 15</p>
+            <div class="pagenum">p. 15</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Jay said, “Then you teach the puppy something new:
+Quiet can be a job too.”
+Maya frowned.
+“That sounds impossible.”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Jay calmly holding up one finger like, “Try this idea.” Maya skeptical but listening.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 16 -->
+      <section class="card" id="p16">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 16</p>
+            <div class="pagenum">p. 16</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Jay said, “Here’s a question to try:
+Is something wrong… or is it just quiet?”
+Maya repeated it softly.
+“Just quiet…”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Text of the question shown clearly in the illustration as a gentle banner. Maya’s face softens a bit.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 17 -->
+      <section class="card" id="p17">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 17</p>
+            <div class="pagenum">p. 17</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">The next day, Maya waited in the lunch line.
+The boredom string showed up again.
+It whispered, “This takes forever.”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Cafeteria line. Kids fidgeting. Maya with a wiggly boredom string hovering.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 18 -->
+      <section class="card" id="p18">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 18</p>
+            <div class="pagenum">p. 18</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Maya tried Jay’s question:
+“Is something wrong… or is it just quiet?”
+She looked around.
+A kid was practicing a joke.
+Another kid was worrying about math.
+Someone was looking for their friend.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Little mini-panels showing other kids’ inner worlds: thought bubbles like “Math test,” “Where’s Sam?” “Hope my joke works.”</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 19 -->
+      <section class="card" id="p19">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 19</p>
+            <div class="pagenum">p. 19</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Maya realized:
+Most people weren’t thinking about Maya at all.
+They were busy with their own stuff.
+That thought made the line feel… lighter.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Maya’s shoulders drop slightly. The boredom string becomes less fuzzy, more relaxed.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 20 -->
+      <section class="card" id="p20">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 20</p>
+            <div class="pagenum">p. 20</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Maya listened to the quiet parts:
+trays clinking, shoes squeaking, someone humming.
+Nothing exciting.
+But nothing scary.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Close-up sensory scene: little sound-icons (clink, squeak, hum). Maya attentive but not intense.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 21 -->
+      <section class="card" id="p21">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 21</p>
+            <div class="pagenum">p. 21</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">The boredom string whispered, “Still boring.”
+Maya smiled a tiny bit and thought,
+“Okay. You can be here.”
+And the itchiness softened.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Maya smiling slightly. The fuzzy string loosens, floating beside her like a calm ribbon.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 22 -->
+      <section class="card" id="p22">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 22</p>
+            <div class="pagenum">p. 22</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Later, when class started, Maya noticed something surprising:
+The quiet between bells helped her feel ready.
+Like a little reset.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Bell icon fades; teacher enters; kids settle. Maya looks steady and prepared, not rushed.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 23 -->
+      <section class="card" id="p23">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 23</p>
+            <div class="pagenum">p. 23</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">That night, Maya told Jay,
+“I think boredom is my brain asking for a job.”
+Jay nodded.
+“And sometimes the job is… resting.”</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Evening scene: Maya brushing teeth or packing bag calmly. Jay leaning in doorway, gentle smile.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- PAGE 24 -->
+      <section class="card" id="p24">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">Page 24 (Ending)</p>
+            <div class="pagenum">p. 24</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <p class="text">Maya didn’t chase the quiet away.
+She learned that quiet isn’t empty.
+Quiet is the space where the day can breathe.</p>
+
+        <div class="prompt">
+          <details>
+            <summary>Illustration prompt</summary>
+            <div class="body">Final warm image: Maya by a window, looking out at the sky. A faint breath-like swirl in the air. Strings present but loose and peaceful.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- BACK MATTER -->
+      <section class="card" id="back-matter">
+        <div class="cardhead">
+          <div>
+            <p class="pagetitle">BACK MATTER (Optional 1-page)</p>
+            <div class="pagenum">Optional</div>
+          </div>
+          <a class="pagenum" href="#top">↑ Top</a>
+        </div>
+
+        <div class="two">
+          <div>
+            <p class="text"><b>Parents/Adults Note (Minimal, Helpful)</b>
+This story introduces “boredom” as a normal signal of unused mental energy—not a problem to fight. The child-friendly question is: “Is something wrong, or is it just quiet?” Quiet (Null) is the baseline when no urgency is running. The story reinforces that quiet is safe and functional.
+
+<b>Optional symbol map (for adults only):</b>
+Interference loops: ⊘
+No loop running (quiet baseline): Ø
+Awareness resting in quiet: ·</p>
+
+            <div class="prompt">
+              <details>
+                <summary>Illustration prompt</summary>
+                <div class="body">Simple diagram: Maya in a calm bubble labeled “quiet space,” with a small fuzzy “boredom string” floating nearby, becoming relaxed.</div>
+              </details>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="notes">
+              <p class="text"><b>QUICK PRODUCTION NOTES (Consistency)</b>
+
+Make the “boredom string” visually distinct: fuzzy/itchy at first, then smoothing out
+Show other kids’ inner worlds to reduce “everyone is judging me” assumptions
+Keep quiet scenes warm, not lonely: quiet as safe space, not isolation</p>
+            </div>
+          </div>
+
+          <aside class="aside notes" aria-label="Consistency checklist">
+            <h3>Consistency checklist</h3>
+            <p>Use these as a quick QA pass when illustrating and laying out the pages.</p>
+            <div class="kv" role="list">
+              <div class="row" role="listitem"><code>Boredom string</code><span>Starts fuzzy/itchy; gradually smooths and loosens</span></div>
+              <div class="row" role="listitem"><code>Other kids’ thoughts</code><span>Show “inner worlds” to reduce social threat assumptions</span></div>
+              <div class="row" role="listitem"><code>Quiet scenes</code><span>Warm, spacious, safe—never lonely or isolating</span></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <footer>
+        Tip: Use your browser’s Print dialog to export to PDF. The “Hide illustration prompts” toggle is useful for printing a text-only draft.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (function(){
+      const body = document.body;
+
+      const btnPrompts = document.getElementById('togglePrompts');
+      const btnNotes = document.getElementById('toggleNotes');
+      const btnExpand = document.getElementById('expandAll');
+      const btnCollapse = document.getElementById('collapseAll');
+      const btnPrint = document.getElementById('printBtn');
+
+      function setBtnState(btn, pressed, labelWhenOn, labelWhenOff){
+        btn.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+        btn.textContent = pressed ? labelWhenOn : labelWhenOff;
+      }
+
+      // Prompts toggle
+      btnPrompts.addEventListener('click', () => {
+        const hidden = body.classList.toggle('hide-prompts');
+        // If hidden === true, prompts are hidden, so button should say "Show ..."
+        setBtnState(btnPrompts, hidden, 'Show illustration prompts', 'Hide illustration prompts');
+      });
+
+      // Notes toggle
+      btnNotes.addEventListener('click', () => {
+        const hidden = body.classList.toggle('hide-notes');
+        setBtnState(btnNotes, hidden, 'Show production notes', 'Hide production notes');
+      });
+
+      // Expand/collapse all prompts (details elements within .prompt)
+      function setAllDetails(open){
+        const details = document.querySelectorAll('.prompt details');
+        details.forEach(d => d.open = !!open);
+      }
+
+      btnExpand.addEventListener('click', () => setAllDetails(true));
+      btnCollapse.addEventListener('click', () => setAllDetails(false));
+
+      // Print
+      btnPrint.addEventListener('click', () => window.print());
+
+      // Initialize label states to match defaults (not hidden)
+      setBtnState(btnPrompts, false, 'Show illustration prompts', 'Hide illustration prompts');
+      setBtnState(btnNotes, false, 'Show production notes', 'Hide production notes');
+    })();
+  </script>
+</body>
+</html>
+```
