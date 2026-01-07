@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="The Strings at School — A Story About Friends, Teasing, and Knowing What’s Real (Children’s book draft, ages 9–11)" />
+  <title>The Strings at School — Single-Page Reader</title>
+
+  <style>
+    :root{
+      --bg: #faf8f4;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-2: #0ea5e9;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --radius: 18px;
+      --maxw: 860px;
+      --font: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      --ui: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      background:linear-gradient(180deg, var(--bg), #ffffff);
+      color:var(--ink);
+      font: 18px/1.65 var(--font);
+    }
+
+    a{ color: var(--accent); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 28px 18px 44px;
+    }
+
+    header{
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px 20px;
+    }
+
+    .title{
+      margin:0 0 6px 0;
+      font-size: 34px;
+      line-height:1.15;
+      letter-spacing: -0.02em;
+    }
+    .subtitle{
+      margin:0 0 6px 0;
+      color: var(--muted);
+      font: 14px/1.4 var(--ui);
+    }
+    .note{
+      margin:12px 0 0 0;
+      color: var(--muted);
+      font: 13px/1.45 var(--ui);
+    }
+
+    .toolbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      margin-top:16px;
+      padding-top:14px;
+      border-top: 1px solid var(--line);
+      font: 14px/1.4 var(--ui);
+      color: var(--muted);
+    }
+
+    .controls{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+
+    .btn{
+      appearance:none;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--ink);
+      padding:10px 12px;
+      border-radius: 999px;
+      cursor:pointer;
+      font: 14px/1 var(--ui);
+      box-shadow: 0 2px 10px rgba(0,0,0,.04);
+    }
+    .btn:hover{ border-color:#d1d5db; }
+    .btn:active{ transform: translateY(1px); }
+    .btn.primary{
+      background: linear-gradient(180deg, #2b78ff, #1f5fe6);
+      color:#fff;
+      border-color: rgba(0,0,0,.0);
+    }
+    .btn.primary:hover{ filter: brightness(1.03); }
+
+    .seg{
+      display:inline-flex;
+      border:1px solid var(--line);
+      border-radius: 999px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.04);
+    }
+    .seg button{
+      border:0;
+      background:transparent;
+      padding:10px 12px;
+      cursor:pointer;
+      font: 14px/1 var(--ui);
+      color: var(--muted);
+    }
+    .seg button[aria-pressed="true"]{
+      background: rgba(37,99,235,.10);
+      color: var(--accent);
+    }
+
+    main{
+      margin-top: 18px;
+    }
+
+    .page{
+      background: var(--panel);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px 20px 18px;
+      margin: 14px 0;
+    }
+
+    .pagehead{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed var(--line);
+      font: 13px/1.4 var(--ui);
+      color: var(--muted);
+    }
+
+    .pnum{
+      font-weight: 600;
+      color: #111827;
+    }
+    .plink{
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .plink:hover{ text-decoration: underline; }
+
+    .text{
+      margin:0;
+      white-space: pre-line;
+      font-size: 19px;
+    }
+
+    /* Reader modes */
+    body[data-mode="page"] .page{
+      display:none;
+    }
+    body[data-mode="page"] .page.is-current{
+      display:block;
+    }
+
+    .footerbar{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      margin-top: 14px;
+      padding: 14px 4px 0;
+      font: 14px/1.4 var(--ui);
+      color: var(--muted);
+    }
+
+    .progress{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 10px;
+      border:1px solid var(--line);
+      border-radius: 999px;
+      background:#fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.04);
+      color: var(--muted);
+      font: 13px/1 var(--ui);
+    }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    }
+
+    /* Table of contents */
+    details.toc{
+      margin-top: 12px;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background:#fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,.04);
+      overflow:hidden;
+    }
+    details.toc > summary{
+      cursor:pointer;
+      padding: 12px 14px;
+      font: 14px/1.3 var(--ui);
+      color: var(--ink);
+      user-select:none;
+      list-style:none;
+    }
+    details.toc > summary::-webkit-details-marker{ display:none; }
+    .tocbox{
+      padding: 0 14px 14px;
+      border-top: 1px solid var(--line);
+      font: 14px/1.6 var(--ui);
+      color: var(--muted);
+    }
+    .tocgrid{
+      display:grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .tocgrid a{
+      display:block;
+      padding: 8px 10px;
+      border:1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      text-align:center;
+      color: var(--ink);
+      text-decoration:none;
+    }
+    .tocgrid a:hover{
+      border-color:#d1d5db;
+      background: rgba(37,99,235,.06);
+    }
+    @media (max-width: 720px){
+      .title{ font-size: 28px; }
+      .text{ font-size: 18px; }
+      .tocgrid{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+    @media (max-width: 520px){
+      .tocgrid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    /* Print: always show all pages, remove controls */
+    @media print{
+      body{ background:#fff; }
+      header, .toolbar, details.toc, .footerbar{ display:none !important; }
+      .page{ box-shadow:none; border:1px solid #ddd; }
+      body[data-mode="page"] .page{ display:block !important; }
+    }
+  </style>
+</head>
+
+<body data-mode="page">
+  <div class="wrap">
+    <header>
+      <h1 class="title">The Strings at School</h1>
+      <p class="subtitle">A Story About Friends, Teasing, and Knowing What’s Real — Children’s book draft (ages ~9–11 / 5th grade)</p>
+
+      <div class="toolbar" role="region" aria-label="Reader controls">
+        <div class="controls">
+          <button class="btn" id="prevBtn" type="button" aria-label="Previous page">Previous</button>
+          <button class="btn primary" id="nextBtn" type="button" aria-label="Next page">Next</button>
+          <span class="pill" aria-live="polite" aria-atomic="true">
+            <span class="dot" aria-hidden="true"></span>
+            <span id="where">Page 1 of 30</span>
+          </span>
+        </div>
+
+        <div class="controls">
+          <div class="seg" role="group" aria-label="Reading mode">
+            <button id="modePage" type="button" aria-pressed="true" title="Show one page at a time">Page View</button>
+            <button id="modeScroll" type="button" aria-pressed="false" title="Show all pages in a scroll">Scroll View</button>
+          </div>
+          <button class="btn" id="tocBtn" type="button" aria-label="Toggle table of contents">Contents</button>
+          <button class="btn" id="printBtn" type="button" aria-label="Print">Print</button>
+        </div>
+      </div>
+
+      <details class="toc" id="toc">
+        <summary>Table of contents (jump to a page)</summary>
+        <div class="tocbox">
+          Tip: In Page View, jumping updates the reader to that page. In Scroll View, it scrolls to the page.
+          <div class="tocgrid" id="tocGrid" aria-label="Page links"></div>
+        </div>
+      </details>
+
+      <p class="note">
+        Keyboard: Left/Right arrows to navigate in Page View. Deep links: add <code>#p12</code> to the URL to open page 12.
+      </p>
+    </header>
+
+    <main id="book" aria-label="Story pages">
+      <section class="page" id="p1" data-page="1">
+        <div class="pagehead"><span class="pnum">Page 1</span><a class="plink" href="#p1" aria-label="Link to page 1">#p1</a></div>
+        <p class="text">Maya was in 5th grade, and school felt like a hallway with a hundred doors.
+Every day, she wondered:
+Which door do I open?
+Which one do I avoid?</p>
+      </section>
+
+      <section class="page" id="p2" data-page="2">
+        <div class="pagehead"><span class="pnum">Page 2</span><a class="plink" href="#p2" aria-label="Link to page 2">#p2</a></div>
+        <p class="text">Maya had two best friends, Lila and Tessa.
+They had a lunch table. They had inside jokes.
+They had a “we always sit together” kind of feeling.
+And Maya liked that feeling.
+It felt safe.</p>
+      </section>
+
+      <section class="page" id="p3" data-page="3">
+        <div class="pagehead"><span class="pnum">Page 3</span><a class="plink" href="#p3" aria-label="Link to page 3">#p3</a></div>
+        <p class="text">But lately, some new kids had started sitting nearby.
+Kids Maya thought seemed funny. Kind. Interesting.
+Maya wanted to talk to them.
+Then another feeling tugged her back.
+What if Lila and Tessa think I’m leaving?</p>
+      </section>
+
+      <section class="page" id="p4" data-page="4">
+        <div class="pagehead"><span class="pnum">Page 4</span><a class="plink" href="#p4" aria-label="Link to page 4">#p4</a></div>
+        <p class="text">That morning, Maya felt it again.
+Strings.
+She didn’t see them with her eyes, but she felt them in her chest.
+One string tugged and whispered:
+“Stay. Don’t risk it.”
+Another string tugged and whispered:
+“Go. Try something new.”</p>
+      </section>
+
+      <section class="page" id="p5" data-page="5">
+        <div class="pagehead"><span class="pnum">Page 5</span><a class="plink" href="#p5" aria-label="Link to page 5">#p5</a></div>
+        <p class="text">At recess, Maya walked toward the swings.
+A group of kids was laughing.
+Then she heard it.
+“Why does Maya always walk like that?” someone said.
+Another kid giggled.
+Maya’s stomach tightened.</p>
+      </section>
+
+      <section class="page" id="p6" data-page="6">
+        <div class="pagehead"><span class="pnum">Page 6</span><a class="plink" href="#p6" aria-label="Link to page 6">#p6</a></div>
+        <p class="text">A new string snapped tight inside her.
+It whispered:
+“They’re judging you.”
+Another string whispered:
+“Judge them back. Decide if they’re mean.”
+Another whispered:
+“Fix yourself so they stop.”
+Maya felt pulled in three directions at once.</p>
+      </section>
+
+      <section class="page" id="p7" data-page="7">
+        <div class="pagehead"><span class="pnum">Page 7</span><a class="plink" href="#p7" aria-label="Link to page 7">#p7</a></div>
+        <p class="text">Maya tried to act normal, but her mind ran fast.
+Are they trying to hurt me?
+Do they hate me?
+Are they laughing at me right now?
+Did I do something wrong?
+Her thoughts felt like a swarm of tiny bees.</p>
+      </section>
+
+      <section class="page" id="p8" data-page="8">
+        <div class="pagehead"><span class="pnum">Page 8</span><a class="plink" href="#p8" aria-label="Link to page 8">#p8</a></div>
+        <p class="text">At lunch, Maya sat with Lila and Tessa, but she kept looking at the other table.
+She wanted to wave.
+Then she imagined Lila’s face.
+Maya’s chest tightened again.
+She didn’t wave.</p>
+      </section>
+
+      <section class="page" id="p9" data-page="9">
+        <div class="pagehead"><span class="pnum">Page 9</span><a class="plink" href="#p9" aria-label="Link to page 9">#p9</a></div>
+        <p class="text">After school, Maya told her older brother, Jay, “Everyone is judging me.”
+Jay didn’t laugh. He just listened.
+Then he said, “Want to try a little experiment?”
+Maya shrugged. “I guess.”</p>
+      </section>
+
+      <section class="page" id="p10" data-page="10">
+        <div class="pagehead"><span class="pnum">Page 10</span><a class="plink" href="#p10" aria-label="Link to page 10">#p10</a></div>
+        <p class="text">Jay said, “Close your eyes and imagine a spotlight on you at school.”
+Maya did.
+Her face felt hot.
+Jay asked, “How many people are looking at the spotlight?”
+Maya said, “Everyone.”</p>
+      </section>
+
+      <section class="page" id="p11" data-page="11">
+        <div class="pagehead"><span class="pnum">Page 11</span><a class="plink" href="#p11" aria-label="Link to page 11">#p11</a></div>
+        <p class="text">Jay said, “Now imagine every kid has their own spotlight.”
+Maya frowned. “That’s too many spotlights.”
+Jay nodded. “Exactly. Most kids are busy under their own.”
+Maya didn’t know if she believed him, but something about it sounded… possible.</p>
+      </section>
+
+      <section class="page" id="p12" data-page="12">
+        <div class="pagehead"><span class="pnum">Page 12</span><a class="plink" href="#p12" aria-label="Link to page 12">#p12</a></div>
+        <p class="text">The next day, Maya walked into class and listened for the strings.
+They were there again.
+“Don’t embarrass yourself.”
+“Don’t lose your friends.”
+“Don’t let them hurt you.”
+Maya whispered inside her mind:
+“Hello, strings.”</p>
+      </section>
+
+      <section class="page" id="p13" data-page="13">
+        <div class="pagehead"><span class="pnum">Page 13</span><a class="plink" href="#p13" aria-label="Link to page 13">#p13</a></div>
+        <p class="text">During group work, a boy named Connor said, “Maya, you’re so serious.”
+A few kids laughed.
+Maya’s face got warm.
+Her “hurt string” tugged hard and whispered:
+“Danger. They’re attacking you.”</p>
+      </section>
+
+      <section class="page" id="p14" data-page="14">
+        <div class="pagehead"><span class="pnum">Page 14</span><a class="plink" href="#p14" aria-label="Link to page 14">#p14</a></div>
+        <p class="text">Maya remembered Jay’s experiment.
+She looked at Connor.
+He wasn’t staring like a villain in a movie.
+He was smiling like he was trying to be funny.
+But Maya didn’t know if it was friendly funny or mean funny.</p>
+      </section>
+
+      <section class="page" id="p15" data-page="15">
+        <div class="pagehead"><span class="pnum">Page 15</span><a class="plink" href="#p15" aria-label="Link to page 15">#p15</a></div>
+        <p class="text">So Maya tried a new kind of question.
+Not out loud.
+Inside.
+She asked:
+“Is this harm… or is this noise?”</p>
+      </section>
+
+      <section class="page" id="p16" data-page="16">
+        <div class="pagehead"><span class="pnum">Page 16</span><a class="plink" href="#p16" aria-label="Link to page 16">#p16</a></div>
+        <p class="text">Maya watched carefully.
+Connor wasn’t looking at her like he wanted to crush her.
+He turned to his friend and said, “Bro, I’m starving. I forgot my snack.”
+Then he said, “Do you guys think our project will be boring?”
+He looked worried.
+Maya noticed something:
+Connor wasn’t living in Maya’s spotlight.
+He was living in his own.</p>
+      </section>
+
+      <section class="page" id="p17" data-page="17">
+        <div class="pagehead"><span class="pnum">Page 17</span><a class="plink" href="#p17" aria-label="Link to page 17">#p17</a></div>
+        <p class="text">Maya felt something loosen.
+Maybe Connor’s comment wasn’t a plan to hurt her.
+Maybe it was a joke that landed wrong.
+Maya didn’t have to like it.
+But she didn’t have to treat it like an emergency either.</p>
+      </section>
+
+      <section class="page" id="p18" data-page="18">
+        <div class="pagehead"><span class="pnum">Page 18</span><a class="plink" href="#p18" aria-label="Link to page 18">#p18</a></div>
+        <p class="text">At recess, Maya heard two girls teasing each other:
+“You’re such a weirdo!” one said, laughing.
+“Yeah, and you’re the queen of weirdos!” the other said.
+They both laughed more.
+Maya blinked.
+They weren’t crying.
+They weren’t shrinking.
+They looked… close.</p>
+      </section>
+
+      <section class="page" id="p19" data-page="19">
+        <div class="pagehead"><span class="pnum">Page 19</span><a class="plink" href="#p19" aria-label="Link to page 19">#p19</a></div>
+        <p class="text">Maya realized something important:
+Sometimes teasing is a game people play with friends.
+Sometimes teasing is a weapon people use to harm.
+They can sound similar.
+But they feel different.</p>
+      </section>
+
+      <section class="page" id="p20" data-page="20">
+        <div class="pagehead"><span class="pnum">Page 20</span><a class="plink" href="#p20" aria-label="Link to page 20">#p20</a></div>
+        <p class="text">That day, Maya made herself a simple “feel-check.”
+Not a rule. Just a helper.
+If it makes someone smaller, it might be harm.
+If everyone is safe and laughing, it might be banter.
+And if she wasn’t sure, she could wait and watch.</p>
+      </section>
+
+      <section class="page" id="p21" data-page="21">
+        <div class="pagehead"><span class="pnum">Page 21</span><a class="plink" href="#p21" aria-label="Link to page 21">#p21</a></div>
+        <p class="text">At lunch, Maya felt the friend-strings again.
+“Stay loyal.”
+“Don’t leave.”
+“Don’t get replaced.”
+Maya looked at Lila and Tessa.
+They were talking about a TV show.
+They weren’t scanning the room to see if Maya was loyal.
+They were just… eating.</p>
+      </section>
+
+      <section class="page" id="p22" data-page="22">
+        <div class="pagehead"><span class="pnum">Page 22</span><a class="plink" href="#p22" aria-label="Link to page 22">#p22</a></div>
+        <p class="text">Maya realized another thing:
+Sometimes the fear of losing friends is louder than friends themselves.
+The fear-string was trying to protect her.
+But it was guessing.</p>
+      </section>
+
+      <section class="page" id="p23" data-page="23">
+        <div class="pagehead"><span class="pnum">Page 23</span><a class="plink" href="#p23" aria-label="Link to page 23">#p23</a></div>
+        <p class="text">Maya did something small.
+She didn’t switch tables.
+She didn’t announce anything.
+She just said, “Hey, after we eat, can we go say hi to the new kids together?”
+Lila shrugged. “Sure.”
+Tessa said, “Okay. Why not?”
+Maya’s chest felt lighter.</p>
+      </section>
+
+      <section class="page" id="p24" data-page="24">
+        <div class="pagehead"><span class="pnum">Page 24</span><a class="plink" href="#p24" aria-label="Link to page 24">#p24</a></div>
+        <p class="text">When they walked over, Maya felt nervous.
+Her “judgment string” whispered:
+“They’ll think you’re weird.”
+But Maya noticed the new kids were talking about their own stuff:
+A video game.
+A math test.
+A soccer game.
+They weren’t waiting to judge Maya.
+They were busy being themselves.</p>
+      </section>
+
+      <section class="page" id="p25" data-page="25">
+        <div class="pagehead"><span class="pnum">Page 25</span><a class="plink" href="#p25" aria-label="Link to page 25">#p25</a></div>
+        <p class="text">One of the new kids, Rina, smiled and said, “Hey, want to sit with us tomorrow too?”
+Maya’s friend-strings tugged again.
+But now Maya could hear what they really were:
+Old helpers trying to keep her safe.
+Not bosses.</p>
+      </section>
+
+      <section class="page" id="p26" data-page="26">
+        <div class="pagehead"><span class="pnum">Page 26</span><a class="plink" href="#p26" aria-label="Link to page 26">#p26</a></div>
+        <p class="text">Later that week, Connor said again, “Maya, you’re serious!”
+This time Maya smiled a little and said, “Yeah, I am. But I’m also funny sometimes.”
+Connor laughed. “Okay, fair.”
+It felt different.
+Maya felt the difference:
+Not harm. Not danger.
+Just awkward banter that could be shaped.</p>
+      </section>
+
+      <section class="page" id="p27" data-page="27">
+        <div class="pagehead"><span class="pnum">Page 27</span><a class="plink" href="#p27" aria-label="Link to page 27">#p27</a></div>
+        <p class="text">Then one day, a kid said something truly mean.
+“You don’t belong here,” he snapped.
+Maya’s body tightened.
+This time, it wasn’t just a tug.
+It felt like a shove.
+Maya knew the difference.
+This was harm.</p>
+      </section>
+
+      <section class="page" id="p28" data-page="28">
+        <div class="pagehead"><span class="pnum">Page 28</span><a class="plink" href="#p28" aria-label="Link to page 28">#p28</a></div>
+        <p class="text">Maya didn’t try to become smaller.
+She didn’t try to pretend it was fine.
+She walked to her teacher and said calmly,
+“That wasn’t okay. I need help.”
+Her strings were quiet while she spoke.
+Because this time the helper was right.</p>
+      </section>
+
+      <section class="page" id="p29" data-page="29">
+        <div class="pagehead"><span class="pnum">Page 29</span><a class="plink" href="#p29" aria-label="Link to page 29">#p29</a></div>
+        <p class="text">That night, Maya told Jay, “I think my strings were trying to protect me from everything.”
+Jay nodded. “That’s what strings do.”
+Maya said, “But not everything is dangerous.”
+Jay smiled. “And not everything is safe.”
+Maya nodded. “I’m learning the difference.”</p>
+      </section>
+
+      <section class="page" id="p30" data-page="30">
+        <div class="pagehead"><span class="pnum">Page 30</span><a class="plink" href="#p30" aria-label="Link to page 30">#p30</a></div>
+        <p class="text">Maya went to bed feeling something new.
+Not perfect.
+But clearer.
+She could make new friends without leaving old ones.
+She could hear teasing without making it a disaster.
+She could tell the difference between banter and harm.
+And when her strings tugged, she could listen without being pulled.
+The end.</p>
+      </section>
+
+      <div class="footerbar" aria-label="End controls">
+        <div class="progress">
+          <span class="pill"><span class="dot" aria-hidden="true"></span><span id="where2">Page 1 of 30</span></span>
+          <span class="pill">Tip: Use #p12 to link directly to page 12</span>
+        </div>
+        <div class="controls">
+          <button class="btn" id="prevBtn2" type="button">Previous</button>
+          <button class="btn primary" id="nextBtn2" type="button">Next</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    (function(){
+      const pages = Array.from(document.querySelectorAll(".page"));
+      const total = pages.length;
+
+      const where = document.getElementById("where");
+      const where2 = document.getElementById("where2");
+
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const prevBtn2 = document.getElementById("prevBtn2");
+      const nextBtn2 = document.getElementById("nextBtn2");
+
+      const modePage = document.getElementById("modePage");
+      const modeScroll = document.getElementById("modeScroll");
+
+      const toc = document.getElementById("toc");
+      const tocBtn = document.getElementById("tocBtn");
+      const tocGrid = document.getElementById("tocGrid");
+      const printBtn = document.getElementById("printBtn");
+
+      let mode = "page";
+      let current = 1;
+
+      function clamp(n, lo, hi){ return Math.max(lo, Math.min(hi, n)); }
+
+      function setMode(nextMode){
+        mode = nextMode;
+        document.body.setAttribute("data-mode", mode);
+        modePage.setAttribute("aria-pressed", mode === "page" ? "true" : "false");
+        modeScroll.setAttribute("aria-pressed", mode === "scroll" ? "true" : "false");
+
+        if(mode === "scroll"){
+          pages.forEach(p => p.classList.remove("is-current"));
+          // scroll to current page for continuity
+          const el = document.getElementById("p" + current);
+          if(el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          render();
+        }
+      }
+
+      function render(){
+        current = clamp(current, 1, total);
+        pages.forEach(p => p.classList.toggle("is-current", Number(p.dataset.page) === current));
+        where.textContent = `Page ${current} of ${total}`;
+        where2.textContent = `Page ${current} of ${total}`;
+
+        prevBtn.disabled = current === 1;
+        prevBtn2.disabled = current === 1;
+        nextBtn.disabled = current === total;
+        nextBtn2.disabled = current === total;
+
+        if(mode === "page"){
+          const el = document.getElementById("p" + current);
+          if(el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+
+        // keep URL hash in sync without polluting history
+        const hash = "#p" + current;
+        if(location.hash !== hash){
+          history.replaceState(null, "", hash);
+        }
+      }
+
+      function go(n){
+        current = clamp(n, 1, total);
+        if(mode === "scroll"){
+          const el = document.getElementById("p" + current);
+          if(el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          where.textContent = `Page ${current} of ${total}`;
+          where2.textContent = `Page ${current} of ${total}`;
+          history.replaceState(null, "", "#p" + current);
+        } else {
+          render();
+        }
+      }
+
+      function next(){ go(current + 1); }
+      function prev(){ go(current - 1); }
+
+      // Build TOC
+      for(let i=1;i<=total;i++){
+        const a = document.createElement("a");
+        a.href = "#p" + i;
+        a.textContent = i;
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          go(i);
+          if(toc.open) toc.open = false;
+        });
+        tocGrid.appendChild(a);
+      }
+
+      // Bind buttons
+      prevBtn.addEventListener("click", prev);
+      nextBtn.addEventListener("click", next);
+      prevBtn2.addEventListener("click", prev);
+      nextBtn2.addEventListener("click", next);
+
+      modePage.addEventListener("click", () => setMode("page"));
+      modeScroll.addEventListener("click", () => setMode("scroll"));
+
+      tocBtn.addEventListener("click", () => { toc.open = !toc.open; });
+
+      printBtn.addEventListener("click", () => window.print());
+
+      // Keyboard navigation
+      window.addEventListener("keydown", (e) => {
+        if(mode !== "page") return;
+        if(e.key === "ArrowRight") next();
+        if(e.key === "ArrowLeft") prev();
+      });
+
+      // Deep link on load
+      function pageFromHash(){
+        const m = (location.hash || "").match(/^#p(\d+)$/);
+        if(!m) return 1;
+        const n = Number(m[1]);
+        return Number.isFinite(n) ? clamp(n, 1, total) : 1;
+      }
+
+      current = pageFromHash();
+      setMode("page");
+      render();
+
+      // Handle hash changes (e.g., manual edits)
+      window.addEventListener("hashchange", () => {
+        const n = pageFromHash();
+        go(n);
+      });
+
+      // In scroll mode, update current when scrolling near a page top
+      let scrollTick = null;
+      window.addEventListener("scroll", () => {
+        if(mode !== "scroll") return;
+        if(scrollTick) return;
+        scrollTick = requestAnimationFrame(() => {
+          scrollTick = null;
+          const y = window.scrollY + 140; // offset below header
+          let best = 1;
+          for(const p of pages){
+            const r = p.getBoundingClientRect();
+            const top = r.top + window.scrollY;
+            if(top <= y) best = Number(p.dataset.page);
+          }
+          if(best !== current){
+            current = best;
+            where.textContent = `Page ${current} of ${total}`;
+            where2.textContent = `Page ${current} of ${total}`;
+            history.replaceState(null, "", "#p" + current);
+          }
+        });
+      }, { passive: true });
+
+    })();
+  </script>
+</body>
+</html>
