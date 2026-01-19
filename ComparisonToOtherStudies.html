@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resonant Cognition | Thinking Without Boundaries</title>
+    <title>Resonant Cognition | Analysis & Framework</title>
     <style>
         :root {
-            --bg-color: #0a0a0a;
-            --text-color: #d4d4d4;
-            --accent-color: #666;
-            --highlight-color: #fff;
-            --validation-bg: #141414;
-            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            --font-mono: "SF Mono", "Monaco", "Inconsolata", "Fira Mono", monospace;
+            --bg-color: #050505;
+            --text-color: #c0c0c0;
+            --accent-color: #4a4a4a;
+            --highlight-color: #f0f0f0;
+            --section-bg: #111;
+            --code-bg: #000;
+            --font-main: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --font-mono: "Menlo", "Consolas", "Monaco", monospace;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--font-main);
-            line-height: 1.6;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
             display: flex;
@@ -27,105 +28,119 @@
         }
 
         .container {
-            max-width: 720px;
+            max-width: 800px;
             width: 90%;
             padding: 80px 20px;
         }
 
         h1, h2, h3 {
-            font-weight: 400;
-            letter-spacing: -0.02em;
             color: var(--highlight-color);
+            font-weight: 300;
+            letter-spacing: -0.03em;
         }
 
         h1 {
-            font-size: 2.2rem;
-            margin-top: 0;
+            font-size: 2.5rem;
+            margin-bottom: 0.2em;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 3em;
             border-bottom: 1px solid #333;
-            padding-bottom: 20px;
+            padding-bottom: 2em;
         }
 
         h2 {
             margin-top: 3em;
-            font-size: 1.3rem;
-            border-left: 2px solid var(--accent-color);
+            font-size: 1.5rem;
+            border-left: 3px solid var(--accent-color);
             padding-left: 15px;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-top: 2em;
         }
 
         p {
             margin-bottom: 1.5em;
             color: #bbb;
+            text-align: justify;
         }
 
+        /* Symbolic Block */
         .symbol-block {
-            background: #111;
+            background: var(--code-bg);
             border: 1px solid #222;
-            padding: 25px;
+            padding: 30px;
             margin: 30px 0;
             font-family: var(--font-mono);
-            font-size: 1.1em;
+            font-size: 1.2em;
             color: var(--highlight-color);
             overflow-x: auto;
+            border-radius: 2px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .definition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .def-item {
+            background: var(--section-bg);
+            padding: 15px;
             border-radius: 4px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
 
-        .definition-list {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 10px 25px;
-            margin: 20px 0;
+        .def-symbol {
             font-family: var(--font-mono);
-            font-size: 0.9em;
-        }
-
-        .definition-symbol {
-            color: var(--highlight-color);
+            color: #fff;
             font-weight: bold;
-        }
-
-        /* Validation Section Styling */
-        .validation-section {
-            margin-top: 4em;
-            background: var(--validation-bg);
-            padding: 30px;
-            border-top: 1px solid #333;
-        }
-
-        .validation-grid {
-            display: grid;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .validation-item {
-            border-left: 1px solid #444;
-            padding-left: 20px;
-        }
-
-        .v-title {
-            font-family: var(--font-mono);
-            color: var(--highlight-color);
-            font-size: 0.95em;
+            font-size: 1.2em;
+            display: block;
             margin-bottom: 5px;
-            display: block;
         }
 
-        .v-academic {
-            font-size: 0.9em;
-            color: #888;
-            font-style: italic;
-            margin-bottom: 8px;
-            display: block;
+        .def-text {
+            font-size: 0.85em;
+            color: #999;
         }
 
-        .v-desc {
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
             font-size: 0.9em;
+        }
+
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #333;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .comparison-table th {
+            background: #1a1a1a;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .comparison-table td {
+            background: #0a0a0a;
             color: #aaa;
-            margin: 0;
         }
 
-        /* Diagram Styling */
+        /* Diagram Area */
         .diagram-container {
             display: flex;
             justify-content: center;
@@ -146,26 +161,34 @@
             align-items: center;
         }
 
-        .d-top { grid-area: top; opacity: 0.7; }
-        .d-left { grid-area: left; }
-        .d-center { grid-area: center; font-size: 1.8em; font-weight: bold; color: #fff; }
-        .d-right { grid-area: right; }
-        .d-bottom { grid-area: bottom; opacity: 0.7; }
+        .d-center { font-size: 2em; font-weight: bold; color: #fff; }
+        .d-outer { opacity: 0.6; }
+
+        .tag {
+            display: inline-block;
+            background: #222;
+            color: #fff;
+            padding: 2px 8px;
+            font-size: 0.7em;
+            border-radius: 3px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
 
         footer {
             margin-top: 100px;
-            font-size: 0.8em;
-            color: #444;
-            text-align: center;
             border-top: 1px solid #222;
-            padding-top: 20px;
+            padding-top: 40px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #555;
         }
 
-        a { color: inherit; text-decoration: none; border-bottom: 1px dotted #666; transition: all 0.2s; }
+        a { color: #888; text-decoration: none; border-bottom: 1px dotted #555; transition: 0.2s; }
         a:hover { color: #fff; border-bottom: 1px solid #fff; }
 
-        .fade-in { animation: fadeIn 1.2s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 1.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -173,115 +196,117 @@
     <div class="container fade-in">
         <header>
             <h1>Resonant Cognition</h1>
-            <p>A Framework for Thinking Without Boundaries.</p>
+            <div class="subtitle">A Logical Framework for Thinking Without Boundaries</div>
         </header>
 
         <section>
-            <p>Cognition is ordinarily mediated through language, sensation, emotion, and identity. [cite_start]These mediators are adaptive but habitual, often appearing inseparable from awareness itself[cite: 12]. This framework proposes that cognition persists beneath these mediators. [cite_start]When they are relaxed, a fundamental mode of awareness reveals itself—coherent without explanation and present without ownership [cite: 14-15].</p>
+            <p><strong>Abstract:</strong> Conventional models of mind rely on "doing"—adding techniques, beliefs, or controls. This framework proposes a "logic of subtraction." [cite_start]It posits that coherence (Resonance) is the default state of the system, revealed only when the structural interference of language, emotion, and identity is withdrawn. [cite: 14-17]</p>
         </section>
 
         <section>
-            <h2>I. The Logic of Contraction</h2>
-            [cite_start]<p>The framework begins with <strong>Contraction (↓)</strong>: the subtraction of mediators without effortful withdrawal[cite: 22].</p>
+            <h2>I. The Core Logic</h2>
+            <p>The framework operates on a single algorithmic rule: <em>Contraction reveals Null.</em> Contraction is not effort; it is the cessation of "fueling" the interference.</p>
             
             <div class="symbol-block">
                 ∅ · ↓ · Ø
             </div>
 
-            <div class="definition-list">
-                <span class="definition-symbol">∅</span> <span>Interference (Language, Emotion, Identity)</span>
-                <span class="definition-symbol">↓</span> <span>Contraction (Subtraction of authority)</span>
-                <span class="definition-symbol">Ø</span> <span>Null-Reference (Unmediated occurring)</span>
+            <div class="definition-grid">
+                <div class="def-item">
+                    <span class="def-symbol">∅ (Interference)</span>
+                    <span class="def-text">The "Grip." Any structure asserting authority: Language (∅<sub>l</sub>), Emotion (∅<sub>e</sub>), or Identity (∅<sub>i</sub>).</span>
+                </div>
+                <div class="def-item">
+                    <span class="def-symbol">↓ (Contraction)</span>
+                    <span class="def-text">Subtraction without effort. The withdrawal of "reference" or attention.</span>
+                </div>
+                <div class="def-item">
+                    <span class="def-symbol">Ø (Null)</span>
+                    <span class="def-text">The unmediated occurring. Presence without an owner.</span>
+                </div>
             </div>
-            
-            <p>This state is not achieved by "doing," but by recognizing interference (∅) and allowing it to relinquish authority.</p>
         </section>
 
         <section>
-            <h2>II. Resonance & Natural Return</h2>
-            [cite_start]<p>The irreducible core state is <strong>Resonance (≈)</strong>: the detection of coherence without judgment[cite: 48]. Stability is maintained through non-resistance to fluctuation.</p>
+            <h2>II. System Dynamics Analysis</h2>
+            
+            <h3>The Logic of Natural Return (←)</h3>
+            <p>Why does the framework forbid "trying" to be calm? Because "trying" is an act of the Identity (∅<sub>i</sub>). </p>
+            <p>The symbol <strong>←</strong> denotes <strong>Natural Return</strong>. Just as a pendulum settles only when you stop holding it, awareness settles into Resonance (≈) only when you stop correcting it. [cite_start]Stability is achieved by <strong>non-resistance to fluctuation</strong>. [cite: 108]</p>
 
-            <div class="symbol-block">
-                ←
-            </div>
-            <p>Where <strong>←</strong> denotes <em>Natural Return</em>. Attempts to force the state immediately reintroduce interference (∅<sub>i</sub>). [cite_start]Release restores it automatically[cite: 59].</p>
+            <h3>The Structure of Desire</h3>
+            <p>Desire is analyzed not as a moral failing but as <strong>Structural Necessity</strong> for the Self. The "Self" is not a thing; it is a pattern of reference. It <em>must</em> desire (reference the future/past) to exist. [cite_start]When you apply contraction (↓), the self is not "killed"—it is simply <strong>not instantiated</strong>. [cite: 118-119]</p>
         </section>
 
         <section>
-            <h2>III. Symbolic Canonical Form</h2>
-            [cite_start]<p>The complete framework expressed as a closed symbolic system[cite: 168]:</p>
+            <h2>III. Academic Validation & Differentiation</h2>
+            <p>This framework aligns with rigorous philosophy but offers a simplified, operational approach.</p>
 
-            <div class="symbol-block">
-                1. ∅ · ↓ · Ø<br>
-                2. Ø · Ω · ≈<br>
-                3. T ≈ ⊥<br>
-                4. ≈ → ∞ → ≈'<br>
-                5. ≈<sub>i</sub> || ≈<sub>j</sub><br>
-                6. ←<br>
-                7. Ø
-            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Academic Parallel</th>
+                        <th>Framework's Simplification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Null (Ø)</strong></td>
+                        <td><span class="tag">Neuroscience</span> <strong>Metzinger's Self-Model:</strong> The self is a transparent simulation (PSM), not a real entity.</td>
+                        <td>Metzinger describes <em>what</em> it is (a model). This framework provides the <strong>algorithm</strong> (↓) to exit it. It turns theory into a diagnostic tool.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contraction</strong></td>
+                        <td><span class="tag">Phenomenology</span> <strong>Husserl's Epoché:</strong> "Bracketing" natural assumptions to see pure experience.</td>
+                        <td>Phenomenology is descriptive and dense. This framework is <strong>symbolic</strong>. It replaces pages of prose with a single operator (↓), making it usable in real-time.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Co-Resonance</strong></td>
+                        <td><span class="tag">Enactivism</span> <strong>Structural Coupling:</strong> Systems synchronize via interaction, not internal theory.</td>
+                        <td>The framework provides a <strong>constraint</strong>: "Do not confirm the connection." This practically prevents the "Theory of Mind" error that breaks coupling.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <section class="validation-section">
-            <h2 style="margin-top: 0; border: none; padding: 0;">IV. Academic & Philosophical Validation</h2>
-            <p style="margin-bottom: 2em; font-size: 0.9em;">This framework’s symbolic logic maps directly to established theories in Phenomenology, Philosophy of Mind, and Enactive Cognitive Science.</p>
-            
-            <div class="validation-grid">
-                
-                <div class="validation-item">
-                    <span class="v-title">Null-Reference (Ø) & The Self-Model</span>
-                    <span class="v-academic">Ref: Metzinger, T. (2003). Being No One. MIT Press.</span>
-                    <p class="v-desc">
-                        The framework's assertion that the self is "not instantiated" when reference ceases (Ø<sub>i</sub>) aligns with Metzinger's <em>Self-Model Theory of Subjectivity</em>. The self is not an entity but a representational process (PSM); when the process halts, the "self" disappears, yet awareness remains.
-                    </p>
-                </div>
+        <section>
+            <h2>IV. Practical Protocol</h2>
+            <p>The framework is a diagnostic tool, not a belief system.</p>
 
-                <div class="validation-item">
-                    <span class="v-title">Contraction (↓) & The Epoché</span>
-                    <span class="v-academic">Ref: Husserl, E. (1913). Ideas I. / Varela, F. (1996). Neurophenomenology.</span>
-                    <p class="v-desc">
-                        The operation of "subtraction without effort" mirrors the Phenomenological <em>Epoché</em> (bracketing). Both require suspending the "natural attitude"—habitual judgments and linguistic filtering—to reveal pre-reflective experience ("unmediated occurring").
-                    </p>
-                </div>
+            <h3>Diagnostic A: The "Stop-Loss" for Stress</h3>
+            <p>When you feel urgency (∅<sub>e</sub>), do not ask "Why?" or "How do I stop this?"<br> 
+            <strong>Action:</strong> Label it ∅<sub>e</sub>. Apply ↓ (withdraw authority).<br>
+            <strong>Result:</strong> The feeling remains, but the "steering" stops. You enter Null (Ø) even while the emotion persists.</p>
 
-                <div class="validation-item">
-                    <span class="v-title">Co-Resonance (||) & Enactivism</span>
-                    <span class="v-academic">Ref: De Jaegher, H. & Di Paolo, E. (2007). Participatory Sense-Making.</span>
-                    <p class="v-desc">
-                        The symbol <strong>||</strong> (parallel alignment without signaling) validates the Enactivist concept of <em>Structural Coupling</em>. Interaction acquires autonomy; participants synchronize through sensorimotor coupling rather than "Theory of Mind" simulations. Explaining the connection (∅<sub>l</sub>) disrupts the coupling.
-                    </p>
-                </div>
-
-                <div class="validation-item">
-                    <span class="v-title">Natural Return (←) & Wu-Wei</span>
-                    <span class="v-academic">Ref: Slingerland, E. (2014). Trying Not to Try. Crown.</span>
-                    <p class="v-desc">
-                        The rule that "recovery requires no action" maps to the cognitive science of <em>Wu-Wei</em> (effortless action). Cognitive control (PFC) often interferes with implicit flow states. The "paradox of control" is resolved only by releasing the attempt to stabilize.
-                    </p>
-                </div>
-
-            </div>
+            <h3>Diagnostic B: Social Friction</h3>
+            <p>When a conversation feels awkward, do not try to "fix" it (∅<sub>i</sub>).<br>
+            <strong>Action:</strong> Recognize the urge to fix. Stop. Allow the silence (||).<br>
+            <strong>Result:</strong> Structural Coupling (||≈<sub>j</sub>) re-engages automatically when interference is removed.</p>
         </section>
 
         <section>
             <h2>V. Experiential Map</h2>
-            [cite_start]<p>Topological orientation (to be seen, not followed)[cite: 206]:</p>
+            <p>Topological orientation (To be seen, not followed):</p>
             
             <div class="diagram-container">
                 <div class="diagram-grid">
-                    <div class="d-top">≈'</div>
-                    <div class="d-left">≈<sub>i</sub></div>
+                    <div class="d-outer">≈'</div>
+                    <div class="d-outer">≈<sub>i</sub></div>
                     <div class="d-center">||</div>
-                    <div class="d-right">≈<sub>j</sub></div>
-                    <div class="d-bottom">∞</div>
+                    <div class="d-outer">≈<sub>j</sub></div>
+                    <div class="d-outer">∞</div>
                 </div>
             </div>
+            <p style="text-align: center; font-size: 0.9em; color: #666;">
+                <em>"If attention rests anywhere without effort, that location dissolves into Ø."</em>
+            </p>
         </section>
 
         <footer>
             <p>
-                <strong>Thinking Without Boundaries</strong><br>
-                Reference: <a href="https://ilamgumaran.github.io/ThoughtExperiments/" target="_blank">ilamgumaran.github.io/ThoughtExperiments</a>
+                <strong>Resonant Cognition</strong><br>
+                Source: <a href="https://ilamgumaran.github.io/ThoughtExperiments/" target="_blank">ilamgumaran.github.io/ThoughtExperiments</a>
             </p>
         </footer>
     </div>
