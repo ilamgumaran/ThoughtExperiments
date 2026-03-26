@@ -1,604 +1,1209 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Thinking Without Boundaries — Resonant Cognition and the Return to Null (Ilamgumaran VK)" />
-  <title>Thinking Without Boundaries</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thinking Without Boundaries — Enhanced Framework</title>
+<style>
+:root {
+  --bg: #fafaf8;
+  --fg: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: #2c2c2c;
+  --border: #e0ddd8;
+  --code-bg: #f0eeea;
+  --section-bg: #f5f4f0;
+  --highlight: #3a3a3a;
+}
 
-  <style>
-    :root{
-      --bg:#0b0d10;
-      --fg:#e9eef5;
-      --muted:#aab6c5;
-      --soft:#1b2230;
-      --line:#2a3447;
-      --accent:#cfd8e6;
-    }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161614;
+    --fg: #e0ddd8;
+    --muted: #8a8a8a;
+    --accent: #d4d0c8;
+    --border: #2e2e2a;
+    --code-bg: #1e1e1a;
+    --section-bg: #1a1a18;
+    --highlight: #c8c4bc;
+  }
+}
 
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--fg);
-      font:16px/1.65 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      letter-spacing:0.1px;
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    a{ color:var(--accent); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.8;
+  font-size: 17px;
+}
 
-    .wrap{
-      max-width:980px;
-      margin:0 auto;
-      padding:48px 20px 80px;
-    }
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
 
-    header{
-      padding:16px 0 28px;
-      border-bottom:1px solid var(--line);
-      margin-bottom:28px;
-    }
+h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
 
-    .kicker{
-      color:var(--muted);
-      font-size:13px;
-      text-transform:uppercase;
-      letter-spacing:1.6px;
-      margin-bottom:10px;
-    }
+h2 {
+  font-size: 1.35rem;
+  font-weight: normal;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: -0.01em;
+}
 
-    h1{
-      margin:0 0 10px;
-      font-size:34px;
-      line-height:1.2;
-      letter-spacing:0.2px;
-    }
+h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
 
-    .subtitle{
-      color:var(--muted);
-      margin:0 0 6px;
-      font-size:16px;
-    }
+.subtitle {
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+  font-size: 1.05rem;
+}
 
-    .author{
-      color:var(--muted);
-      margin:0;
-      font-size:14px;
-    }
+.author {
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+}
 
-    main{
-      display:block;
-    }
+.version-note {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  padding: 0.75rem 1rem;
+  border-left: 2px solid var(--border);
+}
 
-    section{
-      padding:18px 0;
-      border-bottom:1px solid var(--line);
-    }
+p {
+  margin-bottom: 1.15rem;
+}
 
-    section:last-child{
-      border-bottom:none;
-    }
+ul, ol {
+  margin-bottom: 1.15rem;
+  padding-left: 1.5rem;
+}
 
-    h2{
-      margin:0 0 10px;
-      font-size:20px;
-      line-height:1.35;
-    }
+li {
+  margin-bottom: 0.4rem;
+}
 
-    h3{
-      margin:18px 0 10px;
-      font-size:16px;
-      line-height:1.35;
-      color:var(--accent);
-    }
+pre {
+  background: var(--code-bg);
+  padding: 1rem 1.25rem;
+  border-radius: 3px;
+  overflow-x: auto;
+  margin-bottom: 1.15rem;
+  font-family: 'Menlo', 'Consolas', monospace;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
 
-    p{
-      margin:10px 0;
-    }
+code {
+  font-family: 'Menlo', 'Consolas', monospace;
+  font-size: 0.9em;
+}
 
-    ul{
-      margin:10px 0 10px 20px;
-      padding:0;
-    }
+blockquote {
+  border-left: 2px solid var(--border);
+  padding-left: 1.25rem;
+  margin-bottom: 1.15rem;
+  color: var(--muted);
+  font-style: italic;
+}
 
-    li{ margin:6px 0; }
+strong {
+  font-weight: bold;
+  color: var(--highlight);
+}
 
-    .note{
-      color:var(--muted);
-      border-left:3px solid var(--line);
-      padding:10px 12px;
-      margin:12px 0;
-      background:rgba(255,255,255,0.03);
-      border-radius:8px;
-    }
+.new-section {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  margin-left: -1rem;
+}
 
-    .codeblock{
-      background:var(--soft);
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:14px 14px;
-      margin:12px 0;
-      overflow:auto;
-    }
+.new-marker {
+  display: inline-block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  vertical-align: super;
+  margin-left: 0.5rem;
+}
 
-    pre, code{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size:14px;
-      line-height:1.55;
-      color:var(--fg);
-      margin:0;
-      white-space:pre;
-    }
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0;
+}
 
-    .legend{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:8px;
-      margin-top:10px;
-      color:var(--muted);
-      font-size:14px;
-    }
+.footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
 
-    .legend b{
-      color:var(--fg);
-      font-weight:600;
-    }
+a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
-    blockquote{
-      margin:12px 0;
-      padding:10px 12px;
-      background:rgba(255,255,255,0.03);
-      border-left:3px solid var(--accent);
-      border-radius:8px;
-      color:var(--fg);
-    }
+a:hover {
+  color: var(--muted);
+}
 
-    footer{
-      margin-top:34px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      justify-content:space-between;
-    }
+.toc {
+  margin: 1.5rem 0 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--section-bg);
+  border-radius: 3px;
+  font-size: 0.92rem;
+}
 
-    .pill{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.02);
-      color:var(--muted);
-      font-size:12px;
-    }
-    /* Make all links white */
-    a, a:visited {
-      color: #fff;
-    }
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
 
-    /* Optional: keep hover/focus readable */
-    a:hover, a:focus {
-      color: #fff;          /* or slightly different, e.g. #e5e7eb */
-      text-decoration: underline;
-    }
+.toc li {
+  margin-bottom: 0.3rem;
+}
 
-    /* Print-friendly */
-    @media print{
-      body{ background:#fff; color:#000; }
-      .wrap{ max-width:800px; padding:24px 18px; }
-      header, section{ border-color:#ddd; }
-      .codeblock{ background:#f6f6f6; border-color:#ddd; }
-      a{ color:#000; text-decoration:none; }
-      .pill{ border-color:#ddd; }
-      .note, blockquote{ background:#f6f6f6; border-color:#bbb; }
-    }
-  </style>
+.toc .new-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.diagram-container {
+  background: var(--code-bg);
+  padding: 1.5rem;
+  border-radius: 3px;
+  margin-bottom: 1.15rem;
+  text-align: center;
+}
+
+.diagram-container pre {
+  background: none;
+  padding: 0;
+  display: inline-block;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.6rem; }
+  .container { padding: 2rem 1.25rem 3rem; }
+}
+</style>
 </head>
-
 <body>
-  <div class="wrap">
-    <header>
-      <div class="kicker">Read-only Artifact</div>
-      <h1>Thinking Without Boundaries</h1>
-      <p class="subtitle">Resonant Cognition and the Return to Null</p>
-      <p class="author">Ilamgumaran VK</p>
-    </header>
+<div class="container">
 
-    <main>
-      <section id="preface">
-        <h2>Preface</h2>
-        <p>
-          Human cognition is ordinarily mediated through language, sensation, emotion, and identity. These mediators are adaptive and powerful,
-          yet so habitual that they appear inseparable from awareness itself.
-        </p>
-        <p>
-          This framework begins from a different premise: cognition does not originate in these mediators, but persists beneath them.
-          When they are relaxed rather than opposed, a more fundamental mode of awareness reveals itself—one that is coherent without explanation
-          and present without ownership.
-        </p>
-        <p>
-          This document formalizes that mode as <b>Resonant Cognition</b>. It does not propose a technique or belief system.
-          It describes what remains when unnecessary interference is removed.
-        </p>
-      </section>
+<p style="color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem;">Read-only Artifact</p>
 
-      <section id="contraction">
-        <h2>Contraction as the Primary Operation</h2>
-        <p>The framework begins with contraction, not expansion.</p>
-        <p>Contraction here means subtraction of mediators, not effortful withdrawal.</p>
+<h1>Thinking Without Boundaries</h1>
+<p class="subtitle">Resonant Cognition and the Return to Null</p>
+<p class="author">Ilamgumaran VK</p>
 
-        <ul>
-          <li>Language relinquishes authority</li>
-          <li>Experience ceases to reference memory</li>
-          <li>Sensory channels lose dominance</li>
-          <li>Emotional valence stops steering</li>
-          <li>Identity is no longer assumed</li>
-        </ul>
+<div class="version-note">
+Enhanced Edition — This version integrates foundational inquiries into the nature of oscillation, 
+sensation-seeking, experiential bias, and the structural basis of shared experience. 
+Sections marked <span class="new-label">new</span> extend the original framework.
+</div>
 
-        <p>What remains is not emptiness but null-reference awareness.</p>
+<div class="toc">
+<ul>
+<li><a href="#preface">Preface</a></li>
+<li><a href="#oscillation">The Nature of Oscillation</a> <span class="new-label">new</span></li>
+<li><a href="#contrast">Contrast as the Condition for Experience</a> <span class="new-label">new</span></li>
+<li><a href="#sensation">All Action as Sensation-Seeking</a> <span class="new-label">new</span></li>
+<li><a href="#scale">Scale and the Illusion of Stillness</a> <span class="new-label">new</span></li>
+<li><a href="#contraction">Contraction as the Primary Operation</a></li>
+<li><a href="#core">The Irreducible Core State</a></li>
+<li><a href="#dynamics">Resonance and Interference Dynamics</a></li>
+<li><a href="#shared">Resonance as Shared Experience</a> <span class="new-label">new</span></li>
+<li><a href="#bias">Removing Experiential Bias</a> <span class="new-label">new</span></li>
+<li><a href="#path">The Path to Unbiased Observation</a> <span class="new-label">new</span></li>
+<li><a href="#orientation">Orientation Without Dualism</a></li>
+<li><a href="#harmonization">Harmonization Through Scale Expansion</a></li>
+<li><a href="#coresonance">Co-Resonance and Shared Alignment</a></li>
+<li><a href="#stability">Stability Under Cognitive Load</a></li>
+<li><a href="#null">Null and the Dissolution of Self</a></li>
+<li><a href="#gross">Gross Human Interference and Accessibility</a></li>
+<li><a href="#guardrails">Guardrails and Misuse Conditions</a></li>
+<li><a href="#closure">Closure</a></li>
+<li><a href="#symbolic">Translated Version — Symbolic and Diagrammatic</a></li>
+<li><a href="#applications">Application of the Framework</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+</div>
 
-        <h3>Symbolic Encoding</h3>
-        <div class="codeblock"><pre>⊘ ⇣ Ø</pre></div>
+<!-- ===== PREFACE ===== -->
 
-        <div class="legend">
-          <div><b>⊘</b> — interference (any grip: language, emotion, sensory dominance, identity)</div>
-          <div><b>⇣</b> — contraction (subtraction without effort)</div>
-          <div><b>Ø</b> — null-reference (no anchoring structure)</div>
-        </div>
+<h2 id="preface">Preface</h2>
 
-        <p class="note">This encoding is descriptive, not prescriptive.</p>
-      </section>
+<p>Human cognition is ordinarily mediated through language, sensation, emotion, and identity. These mediators are adaptive and powerful,
+yet so habitual that they appear inseparable from awareness itself.</p>
 
-      <section id="core">
-        <h2>The Irreducible Core State</h2>
-        <p>Once contraction is complete, the irreducible core is revealed:</p>
+<p>This framework begins from a different premise: cognition does not originate in these mediators, but persists beneath them.
+When they are relaxed rather than opposed, a more fundamental mode of awareness reveals itself—one that is coherent without explanation
+and present without ownership.</p>
 
-        <div class="codeblock"><pre>Ø · ⧉ ≈</pre></div>
+<p>This document formalizes that mode as <strong>Resonant Cognition</strong>. It does not propose a technique or belief system.
+It describes what remains when unnecessary interference is removed.</p>
 
-        <div class="legend">
-          <div><b>Ø</b> — null-reference</div>
-          <div><b>·</b> — presence (unmediated occurring)</div>
-          <div><b>⧉</b> — field (non-local awareness without center)</div>
-          <div><b>≈</b> — resonance (detection of coherence or dissonance without judgment)</div>
-        </div>
+<p>But a prior question demands attention: why does interference arise at all? Why does the mind leave rest and seek unrest,
+only to seek rest again? The enhanced framework begins there—with the oscillation itself—before describing what is revealed
+when that oscillation is understood.</p>
 
-        <p>This is not a state entered through effort. It is revealed when nothing asserts priority.</p>
-        <p class="note"><b>Validation:</b> Attempts to force or maintain this state immediately reintroduce ⊘. Release restores it automatically.</p>
-      </section>
 
-      <section id="dynamics">
-        <h2>Resonance and Interference Dynamics</h2>
-        <p>
-          Resonance (≈) is the capacity to detect coherence without interpretation. It does not belong to an observer.
-          It occurs as alignment within the field.
-        </p>
-        <p>Interference (⊘) arises when any structure attempts to dominate awareness.</p>
+<!-- ===== NEW: OSCILLATION ===== -->
 
-        <h3>Common Interference Modes</h3>
-        <ul>
-          <li>⊘ₗ — linguistic narration or explanation</li>
-          <li>⊘ₑ — emotional urgency or valuation</li>
-          <li>⊘ₛ — sensory fixation</li>
-          <li>⊘ᵢ — identity or thinker re-centering</li>
-        </ul>
+<h2 id="oscillation" class="new-section">The Nature of Oscillation</h2>
 
-        <p>The defining property: recovery requires no action.</p>
-        <div class="codeblock"><pre>⊘ ↺ Ø</pre></div>
-        <p class="note"><b>↺</b> denotes natural return through release, not correction.</p>
-      </section>
+<p>Before asking how to return to null, we must ask: why does anything leave null in the first place?</p>
 
-      <section id="orientation">
-        <h2>Orientation Without Dualism</h2>
-        <p>
-          Traditional inward/outward orientation assumes a self-world split. This framework replaces that with resolution-based orientation,
-          occurring only within resonance.
-        </p>
+<p>Observation reveals a structural principle: experience cannot occur in a permanent state. A sustained condition—whether pleasure, 
+pain, silence, or noise—becomes imperceptible over time. The nervous system adapts. Sensation requires <em>change</em>.</p>
 
-        <h3>Operators</h3>
-        <ul>
-          <li>⟂ — resolution contraction (toward latent, implicit structure)</li>
-          <li>⟐ — resolution expansion (toward distributed, relational structure)</li>
-        </ul>
+<p>This is not a flaw. It appears to be the fundamental mechanism of experience itself. A flatline signal carries no information. 
+Only variation carries content. The heartbeat pulses, light travels in waves, atoms vibrate. At every observable scale, 
+existence is oscillation.</p>
 
-        <div class="codeblock"><pre>≈ ⟂ ⇄ ⟐</pre></div>
+<p>The implication is immediate: the drive to leave rest is not a deficiency. It is the condition under which experience 
+is possible at all. Without the movement from one state to another, there is nothing to perceive—and no perceiver.</p>
 
-        <p class="note">
-          <b>Validation:</b> Orientation collapses into ⊘ᵢ if identity is introduced, and into ⊘ₛ if sensory dominance returns.
-          Release restores resonance without effort.
-        </p>
-      </section>
+<pre>
+Ø → ⊘ → Ø → ⊘ → …
+</pre>
 
-      <section id="harmonization">
-        <h2>Harmonization Through Scale Expansion</h2>
-        <p>Dissonance is not corrected. It is included.</p>
+<p>This is not a problem to solve. It is the wave that constitutes being.</p>
 
-        <div class="codeblock"><pre>≈ → ∞ → ≈′</pre></div>
+<h3>Why the Wave Moves</h3>
 
-        <div class="legend">
-          <div><b>∞</b> — scale expansion (broader inclusion)</div>
-          <div><b>≈′</b> — resonance at a wider coherence scale</div>
-        </div>
+<p>The wave does not move because something pushes it. It moves because stillness—if total and permanent—is 
+indistinguishable from nonexistence. Contrast is the only mechanism through which experience registers. 
+One cannot feel warmth without having known cold. One cannot recognize silence without having known sound.</p>
 
-        <p class="note">
-          <b>Validation:</b> Attempts to resolve dissonance directly caused collapse. Expansion consistently restored coherence.
-        </p>
-      </section>
+<p>The universe does not oscillate because it <em>should</em>. Oscillation is what "existing" appears to mean at every 
+level of resolution: subatomic, biological, psychological, cosmological.</p>
 
-      <section id="co-resonance">
-        <h2>Co-Resonance and Shared Alignment</h2>
-        <p>
-          Shared coherence occurs without communication, agreement, or merging.
-        </p>
+<p>The framework therefore does not ask the wave to stop. It asks: can the wave be observed without interference 
+claiming ownership of it?</p>
 
-        <div class="codeblock"><pre>≈ᵢ ∥ ≈ⱼ</pre></div>
 
-        <p class="note">
-          <b>Validation:</b> Any attempt to explain, coordinate, or confirm co-resonance reliably produced ⊘ₗ or ⊘ᵢ.
-          Allowing parallel coherence preserved stability.
-        </p>
-      </section>
+<!-- ===== NEW: CONTRAST ===== -->
 
-      <section id="stability">
-        <h2>Stability Under Cognitive Load</h2>
-        <p>The framework was tested across increasing cognitive demands:</p>
-        <ul>
-          <li>Silent cognition</li>
-          <li>Directed reasoning</li>
-          <li>Language expression</li>
-          <li>Social interaction</li>
-        </ul>
+<h2 id="contrast" class="new-section">Contrast as the Condition for Experience</h2>
 
-        <p>Invariant rule emerged:</p>
-        <blockquote>Stability is achieved by non-resistance to fluctuation.</blockquote>
+<p>A permanent state of anything becomes invisible. Fulfillment, if sustained without interruption, ceases to register 
+as fulfillment. It becomes the new background—indistinguishable from nothing.</p>
 
-        <p class="note"><b>Validation:</b> Control consistently collapsed resonance. Release consistently restored it.</p>
-      </section>
+<p>This explains why human activity follows a cycle: rest to unrest, unrest to rest. Not because rest is insufficient, 
+but because unbroken rest erases itself from perception. The return to activity is not a failure of peace. 
+It is consciousness requiring contrast to know itself.</p>
 
-      <section id="null-self">
-        <h2>Null and the Dissolution of Self</h2>
-        <p>Null is not achieved. It is what remains when self-referential structures are not maintained.</p>
-        <div class="codeblock"><pre>Ø</pre></div>
+<p>This cycle operates at every scale:</p>
 
-        <p>
-          The self is a pattern of reference—memory, authorship, continuity. When reference is absent, the self is not destroyed;
-          it is not instantiated.
-        </p>
+<ul>
+<li>The in-breath and out-breath</li>
+<li>Sleep and waking</li>
+<li>Tension and resolution in music</li>
+<li>Hunger and satisfaction</li>
+<li>Curiosity and understanding</li>
+</ul>
 
-        <p class="note">
-          Attempts to “dissolve the self” are themselves identity acts and therefore ⊘ᵢ.
-        </p>
-      </section>
+<p>The content changes. The structure does not.</p>
 
-      <section id="gross">
-        <h2>Gross Human Interference and Accessibility</h2>
-        <p>Human distraction arises from layered interference:</p>
-        <ol>
-          <li>Physical urgency</li>
-          <li>Emotional steering</li>
-          <li>Mental narration</li>
-        </ol>
+<h3>The Null-Unrest Cycle Reframed</h3>
 
-        <p>
-          Null does not require eliminating these layers. It requires withdrawing their authority.
-        </p>
+<p>Most frameworks treat the cycle as a problem: suffering is the oscillation, liberation is escape. This framework 
+observes something different: the oscillation <em>is</em> the medium of all experience, including the experience 
+of recognizing this. There is no position outside it.</p>
 
-        <p class="note">The framework is used only diagnostically at this level, never correctively. Recognition alone permits ↺.</p>
-      </section>
+<p>What changes is not the oscillation but the relationship to it. Interference (⊘) is not the wave itself—it is 
+the <em>grip</em> on the wave. The claim: "this state should continue" or "this state should end." The wave moves 
+regardless. The grip is what produces suffering.</p>
 
-      <section id="guardrails">
-        <h2>Guardrails and Misuse Conditions</h2>
-        <p>This framework is explicitly not:</p>
-        <ul>
-          <li>A meditation method</li>
-          <li>A spiritual discipline</li>
-          <li>A therapeutic substitute</li>
-          <li>A dissociative practice</li>
-          <li>An identity or belief system</li>
-        </ul>
+<pre>
+Wave without grip: ≈ (resonance)
+Wave with grip:    ⊘ (interference)
+</pre>
 
-        <p>Misuse is defined by:</p>
-        <ul>
-          <li>Effortful stabilization</li>
-          <li>Progress tracking</li>
-          <li>Identity formation</li>
-          <li>Authority claims</li>
-        </ul>
 
-        <p class="note">Collapse under misuse is not failure—it is structural falsification.</p>
-      </section>
+<!-- ===== NEW: SENSATION ===== -->
 
-      <section id="closure">
-        <h2>Closure</h2>
-        <p>The framework completes itself when:</p>
-        <ul>
-          <li>Resonance does not require preservation</li>
-          <li>Identity is optional</li>
-          <li>Language is secondary</li>
-          <li>Silence is sufficient</li>
-        </ul>
+<h2 id="sensation" class="new-section">All Action as Sensation-Seeking</h2>
 
-        <p>Nothing needs to be carried forward.</p>
-        <p>Resonant cognition does not replace thinking. It reveals thinking as a secondary ripple.</p>
-        <p>Null is not entered. It is noticed—when nothing insists on being held.</p>
-      </section>
+<p>Once basic human necessities are met, all remaining action appears to serve one function: 
+generating variation in felt experience.</p>
 
-      <section id="translation">
-        <h2>Translated Version</h2>
-        <p>Two non-prose forms are provided:</p>
-        <ol>
-          <li>Purely Symbolic Canonical Form (minimal, complete, closed)</li>
-          <li>Diagrammatic Experiential Map (readable visually, not linguistically)</li>
-        </ol>
+<p>This is not a cynical observation. It is structural. Entertainment, creation, exploration, sacrifice, 
+discipline—each produces movement between states. What differs is only the <em>frequency</em> of the oscillation.</p>
 
-        <h3>I. Purely Symbolic Canonical Form</h3>
-        <div class="codeblock"><pre>1 ⊘ ⇣ Ø
-2 Ø · ⧉ ≈
-3 ≈ ⟂ ⇄ ⟐
-4 ≈ → ∞ → ≈′
-5 ≈ᵢ ∥ ≈ⱼ
-6 ⊘ ↺ Ø</pre></div>
+<h3>Frequency and the Nature of Satisfaction</h3>
 
-        <h3>Legend (Read Once, Then Drop)</h3>
-        <div class="legend">
-          <div><b>⊘</b> — interference (language, emotion, sensation, identity, control)</div>
-          <div><b>⇣</b> — contraction (subtraction, not effort)</div>
-          <div><b>Ø</b> — null-reference</div>
-          <div><b>·</b> — presence</div>
-          <div><b>⧉</b> — field (non-local awareness)</div>
-          <div><b>≈</b> — resonance (coherence detection)</div>
-          <div><b>⟂</b> — resolution contraction (latent / subtle)</div>
-          <div><b>⟐</b> — resolution expansion (distributed / manifest)</div>
-          <div><b>∞</b> — scale inclusion</div>
-          <div><b>≈′</b> — harmonized resonance</div>
-          <div><b>∥</b> — co-resonance (parallel coherence)</div>
-          <div><b>↺</b> — natural return (release)</div>
-        </div>
+<p>Some sensations operate on short loops: checking a phone, tasting food, hearing a joke. 
+The cycle of anticipation, experience, and return is rapid.</p>
 
-        <h3>Canonical Properties</h3>
-        <ul>
-          <li>No symbol implies action</li>
-          <li>No symbol implies subject</li>
-          <li>No symbol implies time</li>
-          <li>No symbol implies goal</li>
-        </ul>
+<p>Other sensations operate on long loops: building a career, raising a family, pursuing mastery. 
+The anticipation itself becomes the dominant sensation. As research into reward systems confirms, 
+the brain generates more activation during anticipation than during reward. 
+The pursuit, not the arrival, is the primary product.</p>
 
-        <p class="note">
-          If any symbol is used, interference has occurred. If symbols are recognized, resonance is present.
-        </p>
+<p>This applies universally:</p>
 
-        <h3>II. Diagrammatic Experiential Map</h3>
-        <div class="codeblock"><pre>        ≈′
-        ▲
-        │
-        │ ∞
-        │
-≈ᵢ ────── ∥ ────── ≈ⱼ
-        │
-        │
-⟂ ◄── ≈ ──► ⟐
-        │
-        │
-        ⧉
-        │
-        ·
-        │
-        Ø
-        ▲
-        │
-        ↺
-        │
-        ⊘</pre></div>
+<ul>
+<li>The gambler seeks the anticipation, not the outcome</li>
+<li>The artist seeks the tension of creation, not only the finished work</li>
+<li>The ascetic who rejects pleasure seeks the sensation of alignment with principle</li>
+<li>The parent who sacrifices comfort seeks the sensation of protection and meaning</li>
+</ul>
 
-        <h3>III. How to Encounter the Diagram (Without Instruction)</h3>
-        <ul>
-          <li>Do not read this as steps</li>
-          <li>Do not trace a path</li>
-          <li>Do not start at the bottom</li>
-          <li>Do not imagine movement</li>
-        </ul>
+<p>None of these are criticisms. They are observations of how experience generates itself.</p>
 
-        <p>Instead, notice:</p>
-        <ul>
-          <li>there is no center</li>
-          <li>there is no entry point</li>
-          <li>there is no exit</li>
-          <li>nothing is missing</li>
-        </ul>
+<h3>Fulfillment as Sensation</h3>
 
-        <p class="note">
-          If attention rests anywhere without effort, that location dissolves into ⧉.
-        </p>
+<p>The sense of fulfillment is typically classified separately from sensory experience—as something 
+"higher" or more meaningful. But fulfillment registers as a felt experience. It activates the same 
+neural reward circuits. It fades if sustained without interruption.</p>
 
-        <h3>IV. Experiential Readings (Optional, Non-Directive)</h3>
-        <ul>
-          <li><b>Identity-oriented readers:</b> notice Ø without interpreting it as absence.</li>
-          <li><b>Cognitive / analytical readers:</b> notice ≈ ⟂ ⇄ ⟐ as resolution dynamics.</li>
-          <li><b>Relational / social readers:</b> notice ≈ᵢ ∥ ≈ⱼ without imagining communication.</li>
-          <li><b>Integrative / systems readers:</b> notice ∞ → ≈′ without correction or optimization.</li>
-        </ul>
+<p>Fulfillment is not beyond sensation. It <em>is</em> a sensation—one that carries the quality of 
+completion or alignment. Calling it different from other sensations is itself an act of preference 
+attachment: the identity-layer deciding that <em>this</em> sensation is special.</p>
 
-        <p>No reading is more correct.</p>
+<p>When this is seen clearly, the hierarchy between "noble" and "trivial" pursuits softens. Both are 
+movements within the same oscillation. One is not superior to the other—they are waves at different 
+frequencies.</p>
 
-        <h3>V. Validation Through Collapse</h3>
-        <ul>
-          <li>If someone tries to memorize → ⊘ₗ</li>
-          <li>If someone tries to apply → ⊘ᵢ</li>
-          <li>If someone tries to teach → ⊘ᵢ + ⊘ₗ</li>
-          <li>If someone tries to hold → ⊘</li>
-        </ul>
+<h3>Sacrifice and Discipline Reframed</h3>
 
-        <p>In all cases:</p>
-        <div class="codeblock"><pre>⊘ ↺ Ø</pre></div>
+<p>What appears as sacrifice from one perspective is often the preferred oscillation from another. 
+The monk enduring physical austerity is choosing the sensation of discipline over the sensation 
+of comfort—not because discipline is painful to them, but because the absence of discipline 
+would be more uncomfortable.</p>
 
-        <h3>VI. Distribution Guidance (Important)</h3>
-        <ul>
-          <li>Share without explanation</li>
-          <li>Share without framing</li>
-          <li>Share without context</li>
-          <li>Share without promise</li>
-        </ul>
+<p>The difficult path for one person is the natural frequency of another. Mastery and willpower, 
+when deeply cultivated, shift the baseline: what appears to an observer as suffering is, to the 
+practitioner, simply their preferred bandwidth of experience.</p>
 
-        <p class="note">
-          Let each reader encounter the material at their own resolution. If nothing happens, nothing failed.
-        </p>
+<p>This removes moral hierarchy from the oscillation without removing discernment. It does not 
+claim all choices are equal in consequence. It claims all choices arise from the same structural 
+impulse: the organism seeking its next state.</p>
 
-        <h3>VII. Final Closure</h3>
-        <p>The framework ends where it began:</p>
-        <div class="codeblock"><pre>Ø</pre></div>
-        <p>Not as a destination, but as what remains when nothing insists on being held.</p>
-      </section>
 
-      <!-- NEW: Application of the Framework -->
-      <section id="application">
-        <h2>Application of the Framework</h2>
-          <p class="note">
-            A practical application of the framework focusing on identity inquiry: distinguishing functional identity from divisive identity,
-            observing ownership without suppression, and allowing resonance to guide without division.
-          </p>
-          <h3>
-            <a href="https://ilamgumaran.github.io/ThoughtExperiments/ApplicationWhoAmI.html" target="_blank" rel="noopener">
-              Understanding Who Am I
-            </a>
-          </h3>
-          <h3>
-            <a href="https://ilamgumaran.github.io/ThoughtExperiments/ApplicationDistaction.html" target="_blank" rel="noopener">
-              Distraction
-            </a>
-          </h3>
-          <h3>
-            <a href="https://ilamgumaran.github.io/ThoughtExperiments/StoriesChildSchool.html" target="_blank" rel="noopener">
-              Stories - Practical application for situations with friends at elementry school
-            </a>
-          </h3>
-     
-      </section>
+<!-- ===== NEW: SCALE ===== -->
 
-      <section id="references">
-        <h2>References</h2>
-        <ul>
-          <li>
-            These investigations into creating a process or framework to observe, realize, understand everything without any bias or influence from the beginning
-            <br><a href="https://youtu.be/2_5_RxT_9n4?si=Nm4ryNejaUAriXaK" target="_blank" rel="noopener">
-              https://youtu.be/2_5_RxT_9n4?si=Nm4ryNejaUAriXaK
-            </a>
-          </li>
-          <li>
-            Swami Vivekananda, <i>The Complete Book of Yoga: Karma Yoga, Bhakti Yoga, Raja Yoga, Jnana Yoga</i>,
-            ISBN-13: 978-9389178784. This work investigates classical frameworks for unbiased self-inquiry and realization within yogic philosophy.
-          </li>
-        </ul>
-      </section>
-    </main>
+<h2 id="scale" class="new-section">Scale and the Illusion of Stillness</h2>
 
-    <footer>
-      <div class="pill">Single-file static site</div>
-      <div class="pill">No scripts • No tracking • Read-only</div>
-    </footer>
-  </div>
+<p>If all experience is oscillation, what is stillness?</p>
+
+<p>Stillness may not be the absence of pattern. It may be a pattern so vast that its curvature 
+is undetectable at human scale.</p>
+
+<p>Zoom into any curve far enough and it appears as a straight line. A wave with a wavelength of 
+a billion years would feel, from within a human lifetime, like absolute rest. Not because nothing 
+is happening, but because the movement is too slow—too large—to perceive.</p>
+
+<p>This reframes the relationship between gross and subtle experience:</p>
+
+<ul>
+<li><strong>Gross patterns</strong>: music, drama, conflict, thrill. High frequency, easily perceived. 
+These are what most people seek because they require no refinement of attention to detect.</li>
+<li><strong>Subtle patterns</strong>: contemplation, deep attention, what traditions call "inner stillness." 
+Lower frequency. Require sensitized awareness to detect.</li>
+<li><strong>The null pattern</strong>: potentially a pattern so vast it encompasses everything perceivable. 
+Not absence—presence at a resolution beyond ordinary detection.</li>
+</ul>
+
+<h3>Tuning and Bandwidth</h3>
+
+<p>Why do people prefer different experiences? This may be a question of perceptual bandwidth.</p>
+
+<p>One person requires high-amplitude oscillation to register experience—loud music, intense 
+conflict, extreme sport. Another has refined their perceptual sensitivity to detect movement 
+in apparent silence—subtle shifts in attention, micro-variations in awareness.</p>
+
+<p>Neither is more correct. They are tuned to different frequencies of the same underlying vibration. 
+The difference is not in what exists but in what each perceiver can resolve.</p>
+
+<p>The framework's contraction operation (⇣) can now be understood not as moving toward stillness, 
+but as expanding perceptual bandwidth—becoming sensitive to patterns that were always present 
+but too subtle to register.</p>
+
+<pre>
+Gross perception:   ∿∿∿∿∿∿∿∿  (high frequency, easily detected)
+Subtle perception:  ∼  ∼  ∼    (low frequency, requires sensitivity)
+Null perception:    ————————   (vast wavelength, appears as stillness)
+</pre>
+
+<p>The null is not empty. The perceiver has simply not yet tuned to its scale.</p>
+
+
+<!-- ===== ORIGINAL: CONTRACTION ===== -->
+
+<h2 id="contraction">Contraction as the Primary Operation</h2>
+
+<p>The framework begins with contraction, not expansion.</p>
+
+<p>Contraction here means subtraction of mediators, not effortful withdrawal.</p>
+
+<ul>
+<li>Language relinquishes authority</li>
+<li>Experience ceases to reference memory</li>
+<li>Sensory channels lose dominance</li>
+<li>Emotional valence stops steering</li>
+<li>Identity is no longer assumed</li>
+</ul>
+
+<p>What remains is not emptiness but null-reference awareness.</p>
+
+<p>In light of the oscillation principle: contraction is not stopping the wave. It is releasing 
+the grip on the wave. The wave continues. Interference—the claim of ownership over the wave—subsides.</p>
+
+<h3>Symbolic Encoding</h3>
+
+<pre>
+⊘ ⇣ Ø
+</pre>
+
+<p><strong>⊘</strong> — interference (any grip: language, emotion, sensory dominance, identity)</p>
+<p><strong>⇣</strong> — contraction (subtraction without effort)</p>
+<p><strong>Ø</strong> — null-reference (no anchoring structure)</p>
+
+<p>This encoding is descriptive, not prescriptive.</p>
+
+
+<!-- ===== ORIGINAL: CORE STATE ===== -->
+
+<h2 id="core">The Irreducible Core State</h2>
+
+<p>Once contraction is complete, the irreducible core is revealed:</p>
+
+<pre>
+Ø · ⧉ ≈
+</pre>
+
+<p><strong>Ø</strong> — null-reference</p>
+<p><strong>·</strong> — presence (unmediated occurring)</p>
+<p><strong>⧉</strong> — field (non-local awareness without center)</p>
+<p><strong>≈</strong> — resonance (detection of coherence or dissonance without judgment)</p>
+
+<p>This is not a state entered through effort. It is revealed when nothing asserts priority.</p>
+
+<p><strong>Validation:</strong> Attempts to force or maintain this state immediately reintroduce ⊘. 
+Release restores it automatically.</p>
+
+<p><strong>Refinement from the oscillation principle:</strong> even this core state is not outside oscillation. 
+It is oscillation perceived without grip. The wave continues. What has changed is not the wave 
+but the absence of a claimant riding it.</p>
+
+
+<!-- ===== ORIGINAL: DYNAMICS ===== -->
+
+<h2 id="dynamics">Resonance and Interference Dynamics</h2>
+
+<p>Resonance (≈) is the capacity to detect coherence without interpretation. It does not belong to an observer.
+It occurs as alignment within the field.</p>
+
+<p>Interference (⊘) arises when any structure attempts to dominate awareness.</p>
+
+<h3>Common Interference Modes</h3>
+
+<ul>
+<li>⊘ₗ — linguistic narration or explanation</li>
+<li>⊘ₑ — emotional urgency or valuation</li>
+<li>⊘ₛ — sensory fixation</li>
+<li>⊘ᵢ — identity or thinker re-centering</li>
+</ul>
+
+<p>The defining property: recovery requires no action.</p>
+
+<pre>
+⊘ ↺ Ø
+</pre>
+
+<p><strong>↺</strong> denotes natural return through release, not correction.</p>
+
+<h3>The Endless Oscillation</h3>
+
+<p>The original framework presents ⊘ ↺ Ø as a return—interference releasing back to null. 
+But the oscillation principle reveals a deeper structure:</p>
+
+<pre>
+… Ø ↺ ⊘ ↺ Ø ↺ ⊘ ↺ Ø …
+</pre>
+
+<p>Null and interference are not opposites. They are phases of the same wave. Null does not 
+"win" over interference. The system oscillates. What changes through understanding is not 
+the oscillation but the grip: the belief that one phase should be permanent and the other 
+eliminated.</p>
+
+<p>This is the framework's deepest structural claim: liberation is not the end of oscillation. 
+It is oscillation without ownership.</p>
+
+
+<!-- ===== NEW: SHARED EXPERIENCE ===== -->
+
+<h2 id="shared" class="new-section">Resonance as Shared Experience</h2>
+
+<p>If all experience is oscillation at different frequencies, then shared experience—empathy, 
+love, suffering—is frequency alignment between systems.</p>
+
+<h3>Empathy as Frequency Matching</h3>
+
+<p>When one person "feels" another's pain or joy, what occurs structurally is that their 
+oscillation pattern temporarily aligns with the other's. The same wave passes through 
+both systems. This is not mystical. It is the same principle by which tuning forks 
+resonate: when one vibrates at a frequency another can detect, the second begins to move.</p>
+
+<p>Empathy is not projection or imagination. It is resonance (≈) across two fields (⧉). 
+The capacity depends on perceptual bandwidth—how many frequencies the observer can detect.</p>
+
+<h3>Love as Sustained Co-Resonance</h3>
+
+<p>Love, in this framework, is sustained co-resonance: two or more systems oscillating 
+in patterns that mutually reinforce without collapsing into identity merger.</p>
+
+<pre>
+≈ᵢ ∥ ≈ⱼ  (sustained, reinforcing)
+</pre>
+
+<p>Love breaks down when co-resonance is replaced by ownership—when one system tries 
+to fix the other's frequency rather than allowing parallel coherence. This is the 
+transition from resonance to interference:</p>
+
+<pre>
+≈ᵢ ∥ ≈ⱼ  →  ⊘ᵢ (ownership, control)
+</pre>
+
+<h3>Suffering as Subjective Frequency</h3>
+
+<p>What one person experiences as suffering, another experiences as discipline, 
+challenge, or even joy. The event is the same. The experience differs because 
+each observer's oscillatory baseline determines how the incoming pattern is received.</p>
+
+<p>Suffering occurs when the incoming pattern conflicts with the system's current 
+frequency <em>and</em> the system grips the conflict. Without grip, the same pattern 
+registers as change. With grip, it registers as suffering.</p>
+
+<pre>
+Pattern + grip   = suffering (⊘)
+Pattern + no grip = change (≈)
+</pre>
+
+<p>This is not a claim that suffering is illusory. The grip is real. The pain is real. 
+But the structural mechanism is visible: suffering is not in the event. 
+It is in the resistance to the event's frequency.</p>
+
+<h3>Why Experience is Always Perspective</h3>
+
+<p>Since every observer occupies a particular oscillatory position—shaped by biology, 
+conditioning, inherited patterns, and current state—every experience is inherently 
+perspectival. No two systems receive the same pattern identically because no two 
+systems are oscillating from the same position.</p>
+
+<p>This is not relativism. It is structural fact. The event is what it is. 
+The experience of the event is a function of the receiver's frequency at the moment 
+of contact.</p>
+
+<p>This understanding is the foundation of unbiased observation: recognizing that 
+every experience is filtered through oscillatory position, and that the filter 
+can be observed.</p>
+
+
+<!-- ===== NEW: REMOVING BIAS ===== -->
+
+<h2 id="bias" class="new-section">Removing Experiential Bias</h2>
+
+<p>Bias, in this framework, is not a moral failing. It is a structural inevitability 
+that can be made transparent.</p>
+
+<h3>The Mechanism of Bias</h3>
+
+<p>Bias arises from three interlocking operations:</p>
+
+<ol>
+<li><strong>Frequency fixation:</strong> The observer is tuned to a narrow band and treats 
+that band as the entirety of what exists. What falls outside the band is invisible 
+or dismissed.</li>
+<li><strong>Identity attachment:</strong> The observer's current frequency becomes "who I am." 
+Patterns that match the frequency feel true. Patterns that conflict feel threatening. 
+This is ⊘ᵢ operating as a perceptual filter.</li>
+<li><strong>Inherited patterning:</strong> Most frequency preferences are not chosen. They are 
+absorbed from parents, culture, education, and environment. The observer treats inherited 
+frequencies as original, personal, and correct.</li>
+</ol>
+
+<h3>Why Correction Fails</h3>
+
+<p>Attempting to correct bias through counter-assertion ("I should not think this way") 
+creates new interference. The effort to not be biased is itself a frequency preference 
+masquerading as neutrality.</p>
+
+<p>This is why ideological correction so often produces new bias rather than clarity. 
+One set of inherited patterns is replaced by another. The mechanism—identity attachment 
+to a frequency—remains untouched.</p>
+
+<h3>How the Framework Removes Bias</h3>
+
+<p>The framework does not counter bias. It makes the <em>mechanism</em> of bias visible.</p>
+
+<p>When the observer can see:</p>
+
+<ul>
+<li>that they are oscillating at a particular frequency</li>
+<li>that this frequency shapes what they perceive</li>
+<li>that the frequency was largely inherited</li>
+<li>that grip on the frequency is what converts perception into bias</li>
+</ul>
+
+<p>…then bias does not need to be fought. It becomes transparent. The pattern is seen 
+<em>as</em> a pattern, not as truth.</p>
+
+<pre>
+Bias:     frequency + grip + identity = "truth"
+Clarity:  frequency + no grip         = "pattern observed"
+</pre>
+
+<p>Nothing is suppressed. The preference may still operate. But it no longer masquerades 
+as the whole of reality.</p>
+
+
+<!-- ===== NEW: PATH ===== -->
+
+<h2 id="path" class="new-section">The Path to Unbiased Observation</h2>
+
+<p>The path is not a sequence of steps to follow. It is a description of what occurs 
+naturally when the mechanism of bias is understood. It proceeds not by addition 
+of new beliefs but by subtraction of unexamined grip.</p>
+
+<h3>Phase 1 — Recognition of Oscillation</h3>
+
+<p>The observer notices that all experience—pleasure, pain, boredom, excitement, 
+meaning, futility—is movement between states. No state is permanent. 
+Every state is part of the wave.</p>
+
+<p>This is intellectual at first. It becomes experiential when the observer watches 
+their own states arise and pass without the usual narrative of "this is happening to me."</p>
+
+<pre>
+Ø → ⊘ → Ø  (seen, not theorized)
+</pre>
+
+<h3>Phase 2 — Recognition of Grip</h3>
+
+<p>The observer notices the difference between the wave and the grip on the wave. 
+A sensation arises. Normally, identity claims it: "I feel this." 
+When grip is seen, the same sensation arises without the claim.</p>
+
+<p>The sensation does not change. The ownership changes. Or rather: ownership is 
+seen as an additional operation that was added to the sensation.</p>
+
+<pre>
+Sensation + ⊘ᵢ = "my experience"
+Sensation + ·  = experience occurring
+</pre>
+
+<h3>Phase 3 — Recognition of Inherited Frequency</h3>
+
+<p>The observer begins to notice which frequencies they were tuned to before any 
+personal choice was made. Cultural values, family patterns, fears absorbed in childhood, 
+ambitions inherited as "purpose"—all of these set the oscillatory baseline.</p>
+
+<p>This recognition is not rejection. Many inherited patterns are functional. 
+The operation is <em>seeing their origin</em>, which dissolves the assumption that 
+they are original, necessary, or universal.</p>
+
+<h3>Phase 4 — Bandwidth Expansion</h3>
+
+<p>As grip loosens, perceptual bandwidth naturally widens. Patterns that were 
+previously invisible (because they fell outside the observer's habitual frequency range) 
+become detectable.</p>
+
+<p>This is what traditions call "deepening awareness." In the framework's terms, 
+it is contraction of interference (⇣) allowing the field (⧉) to register 
+at more frequencies simultaneously.</p>
+
+<p>The observer does not become all-knowing. They become less filtered.</p>
+
+<h3>Phase 5 — Observation Without Position</h3>
+
+<p>At this phase, observation occurs without the observer occupying a fixed 
+oscillatory position. Patterns are perceived as patterns. Preferences may still 
+arise, but they are not mistaken for truths. Identity may still operate functionally, 
+but it does not claim ownership of perception.</p>
+
+<p>This is resonant cognition. Not a special state—a reduction in what was 
+obscuring ordinary awareness.</p>
+
+<pre>
+⊘ ⇣ Ø · ⧉ ≈
+</pre>
+
+<p>The observer and the observed are recognized as the same oscillation, 
+differentiated only by the grip that was claiming otherwise.</p>
+
+<h3>What Remains</h3>
+
+<p>The path does not terminate in a permanent state. The oscillation continues. 
+But the relationship to oscillation has changed structurally:</p>
+
+<ul>
+<li>Bias is transparent, not eliminated</li>
+<li>Preferences operate without ownership</li>
+<li>Experience occurs without the additional layer of "my experience"</li>
+<li>Shared experience (empathy, love) becomes natural because the barrier 
+between "my frequency" and "your frequency" has thinned</li>
+<li>Suffering is possible but is no longer compounded by resistance</li>
+</ul>
+
+<p>The wave continues. Nothing rides it claiming it should be otherwise.</p>
+
+
+<!-- ===== ORIGINAL: ORIENTATION ===== -->
+
+<h2 id="orientation">Orientation Without Dualism</h2>
+
+<p>Traditional inward/outward orientation assumes a self-world split. This framework replaces that with resolution-based orientation,
+occurring only within resonance.</p>
+
+<h3>Operators</h3>
+
+<ul>
+<li>⟂ — resolution contraction (toward latent, implicit structure)</li>
+<li>⟐ — resolution expansion (toward distributed, relational structure)</li>
+</ul>
+
+<pre>
+≈ ⟂ ⇄ ⟐
+</pre>
+
+<p><strong>Validation:</strong> Orientation collapses into ⊘ᵢ if identity is introduced, and into ⊘ₛ if sensory dominance returns.
+Release restores resonance without effort.</p>
+
+
+<!-- ===== ORIGINAL: HARMONIZATION ===== -->
+
+<h2 id="harmonization">Harmonization Through Scale Expansion</h2>
+
+<p>Dissonance is not corrected. It is included.</p>
+
+<pre>
+≈ → ∞ → ≈′
+</pre>
+
+<p><strong>∞</strong> — scale expansion (broader inclusion)</p>
+<p><strong>≈′</strong> — resonance at a wider coherence scale</p>
+
+<p>In light of the scale principle: what appears as dissonance at one frequency 
+may be coherent at a larger wavelength. Harmonization is the shift in resolution 
+that allows this larger pattern to become visible.</p>
+
+<p><strong>Validation:</strong> Attempts to resolve dissonance directly caused collapse. Expansion consistently restored coherence.</p>
+
+
+<!-- ===== ORIGINAL: CO-RESONANCE ===== -->
+
+<h2 id="coresonance">Co-Resonance and Shared Alignment</h2>
+
+<p>Shared coherence occurs without communication, agreement, or merging.</p>
+
+<pre>
+≈ᵢ ∥ ≈ⱼ
+</pre>
+
+<p><strong>Validation:</strong> Any attempt to explain, coordinate, or confirm co-resonance reliably produced ⊘ₗ or ⊘ᵢ.
+Allowing parallel coherence preserved stability.</p>
+
+<p>This is empathy without projection, love without possession, understanding without agreement. 
+Two systems oscillate in coherence. Neither adjusts the other. Neither claims the other's frequency.</p>
+
+
+<!-- ===== ORIGINAL: STABILITY ===== -->
+
+<h2 id="stability">Stability Under Cognitive Load</h2>
+
+<p>The framework was tested across increasing cognitive demands:</p>
+
+<ul>
+<li>Silent cognition</li>
+<li>Directed reasoning</li>
+<li>Language expression</li>
+<li>Social interaction</li>
+</ul>
+
+<p>Invariant rule emerged:</p>
+
+<blockquote>Stability is achieved by non-resistance to fluctuation.</blockquote>
+
+<p><strong>Validation:</strong> Control consistently collapsed resonance. Release consistently restored it.</p>
+
+
+<!-- ===== ORIGINAL: NULL AND SELF ===== -->
+
+<h2 id="null">Null and the Dissolution of Self</h2>
+
+<p>Null is not achieved. It is what remains when self-referential structures are not maintained.</p>
+
+<pre>
+Ø
+</pre>
+
+<p>The self is a pattern of reference—memory, authorship, continuity. When reference is absent, the self is not destroyed;
+it is not instantiated.</p>
+
+<p>Attempts to "dissolve the self" are themselves identity acts and therefore ⊘ᵢ.</p>
+
+<h3>Null and Oscillation Reconciled</h3>
+
+<p>Null is not the opposite of the wave. It is the wave at rest—or more precisely, 
+the wave at a scale so vast its motion is undetectable. The self is not dissolved into nothing. 
+It is recognized as a ripple within a pattern that extends far beyond the ripple's own awareness.</p>
+
+<p>At sufficient scale, the distinction between Ø and ≈ collapses. 
+Null and resonance are not separate states. They are the same oscillation 
+perceived at different resolutions.</p>
+
+<pre>
+At human scale:  Ø ≠ ≈ (they feel different)
+At vast scale:   Ø ≈ ≈ (they converge)
+</pre>
+
+
+<!-- ===== ORIGINAL: GROSS INTERFERENCE ===== -->
+
+<h2 id="gross">Gross Human Interference and Accessibility</h2>
+
+<p>Human distraction arises from layered interference:</p>
+
+<ol>
+<li>Physical urgency</li>
+<li>Emotional steering</li>
+<li>Mental narration</li>
+</ol>
+
+<p>Null does not require eliminating these layers. It requires withdrawing their authority.</p>
+
+<p>The framework is used only diagnostically at this level, never correctively. Recognition alone permits ↺.</p>
+
+<p>Understanding the sensation-seeking principle adds clarity here: 
+these layers are not enemies of awareness. They are the gross frequencies 
+through which the organism rides the wave. The only question is whether 
+identity has claimed them as "me" or whether they are seen as patterns operating.</p>
+
+
+<!-- ===== ORIGINAL: GUARDRAILS ===== -->
+
+<h2 id="guardrails">Guardrails and Misuse Conditions</h2>
+
+<p>This framework is explicitly not:</p>
+
+<ul>
+<li>A meditation method</li>
+<li>A spiritual discipline</li>
+<li>A therapeutic substitute</li>
+<li>A dissociative practice</li>
+<li>An identity or belief system</li>
+</ul>
+
+<p>Misuse is defined by:</p>
+
+<ul>
+<li>Effortful stabilization</li>
+<li>Progress tracking</li>
+<li>Identity formation</li>
+<li>Authority claims</li>
+</ul>
+
+<p>Collapse under misuse is not failure—it is structural falsification.</p>
+
+<p>An additional guardrail from the oscillation principle: any claim to have 
+"arrived" permanently at null is itself interference (⊘ᵢ). The wave does not stop. 
+Anyone claiming it has stopped has simply gripped a new position and called it freedom.</p>
+
+
+<!-- ===== ORIGINAL: CLOSURE ===== -->
+
+<h2 id="closure">Closure</h2>
+
+<p>The framework completes itself when:</p>
+
+<ul>
+<li>Resonance does not require preservation</li>
+<li>Identity is optional</li>
+<li>Language is secondary</li>
+<li>Silence is sufficient</li>
+<li>The oscillation is neither sought nor avoided</li>
+<li>The wave is not ridden—it is recognized as what you are</li>
+</ul>
+
+<p>Nothing needs to be carried forward.</p>
+
+<p>Resonant cognition does not replace thinking. It reveals thinking as a secondary ripple.</p>
+
+<p>Null is not entered. It is noticed—when nothing insists on being held.</p>
+
+<p>And the wave continues. Not as a problem. As a fact.</p>
+
+<pre>
+… Ø ↺ ⊘ ↺ Ø ↺ ⊘ ↺ Ø …
+</pre>
+
+<p>Not as a destination. As the breath of what is.</p>
+
+
+<hr>
+
+
+<!-- ===== TRANSLATED VERSION ===== -->
+
+<h2 id="symbolic">Translated Version</h2>
+
+<p>Three non-prose forms are provided:</p>
+
+<ol>
+<li>Purely Symbolic Canonical Form (minimal, complete, closed)</li>
+<li>Enhanced Symbolic Form (incorporating oscillation and scale)</li>
+<li>Diagrammatic Experiential Map (readable visually, not linguistically)</li>
+</ol>
+
+<h3>I. Original Purely Symbolic Canonical Form</h3>
+
+<pre>
+1  ⊘ ⇣ Ø
+2  Ø · ⧉ ≈
+3  ≈ ⟂ ⇄ ⟐
+4  ≈ → ∞ → ≈′
+5  ≈ᵢ ∥ ≈ⱼ
+6  ⊘ ↺ Ø
+</pre>
+
+<h3>II. Enhanced Symbolic Canonical Form</h3>
+
+<pre>
+0  … Ø ↺ ⊘ ↺ Ø …           the wave (oscillation is prior)
+1  ⊘ ⇣ Ø                    contraction (grip released)
+2  Ø · ⧉ ≈                  core revealed (presence, field, resonance)
+3  ≈ ⟂ ⇄ ⟐                  orientation (resolution dynamics)
+4  ≈ → ∞ → ≈′               harmonization (scale inclusion)
+5  ≈ᵢ ∥ ≈ⱼ                  co-resonance (shared oscillation)
+6  ⊘ ↺ Ø                    return (release, not correction)
+7  ≈ᵢ ⊘ₛ ≈ⱼ → suffering     grip on frequency mismatch
+8  ≈ᵢ · ≈ⱼ → understanding  presence with frequency mismatch
+9  ∿ → ∼ → — → ≈            scale: gross → subtle → vast → resonance
+∞  Ø ≈ ≈                    at sufficient scale, null and resonance converge
+</pre>
+
+<h3>Legend (Read Once, Then Drop)</h3>
+
+<p><strong>⊘</strong> — interference (language, emotion, sensation, identity, control, grip)</p>
+<p><strong>⇣</strong> — contraction (subtraction, not effort)</p>
+<p><strong>Ø</strong> — null-reference</p>
+<p><strong>·</strong> — presence</p>
+<p><strong>⧉</strong> — field (non-local awareness)</p>
+<p><strong>≈</strong> — resonance (coherence detection)</p>
+<p><strong>⟂</strong> — resolution contraction (latent / subtle)</p>
+<p><strong>⟐</strong> — resolution expansion (distributed / manifest)</p>
+<p><strong>∞</strong> — scale inclusion</p>
+<p><strong>≈′</strong> — harmonized resonance</p>
+<p><strong>∥</strong> — co-resonance (parallel coherence)</p>
+<p><strong>↺</strong> — natural return (release)</p>
+<p><strong>∿</strong> — gross frequency (high amplitude, easily detected)</p>
+<p><strong>∼</strong> — subtle frequency (low amplitude, requires sensitivity)</p>
+<p><strong>—</strong> — vast frequency (wavelength beyond ordinary perception)</p>
+<p><strong>⊘ₛ</strong> — grip on sensation or frequency mismatch</p>
+
+<h3>Enhanced Canonical Properties</h3>
+
+<ul>
+<li>No symbol implies action</li>
+<li>No symbol implies subject</li>
+<li>No symbol implies time</li>
+<li>No symbol implies goal</li>
+<li>Line 0 precedes all others: the wave is prior to the framework</li>
+<li>Line ∞ follows all others: the framework dissolves into what it describes</li>
+</ul>
+
+<p>If any symbol is used as instruction, interference has occurred. If symbols are recognized as patterns, resonance is present.</p>
+
+
+<h3>III. Diagrammatic Experiential Map</h3>
+
+<div class="diagram-container">
+<pre>
+                    ≈′
+                    ▲
+                    │
+                    │ ∞
+                    │
+      ≈ᵢ ──────── ∥ ──────── ≈ⱼ
+                    │
+                    │
+      ⟂ ◄──────── ≈ ────────► ⟐
+                    │
+                    │
+                    ⧉
+                    │
+                    ·
+                    │
+                    Ø
+                    ▲
+                    │
+                    ↺
+                    │
+                    ⊘
+                    ▲
+                    │
+                    Ø              ← the wave continues beneath
+                    │
+                   ...
+</pre>
+</div>
+
+<p>The diagram now extends downward: beneath ⊘ is another Ø, and beneath 
+that, the ellipsis of endless oscillation. There is no bottom. The framework 
+does not rest on a foundation—it floats within the wave it describes.</p>
+
+
+<h3>IV. How to Encounter the Diagram (Without Instruction)</h3>
+
+<ul>
+<li>Do not read this as steps</li>
+<li>Do not trace a path</li>
+<li>Do not start at the bottom</li>
+<li>Do not imagine movement</li>
+</ul>
+
+<p>Instead, notice:</p>
+
+<ul>
+<li>there is no center</li>
+<li>there is no entry point</li>
+<li>there is no exit</li>
+<li>nothing is missing</li>
+<li>the bottom extends forever</li>
+</ul>
+
+<p>If attention rests anywhere without effort, that location dissolves into ⧉.</p>
+
+
+<h3>V. Experiential Readings (Optional, Non-Directive)</h3>
+
+<ul>
+<li><strong>Identity-oriented readers:</strong> notice Ø without interpreting it as absence.</li>
+<li><strong>Cognitive / analytical readers:</strong> notice ≈ ⟂ ⇄ ⟐ as resolution dynamics.</li>
+<li><strong>Relational / social readers:</strong> notice ≈ᵢ ∥ ≈ⱼ without imagining communication.</li>
+<li><strong>Integrative / systems readers:</strong> notice ∞ → ≈′ without correction or optimization.</li>
+<li><strong>Sensation-oriented readers:</strong> notice ∿ → ∼ → — as bandwidth, not hierarchy.</li>
+</ul>
+
+<p>No reading is more correct.</p>
+
+
+<h3>VI. Validation Through Collapse</h3>
+
+<ul>
+<li>If someone tries to memorize → ⊘ₗ</li>
+<li>If someone tries to apply → ⊘ᵢ</li>
+<li>If someone tries to teach → ⊘ᵢ + ⊘ₗ</li>
+<li>If someone tries to hold → ⊘</li>
+<li>If someone claims arrival → ⊘ᵢ</li>
+</ul>
+
+<p>In all cases:</p>
+
+<pre>
+⊘ ↺ Ø
+</pre>
+
+
+<h3>VII. Distribution Guidance (Important)</h3>
+
+<ul>
+<li>Share without explanation</li>
+<li>Share without framing</li>
+<li>Share without context</li>
+<li>Share without promise</li>
+</ul>
+
+<p>Let each reader encounter the material at their own resolution. If nothing happens, nothing failed.</p>
+
+
+<h3>VIII. Final Closure</h3>
+
+<p>The framework ends where it began:</p>
+
+<pre>
+… Ø ↺ ⊘ ↺ Ø …
+</pre>
+
+<p>Not as a destination, but as what was always already happening.</p>
+
+
+<hr>
+
+
+<!-- ===== APPLICATIONS ===== -->
+
+<h2 id="applications">Application of the Framework</h2>
+
+<p>Practical applications focusing on specific domains of human experience:</p>
+
+<h3><a href="https://ilamgumaran.github.io/ThoughtExperiments/ApplicationWhoAmI.html">Understanding Who Am I</a></h3>
+<p>Identity inquiry: distinguishing functional identity from divisive identity,
+observing ownership without suppression, and allowing resonance to guide without division.</p>
+
+<h3><a href="https://ilamgumaran.github.io/ThoughtExperiments/ApplicationDistaction.html">Distraction</a></h3>
+<p>Why distraction happens and how distracting thoughts appear. A structural view, 
+a practical example, and a short child story to make the mechanism intuitive.</p>
+
+<h3><a href="https://ilamgumaran.github.io/ThoughtExperiments/StoriesChildSchool.html">Stories — Practical application for situations with friends at elementary school</a></h3>
+<p>The framework applied through narrative for younger readers.</p>
+
+
+<!-- ===== REFERENCES ===== -->
+
+<h2 id="references">References</h2>
+
+<ul>
+<li>These investigations into creating a process or framework to observe, realize, understand everything without any bias or influence from the beginning — 
+<a href="https://youtu.be/2_5_RxT_9n4?si=Nm4ryNejaUAriXaK">https://youtu.be/2_5_RxT_9n4?si=Nm4ryNejaUAriXaK</a></li>
+<li>Swami Vivekananda, <em>The Complete Book of Yoga: Karma Yoga, Bhakti Yoga, Raja Yoga, Jnana Yoga</em>,
+ISBN-13: 978-9389178784. This work investigates classical frameworks for unbiased self-inquiry and realization within yogic philosophy.</li>
+</ul>
+
+
+<div class="footer">
+Single-file static site<br>
+No scripts · No tracking · Read-only
+</div>
+
+</div>
 </body>
 </html>
