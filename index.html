@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -17,209 +18,252 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #161614;
-    --fg: #e0ddd8;
-    --muted: #8a8a8a;
-    --accent: #d4d0c8;
-    --border: #2e2e2a;
-    --code-bg: #1e1e1a;
-    --section-bg: #1a1a18;
-    --highlight: #c8c4bc;
-  }
+:root {
+–bg: #161614;
+–fg: #e0ddd8;
+–muted: #8a8a8a;
+–accent: #d4d0c8;
+–border: #2e2e2a;
+–code-bg: #1e1e1a;
+–section-bg: #1a1a18;
+–highlight: #c8c4bc;
+}
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+- { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.8;
-  font-size: 17px;
+font-family: ‘Georgia’, ‘Times New Roman’, serif;
+background: var(–bg);
+color: var(–fg);
+line-height: 1.8;
+font-size: 17px;
 }
 
 .container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 3rem 1.5rem 5rem;
+max-width: 720px;
+margin: 0 auto;
+padding: 3rem 1.5rem 5rem;
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: normal;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.25rem;
-  line-height: 1.3;
+font-size: 2rem;
+font-weight: normal;
+letter-spacing: -0.02em;
+margin-bottom: 0.25rem;
+line-height: 1.3;
 }
 
 h2 {
-  font-size: 1.35rem;
-  font-weight: normal;
-  margin-top: 3.5rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--border);
-  letter-spacing: -0.01em;
+font-size: 1.35rem;
+font-weight: normal;
+margin-top: 3.5rem;
+margin-bottom: 1rem;
+padding-bottom: 0.4rem;
+border-bottom: 1px solid var(–border);
+letter-spacing: -0.01em;
 }
 
 h3 {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
+font-size: 1.1rem;
+font-weight: bold;
+margin-top: 2rem;
+margin-bottom: 0.75rem;
 }
 
 .subtitle {
-  font-style: italic;
-  color: var(--muted);
-  margin-bottom: 0.25rem;
-  font-size: 1.05rem;
+font-style: italic;
+color: var(–muted);
+margin-bottom: 0.25rem;
+font-size: 1.05rem;
 }
 
 .author {
-  color: var(--muted);
-  margin-bottom: 2.5rem;
-  font-size: 0.95rem;
+color: var(–muted);
+margin-bottom: 2.5rem;
+font-size: 0.95rem;
 }
 
 .version-note {
-  color: var(--muted);
-  font-size: 0.85rem;
-  font-style: italic;
-  margin-bottom: 2.5rem;
-  padding: 0.75rem 1rem;
-  border-left: 2px solid var(--border);
+color: var(–muted);
+font-size: 0.85rem;
+font-style: italic;
+margin-bottom: 2.5rem;
+padding: 0.75rem 1rem;
+border-left: 2px solid var(–border);
 }
 
 p {
-  margin-bottom: 1.15rem;
+margin-bottom: 1.15rem;
 }
 
 ul, ol {
-  margin-bottom: 1.15rem;
-  padding-left: 1.5rem;
+margin-bottom: 1.15rem;
+padding-left: 1.5rem;
 }
 
 li {
-  margin-bottom: 0.4rem;
+margin-bottom: 0.4rem;
 }
 
 pre {
-  background: var(--code-bg);
-  padding: 1rem 1.25rem;
-  border-radius: 3px;
-  overflow-x: auto;
-  margin-bottom: 1.15rem;
-  font-family: 'Menlo', 'Consolas', monospace;
-  font-size: 0.92rem;
-  line-height: 1.6;
+background: var(–code-bg);
+padding: 1rem 1.25rem;
+border-radius: 3px;
+overflow-x: auto;
+margin-bottom: 1.15rem;
+font-family: ‘Menlo’, ‘Consolas’, monospace;
+font-size: 0.92rem;
+line-height: 1.6;
 }
 
 code {
-  font-family: 'Menlo', 'Consolas', monospace;
-  font-size: 0.9em;
+font-family: ‘Menlo’, ‘Consolas’, monospace;
+font-size: 0.9em;
 }
 
 blockquote {
-  border-left: 2px solid var(--border);
-  padding-left: 1.25rem;
-  margin-bottom: 1.15rem;
-  color: var(--muted);
-  font-style: italic;
+border-left: 2px solid var(–border);
+padding-left: 1.25rem;
+margin-bottom: 1.15rem;
+color: var(–muted);
+font-style: italic;
 }
 
 strong {
-  font-weight: bold;
-  color: var(--highlight);
+font-weight: bold;
+color: var(–highlight);
 }
 
 .new-section {
-  border-left: 3px solid var(--accent);
-  padding-left: 1rem;
-  margin-left: -1rem;
+border-left: 3px solid var(–accent);
+padding-left: 1rem;
+margin-left: -1rem;
 }
 
 .new-marker {
-  display: inline-block;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-  vertical-align: super;
-  margin-left: 0.5rem;
+display: inline-block;
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+color: var(–muted);
+vertical-align: super;
+margin-left: 0.5rem;
 }
 
 hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: 3rem 0;
+border: none;
+border-top: 1px solid var(–border);
+margin: 3rem 0;
 }
 
 .footer {
-  margin-top: 4rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 0.85rem;
-  text-align: center;
+margin-top: 4rem;
+padding-top: 1.5rem;
+border-top: 1px solid var(–border);
+color: var(–muted);
+font-size: 0.85rem;
+text-align: center;
 }
 
 a {
-  color: var(--fg);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+color: var(–fg);
+text-decoration: underline;
+text-underline-offset: 2px;
 }
 
 a:hover {
-  color: var(--muted);
+color: var(–muted);
 }
 
 .toc {
-  margin: 1.5rem 0 2.5rem;
-  padding: 1.25rem 1.5rem;
-  background: var(--section-bg);
-  border-radius: 3px;
-  font-size: 0.92rem;
+margin: 1.5rem 0 2.5rem;
+padding: 1.25rem 1.5rem;
+background: var(–section-bg);
+border-radius: 3px;
+font-size: 0.92rem;
 }
 
 .toc ul {
-  list-style: none;
-  padding-left: 0;
+list-style: none;
+padding-left: 0;
 }
 
 .toc li {
-  margin-bottom: 0.3rem;
+margin-bottom: 0.3rem;
 }
 
 .toc .new-label {
-  font-size: 0.7rem;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+font-size: 0.7rem;
+color: var(–muted);
+text-transform: uppercase;
+letter-spacing: 0.08em;
 }
 
 .diagram-container {
-  background: var(--code-bg);
-  padding: 1.5rem;
-  border-radius: 3px;
-  margin-bottom: 1.15rem;
-  text-align: center;
+background: var(–code-bg);
+padding: 1.5rem;
+border-radius: 3px;
+margin-bottom: 1.15rem;
+text-align: center;
 }
 
 .diagram-container pre {
-  background: none;
-  padding: 0;
-  display: inline-block;
-  text-align: left;
+background: none;
+padding: 0;
+display: inline-block;
+text-align: left;
+}
+
+.featured-link {
+display: block;
+margin: 2rem 0;
+padding: 1.25rem 1.5rem;
+background: var(–section-bg);
+border: 2px solid var(–accent);
+border-radius: 5px;
+text-decoration: none;
+transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.featured-link:hover {
+border-color: var(–highlight);
+background: var(–code-bg);
+}
+
+.featured-link .featured-label {
+display: block;
+font-size: 0.7rem;
+text-transform: uppercase;
+letter-spacing: 0.12em;
+color: var(–muted);
+margin-bottom: 0.35rem;
+}
+
+.featured-link .featured-title {
+display: block;
+font-size: 1.15rem;
+font-weight: bold;
+color: var(–highlight);
+margin-bottom: 0.35rem;
+text-decoration: underline;
+text-underline-offset: 3px;
+}
+
+.featured-link .featured-desc {
+display: block;
+font-size: 0.92rem;
+color: var(–fg);
+line-height: 1.6;
 }
 
 @media (max-width: 600px) {
-  body { font-size: 16px; }
-  h1 { font-size: 1.6rem; }
-  .container { padding: 2rem 1.25rem 3rem; }
+body { font-size: 16px; }
+h1 { font-size: 1.6rem; }
+.container { padding: 2rem 1.25rem 3rem; }
 }
 </style>
+
 </head>
 <body>
 <div class="container">
@@ -259,6 +303,7 @@ Sections marked <span class="new-label">new</span> extend the original framework
 <li><a href="#closure">Closure</a></li>
 <li><a href="#symbolic">Translated Version — Symbolic and Diagrammatic</a></li>
 <li><a href="#applications">Application of the Framework</a></li>
+<li style="margin-top:0.5rem;"><a href="#applications" style="font-weight:bold;">↳ Academic Parallels and Applications</a> <span class="new-label">new</span></li>
 <li><a href="#references">References</a></li>
 </ul>
 </div>
@@ -280,7 +325,6 @@ It describes what remains when unnecessary interference is removed.</p>
 <p>But a prior question demands attention: why does interference arise at all? Why does the mind leave rest and seek unrest,
 only to seek rest again? The enhanced framework begins there—with the oscillation itself—before describing what is revealed
 when that oscillation is understood.</p>
-
 
 <!-- ===== NEW: OSCILLATION ===== -->
 
@@ -315,7 +359,6 @@ level of resolution: subatomic, biological, psychological, cosmological.</p>
 
 <p>The framework therefore does not ask the wave to stop. It asks: can the wave be observed without interference 
 claiming ownership of it?</p>
-
 
 <!-- ===== NEW: CONTRAST ===== -->
 
@@ -354,7 +397,6 @@ regardless. The grip is what produces suffering.</p>
 Wave without grip: ≈ (resonance)
 Wave with grip:    ⊘ (interference)
 </pre>
-
 
 <!-- ===== NEW: SENSATION ===== -->
 
@@ -416,7 +458,6 @@ practitioner, simply their preferred bandwidth of experience.</p>
 claim all choices are equal in consequence. It claims all choices arise from the same structural 
 impulse: the organism seeking its next state.</p>
 
-
 <!-- ===== NEW: SCALE ===== -->
 
 <h2 id="scale" class="new-section">Scale and the Illusion of Stillness</h2>
@@ -464,7 +505,6 @@ Null perception:    ————————   (vast wavelength, appears as stil
 
 <p>The null is not empty. The perceiver has simply not yet tuned to its scale.</p>
 
-
 <!-- ===== ORIGINAL: CONTRACTION ===== -->
 
 <h2 id="contraction">Contraction as the Primary Operation</h2>
@@ -498,7 +538,6 @@ the grip on the wave. The wave continues. Interference—the claim of ownership 
 
 <p>This encoding is descriptive, not prescriptive.</p>
 
-
 <!-- ===== ORIGINAL: CORE STATE ===== -->
 
 <h2 id="core">The Irreducible Core State</h2>
@@ -522,7 +561,6 @@ Release restores it automatically.</p>
 <p><strong>Refinement from the oscillation principle:</strong> even this core state is not outside oscillation. 
 It is oscillation perceived without grip. The wave continues. What has changed is not the wave 
 but the absence of a claimant riding it.</p>
-
 
 <!-- ===== ORIGINAL: DYNAMICS ===== -->
 
@@ -566,7 +604,6 @@ eliminated.</p>
 
 <p>This is the framework's deepest structural claim: liberation is not the end of oscillation. 
 It is oscillation without ownership.</p>
-
 
 <!-- ===== NEW: SHARED EXPERIENCE ===== -->
 
@@ -636,7 +673,6 @@ of contact.</p>
 every experience is filtered through oscillatory position, and that the filter 
 can be observed.</p>
 
-
 <!-- ===== NEW: REMOVING BIAS ===== -->
 
 <h2 id="bias" class="new-section">Removing Experiential Bias</h2>
@@ -693,7 +729,6 @@ Clarity:  frequency + no grip         = "pattern observed"
 
 <p>Nothing is suppressed. The preference may still operate. But it no longer masquerades 
 as the whole of reality.</p>
-
 
 <!-- ===== NEW: PATH ===== -->
 
@@ -785,7 +820,6 @@ between "my frequency" and "your frequency" has thinned</li>
 
 <p>The wave continues. Nothing rides it claiming it should be otherwise.</p>
 
-
 <!-- ===== ORIGINAL: ORIENTATION ===== -->
 
 <h2 id="orientation">Orientation Without Dualism</h2>
@@ -807,7 +841,6 @@ occurring only within resonance.</p>
 <p><strong>Validation:</strong> Orientation collapses into ⊘ᵢ if identity is introduced, and into ⊘ₛ if sensory dominance returns.
 Release restores resonance without effort.</p>
 
-
 <!-- ===== ORIGINAL: HARMONIZATION ===== -->
 
 <h2 id="harmonization">Harmonization Through Scale Expansion</h2>
@@ -827,7 +860,6 @@ that allows this larger pattern to become visible.</p>
 
 <p><strong>Validation:</strong> Attempts to resolve dissonance directly caused collapse. Expansion consistently restored coherence.</p>
 
-
 <!-- ===== ORIGINAL: CO-RESONANCE ===== -->
 
 <h2 id="coresonance">Co-Resonance and Shared Alignment</h2>
@@ -843,7 +875,6 @@ Allowing parallel coherence preserved stability.</p>
 
 <p>This is empathy without projection, love without possession, understanding without agreement. 
 Two systems oscillate in coherence. Neither adjusts the other. Neither claims the other's frequency.</p>
-
 
 <!-- ===== ORIGINAL: STABILITY ===== -->
 
@@ -863,7 +894,6 @@ Two systems oscillate in coherence. Neither adjusts the other. Neither claims th
 <blockquote>Stability is achieved by non-resistance to fluctuation.</blockquote>
 
 <p><strong>Validation:</strong> Control consistently collapsed resonance. Release consistently restored it.</p>
-
 
 <!-- ===== ORIGINAL: NULL AND SELF ===== -->
 
@@ -895,7 +925,6 @@ At human scale:  Ø ≠ ≈ (they feel different)
 At vast scale:   Ø ≈ ≈ (they converge)
 </pre>
 
-
 <!-- ===== ORIGINAL: GROSS INTERFERENCE ===== -->
 
 <h2 id="gross">Gross Human Interference and Accessibility</h2>
@@ -916,7 +945,6 @@ At vast scale:   Ø ≈ ≈ (they converge)
 these layers are not enemies of awareness. They are the gross frequencies 
 through which the organism rides the wave. The only question is whether 
 identity has claimed them as "me" or whether they are seen as patterns operating.</p>
-
 
 <!-- ===== ORIGINAL: GUARDRAILS ===== -->
 
@@ -947,7 +975,6 @@ identity has claimed them as "me" or whether they are seen as patterns operating
 "arrived" permanently at null is itself interference (⊘ᵢ). The wave does not stop. 
 Anyone claiming it has stopped has simply gripped a new position and called it freedom.</p>
 
-
 <!-- ===== ORIGINAL: CLOSURE ===== -->
 
 <h2 id="closure">Closure</h2>
@@ -977,9 +1004,7 @@ Anyone claiming it has stopped has simply gripped a new position and called it f
 
 <p>Not as a destination. As the breath of what is.</p>
 
-
 <hr>
-
 
 <!-- ===== TRANSLATED VERSION ===== -->
 
@@ -1052,7 +1077,6 @@ Anyone claiming it has stopped has simply gripped a new position and called it f
 
 <p>If any symbol is used as instruction, interference has occurred. If symbols are recognized as patterns, resonance is present.</p>
 
-
 <h3>III. Diagrammatic Experiential Map</h3>
 
 <div class="diagram-container">
@@ -1090,7 +1114,6 @@ Anyone claiming it has stopped has simply gripped a new position and called it f
 that, the ellipsis of endless oscillation. There is no bottom. The framework 
 does not rest on a foundation—it floats within the wave it describes.</p>
 
-
 <h3>IV. How to Encounter the Diagram (Without Instruction)</h3>
 
 <ul>
@@ -1112,7 +1135,6 @@ does not rest on a foundation—it floats within the wave it describes.</p>
 
 <p>If attention rests anywhere without effort, that location dissolves into ⧉.</p>
 
-
 <h3>V. Experiential Readings (Optional, Non-Directive)</h3>
 
 <ul>
@@ -1124,7 +1146,6 @@ does not rest on a foundation—it floats within the wave it describes.</p>
 </ul>
 
 <p>No reading is more correct.</p>
-
 
 <h3>VI. Validation Through Collapse</h3>
 
@@ -1142,7 +1163,6 @@ does not rest on a foundation—it floats within the wave it describes.</p>
 ⊘ ↺ Ø
 </pre>
 
-
 <h3>VII. Distribution Guidance (Important)</h3>
 
 <ul>
@@ -1154,7 +1174,6 @@ does not rest on a foundation—it floats within the wave it describes.</p>
 
 <p>Let each reader encounter the material at their own resolution. If nothing happens, nothing failed.</p>
 
-
 <h3>VIII. Final Closure</h3>
 
 <p>The framework ends where it began:</p>
@@ -1165,9 +1184,7 @@ does not rest on a foundation—it floats within the wave it describes.</p>
 
 <p>Not as a destination, but as what was always already happening.</p>
 
-
 <hr>
-
 
 <!-- ===== APPLICATIONS ===== -->
 
@@ -1186,6 +1203,13 @@ a practical example, and a short child story to make the mechanism intuitive.</p
 <h3><a href="https://ilamgumaran.github.io/ThoughtExperiments/StoriesChildSchool.html">Stories — Practical application for situations with friends at elementary school</a></h3>
 <p>The framework applied through narrative for younger readers.</p>
 
+<a class="featured-link" href="https://ilamgumaran.github.io/ThoughtExperiments/ApplicationAcademicParallel.html">
+<span class="featured-label">For Researchers &amp; Academics</span>
+<span class="featured-title">Academic Parallels and Applications →</span>
+<span class="featured-desc">Published research in conversation with this framework. Peer-reviewed convergences 
+from neuroscience, psychology, and philosophy of mind. Original contributions not found in published 
+literature. Concrete study designs across seven disciplines for researchers to extend their own work.</span>
+</a>
 
 <!-- ===== REFERENCES ===== -->
 
@@ -1197,7 +1221,6 @@ a practical example, and a short child story to make the mechanism intuitive.</p
 <li>Swami Vivekananda, <em>The Complete Book of Yoga: Karma Yoga, Bhakti Yoga, Raja Yoga, Jnana Yoga</em>,
 ISBN-13: 978-9389178784. This work investigates classical frameworks for unbiased self-inquiry and realization within yogic philosophy.</li>
 </ul>
-
 
 <div class="footer">
 Single-file static site<br>
