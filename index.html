@@ -19,23 +19,23 @@
 
 @media (prefers-color-scheme: dark) {
 :root {
-–bg: #161614;
-–fg: #e0ddd8;
-–muted: #8a8a8a;
-–accent: #d4d0c8;
-–border: #2e2e2a;
-–code-bg: #1e1e1a;
-–section-bg: #1a1a18;
-–highlight: #c8c4bc;
+--bg: #161614;
+--fg: #e0ddd8;
+--muted: #8a8a8a;
+--accent: #d4d0c8;
+--border: #2e2e2a;
+--code-bg: #1e1e1a;
+--section-bg: #1a1a18;
+--highlight: #c8c4bc;
 }
 }
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
 font-family: ‘Georgia’, ‘Times New Roman’, serif;
-background: var(–bg);
-color: var(–fg);
+background: var(--bg);
+color: var(--fg);
 line-height: 1.8;
 font-size: 17px;
 }
@@ -60,7 +60,7 @@ font-weight: normal;
 margin-top: 3.5rem;
 margin-bottom: 1rem;
 padding-bottom: 0.4rem;
-border-bottom: 1px solid var(–border);
+border-bottom: 1px solid var(--border);
 letter-spacing: -0.01em;
 }
 
@@ -73,24 +73,24 @@ margin-bottom: 0.75rem;
 
 .subtitle {
 font-style: italic;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 0.25rem;
 font-size: 1.05rem;
 }
 
 .author {
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 2.5rem;
 font-size: 0.95rem;
 }
 
 .version-note {
-color: var(–muted);
+color: var(--muted);
 font-size: 0.85rem;
 font-style: italic;
 margin-bottom: 2.5rem;
 padding: 0.75rem 1rem;
-border-left: 2px solid var(–border);
+border-left: 2px solid var(--border);
 }
 
 p {
@@ -107,7 +107,7 @@ margin-bottom: 0.4rem;
 }
 
 pre {
-background: var(–code-bg);
+background: var(--code-bg);
 padding: 1rem 1.25rem;
 border-radius: 3px;
 overflow-x: auto;
@@ -123,20 +123,20 @@ font-size: 0.9em;
 }
 
 blockquote {
-border-left: 2px solid var(–border);
+border-left: 2px solid var(--border);
 padding-left: 1.25rem;
 margin-bottom: 1.15rem;
-color: var(–muted);
+color: var(--muted);
 font-style: italic;
 }
 
 strong {
 font-weight: bold;
-color: var(–highlight);
+color: var(--highlight);
 }
 
 .new-section {
-border-left: 3px solid var(–accent);
+border-left: 3px solid var(--accent);
 padding-left: 1rem;
 margin-left: -1rem;
 }
@@ -146,40 +146,40 @@ display: inline-block;
 font-size: 0.7rem;
 text-transform: uppercase;
 letter-spacing: 0.1em;
-color: var(–muted);
+color: var(--muted);
 vertical-align: super;
 margin-left: 0.5rem;
 }
 
 hr {
 border: none;
-border-top: 1px solid var(–border);
+border-top: 1px solid var(--border);
 margin: 3rem 0;
 }
 
 .footer {
 margin-top: 4rem;
 padding-top: 1.5rem;
-border-top: 1px solid var(–border);
-color: var(–muted);
+border-top: 1px solid var(--border);
+color: var(--muted);
 font-size: 0.85rem;
 text-align: center;
 }
 
 a {
-color: var(–fg);
+color: var(--fg);
 text-decoration: underline;
 text-underline-offset: 2px;
 }
 
 a:hover {
-color: var(–muted);
+color: var(--muted);
 }
 
 .toc {
 margin: 1.5rem 0 2.5rem;
 padding: 1.25rem 1.5rem;
-background: var(–section-bg);
+background: var(--section-bg);
 border-radius: 3px;
 font-size: 0.92rem;
 }
@@ -195,13 +195,13 @@ margin-bottom: 0.3rem;
 
 .toc .new-label {
 font-size: 0.7rem;
-color: var(–muted);
+color: var(--muted);
 text-transform: uppercase;
 letter-spacing: 0.08em;
 }
 
 .diagram-container {
-background: var(–code-bg);
+background: var(--code-bg);
 padding: 1.5rem;
 border-radius: 3px;
 margin-bottom: 1.15rem;
@@ -219,16 +219,16 @@ text-align: left;
 display: block;
 margin: 2rem 0;
 padding: 1.25rem 1.5rem;
-background: var(–section-bg);
-border: 2px solid var(–accent);
+background: var(--section-bg);
+border: 2px solid var(--accent);
 border-radius: 5px;
 text-decoration: none;
 transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .featured-link:hover {
-border-color: var(–highlight);
-background: var(–code-bg);
+border-color: var(--highlight);
+background: var(--code-bg);
 }
 
 .featured-link .featured-label {
@@ -236,7 +236,7 @@ display: block;
 font-size: 0.7rem;
 text-transform: uppercase;
 letter-spacing: 0.12em;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 0.35rem;
 }
 
@@ -244,7 +244,7 @@ margin-bottom: 0.35rem;
 display: block;
 font-size: 1.15rem;
 font-weight: bold;
-color: var(–highlight);
+color: var(--highlight);
 margin-bottom: 0.35rem;
 text-decoration: underline;
 text-underline-offset: 3px;
@@ -253,7 +253,7 @@ text-underline-offset: 3px;
 .featured-link .featured-desc {
 display: block;
 font-size: 0.92rem;
-color: var(–fg);
+color: var(--fg);
 line-height: 1.6;
 }
 
@@ -266,6 +266,17 @@ h1 { font-size: 1.6rem; }
 
 </head>
 <body>
+<nav style="background:#f5f4f0;border-bottom:1px solid #e0ddd8;padding:10px 20px;font:13px/1 ui-sans-serif,system-ui,sans-serif;flex-wrap:wrap;display:flex;gap:4px;">
+  <a href="index.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">← Framework</a>
+  <a href="ApplicationAcademicParallel.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Academic Parallels</a>
+  <a href="ApplicationDistaction.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Interference (Distraction)</a>
+  <a href="ApplicationWhoAmI.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Identity (Who Am I?)</a>
+  <a href="ComparisonToOtherStudies.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Comparison to Other Studies</a>
+  <a href="StoriesChildOld.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Story: The Quiet Between Bells</a>
+  <a href="StoriesChildSchool.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Story: The Strings at School</a>
+  <a href="StoryChild2.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Story: Quiet Between Bells (Draft)</a>
+  <a href="TamilVersionV1.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Tamil Version</a>
+</nav>
 <div class="container">
 
 <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem;">Read-only Artifact</p>

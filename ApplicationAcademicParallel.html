@@ -22,26 +22,26 @@
 
 @media (prefers-color-scheme: dark) {
 :root {
-–bg: #161614;
-–fg: #e0ddd8;
-–muted: #8a8a8a;
-–accent: #d4d0c8;
-–border: #2e2e2a;
-–code-bg: #1e1e1a;
-–section-bg: #1a1a18;
-–highlight: #c8c4bc;
-–support: #6aaa8a;
-–distinct: #aa6a6a;
-–apply: #7a7aaa;
+--bg: #161614;
+--fg: #e0ddd8;
+--muted: #8a8a8a;
+--accent: #d4d0c8;
+--border: #2e2e2a;
+--code-bg: #1e1e1a;
+--section-bg: #1a1a18;
+--highlight: #c8c4bc;
+--support: #6aaa8a;
+--distinct: #aa6a6a;
+--apply: #7a7aaa;
 }
 }
 
-- { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
 font-family: ‘Georgia’, ‘Times New Roman’, serif;
-background: var(–bg);
-color: var(–fg);
+background: var(--bg);
+color: var(--fg);
 line-height: 1.8;
 font-size: 17px;
 }
@@ -66,7 +66,7 @@ font-weight: normal;
 margin-top: 3.5rem;
 margin-bottom: 1rem;
 padding-bottom: 0.4rem;
-border-bottom: 1px solid var(–border);
+border-bottom: 1px solid var(--border);
 }
 
 h3 {
@@ -86,13 +86,13 @@ font-style: italic;
 
 .subtitle {
 font-style: italic;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 0.25rem;
 font-size: 1.05rem;
 }
 
 .author {
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 2.5rem;
 font-size: 0.95rem;
 }
@@ -107,7 +107,7 @@ padding-left: 1.5rem;
 li { margin-bottom: 0.5rem; }
 
 pre {
-background: var(–code-bg);
+background: var(--code-bg);
 padding: 1rem 1.25rem;
 border-radius: 3px;
 overflow-x: auto;
@@ -118,36 +118,36 @@ line-height: 1.6;
 }
 
 blockquote {
-border-left: 2px solid var(–border);
+border-left: 2px solid var(--border);
 padding-left: 1.25rem;
 margin-bottom: 1.15rem;
-color: var(–muted);
+color: var(--muted);
 font-style: italic;
 }
 
 strong {
 font-weight: bold;
-color: var(–highlight);
+color: var(--highlight);
 }
 
 hr {
 border: none;
-border-top: 1px solid var(–border);
+border-top: 1px solid var(--border);
 margin: 3rem 0;
 }
 
 a {
-color: var(–fg);
+color: var(--fg);
 text-decoration: underline;
 text-underline-offset: 2px;
 }
 
-a:hover { color: var(–muted); }
+a:hover { color: var(--muted); }
 
 .toc {
 margin: 1.5rem 0 2.5rem;
 padding: 1.25rem 1.5rem;
-background: var(–section-bg);
+background: var(--section-bg);
 border-radius: 3px;
 font-size: 0.92rem;
 }
@@ -160,16 +160,16 @@ padding-left: 0;
 .toc li { margin-bottom: 0.3rem; }
 
 .ref-card {
-background: var(–section-bg);
+background: var(--section-bg);
 border-radius: 4px;
 padding: 1.25rem 1.5rem;
 margin-bottom: 1.5rem;
-border-left: 3px solid var(–border);
+border-left: 3px solid var(--border);
 }
 
-.ref-card.support { border-left-color: var(–support); }
-.ref-card.distinct { border-left-color: var(–distinct); }
-.ref-card.apply { border-left-color: var(–apply); }
+.ref-card.support { border-left-color: var(--support); }
+.ref-card.distinct { border-left-color: var(--distinct); }
+.ref-card.apply { border-left-color: var(--apply); }
 
 .ref-card .ref-title {
 font-weight: bold;
@@ -179,7 +179,7 @@ margin-bottom: 0.25rem;
 
 .ref-card .ref-source {
 font-size: 0.85rem;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 0.5rem;
 font-style: italic;
 }
@@ -197,7 +197,7 @@ margin-bottom: 1rem;
 }
 
 .mapping-cell {
-background: var(–section-bg);
+background: var(--section-bg);
 padding: 0.75rem 1rem;
 border-radius: 3px;
 font-size: 0.92rem;
@@ -207,7 +207,7 @@ font-size: 0.92rem;
 font-size: 0.75rem;
 text-transform: uppercase;
 letter-spacing: 0.08em;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 0.25rem;
 }
 
@@ -222,12 +222,12 @@ margin-right: 0.25rem;
 vertical-align: middle;
 }
 
-.tag-support { background: var(–support); color: #fff; }
-.tag-distinct { background: var(–distinct); color: #fff; }
-.tag-apply { background: var(–apply); color: #fff; }
+.tag-support { background: var(--support); color: #fff; }
+.tag-distinct { background: var(--distinct); color: #fff; }
+.tag-apply { background: var(--apply); color: #fff; }
 
 .application-box {
-background: var(–code-bg);
+background: var(--code-bg);
 border-radius: 4px;
 padding: 1.25rem 1.5rem;
 margin-bottom: 1.5rem;
@@ -240,7 +240,7 @@ margin-bottom: 0.5rem;
 
 .application-box .app-field {
 font-size: 0.85rem;
-color: var(–muted);
+color: var(--muted);
 text-transform: uppercase;
 letter-spacing: 0.06em;
 margin-bottom: 0.25rem;
@@ -249,15 +249,15 @@ margin-bottom: 0.25rem;
 .footer {
 margin-top: 4rem;
 padding-top: 1.5rem;
-border-top: 1px solid var(–border);
-color: var(–muted);
+border-top: 1px solid var(--border);
+color: var(--muted);
 font-size: 0.85rem;
 text-align: center;
 }
 
 .back-link {
 font-size: 0.9rem;
-color: var(–muted);
+color: var(--muted);
 margin-bottom: 2rem;
 display: block;
 }
@@ -272,9 +272,20 @@ h1 { font-size: 1.5rem; }
 
 </head>
 <body>
+<nav style="background:#f5f4f0;border-bottom:1px solid #e0ddd8;padding:10px 20px;font:13px/1 ui-sans-serif,system-ui,sans-serif;flex-wrap:wrap;display:flex;gap:4px;">
+  <a href="index.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">← Framework</a>
+  <a href="ApplicationAcademicParallel.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Academic Parallels</a>
+  <a href="ApplicationDistaction.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Interference (Distraction)</a>
+  <a href="ApplicationWhoAmI.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Identity (Who Am I?)</a>
+  <a href="ComparisonToOtherStudies.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Comparison to Other Studies</a>
+  <a href="StoriesChildOld.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Story: The Quiet Between Bells</a>
+  <a href="StoriesChildSchool.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Story: The Strings at School</a>
+  <a href="StoryChild2.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Story: Quiet Between Bells (Draft)</a>
+  <a href="TamilVersionV1.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Tamil Version</a>
+</nav>
 <div class="container">
 
-<a class="back-link" href="https://ilamgumaran.github.io/ThoughtExperiments/">← Back to Framework</a>
+<a class="back-link" href="index.html">← Back to Framework</a>
 
 <h1>Academic Parallels and Applications</h1>
 <p class="subtitle">Published Research in Conversation with the Resonant Cognition Framework</p>
@@ -425,7 +436,7 @@ framework through ⊘ᵢ collapse, the research through disrupted phase synchron
 <div class="ref-source">Cebolla, A.M. & Cheron, G. (2019). "Understanding Neural Oscillations in 
 the Human Brain: From Movement to Consciousness." Frontiers in Psychology, 10, 1930.</div>
 <div class="ref-body">
-<p>This paper reviews how neural oscillations, particularly in the 12–70 Hz range, 
+<p>This paper reviews how neural oscillations, particularly in the 12--70 Hz range, 
 underlie conscious experience. It proposes that movement and oscillation may be 
 inescapable in understanding consciousness—that consciousness may require 
 dynamic change rather than static states. This supports the framework's claim 
@@ -441,7 +452,7 @@ that experience requires contrast and cannot occur in a permanent state.</p>
 <div class="ref-card support">
 <div class="ref-title">Nondual Awareness: Consciousness-as-Such</div>
 <div class="ref-source">Josipovic, Z. (2019). "Nondual awareness: consciousness-as-such as 
-non-representational reflexivity." Progress in Brain Research, 244, 273–298. Elsevier.</div>
+non-representational reflexivity." Progress in Brain Research, 244, 273--298. Elsevier.</div>
 <div class="ref-body">
 <p>Josipovic defines nondual awareness as a non-conceptual, non-propositional awareness 
 that knows itself without relying on mental representations. He proposes an expanded 
@@ -503,9 +514,9 @@ hedonic adaptation research.</p>
 <div class="ref-card support">
 <div class="ref-title">The Hedonic Treadmill</div>
 <div class="ref-source">Brickman, P. & Campbell, D.T. (1971). "Hedonic relativism and planning the 
-good society." In Adaptation-level theory: A symposium, 287–305. Academic Press. 
+good society." In Adaptation-level theory: A symposium, 287--305. Academic Press. 
 Subsequently validated in: Diener, E. et al. (2006). "Beyond the hedonic treadmill: 
-Revising the adaptation theory of well-being." American Psychologist, 61, 305–314.</div>
+Revising the adaptation theory of well-being." American Psychologist, 61, 305--314.</div>
 <div class="ref-body">
 <p>The hedonic treadmill describes a homeostatic mechanism by which subjective 
 well-being returns to baseline after positive or negative events. Sustained 
@@ -519,7 +530,7 @@ organism to seek the next state.</p>
 <div class="ref-card support">
 <div class="ref-title">Dynamical Models of Hedonic Cycling</div>
 <div class="ref-source">Carrero, J.A. et al. (2024). "Running on the Hedonic Treadmill: A Dynamical 
-Model of Happiness Based on an Approach–Avoidance Framework." 
+Model of Happiness Based on an Approach--Avoidance Framework." 
 Journal of Happiness Studies, 25, 766.</div>
 <div class="ref-body">
 <p>This paper models happiness as oscillation using dynamical systems mathematics, 
@@ -540,7 +551,7 @@ robustly confirmed by dopamine research.</p>
 <div class="ref-title">Sustained Dopamine During Anticipation</div>
 <div class="ref-source">Fotros, A. et al. (2023). "Anticipation of Appetitive Operant Action Induces 
 Sustained Dopamine Release in the Nucleus Accumbens." 
-Journal of Neuroscience, 43(21), 3922–3932.</div>
+Journal of Neuroscience, 43(21), 3922--3932.</div>
 <div class="ref-body">
 <p>This study directly measured dopamine release during anticipation versus 
 reward receipt. Rats showed sustained dopamine plateau throughout the entire 
@@ -593,8 +604,8 @@ without mapping to biological substrates. Published research fills these gaps.</
 <div class="ref-source">Seth, A.K. et al. (2006); Cebolla & Cheron (2019); 
 Ruhnau, Hauswald & Weisz (2014, Frontiers in Psychology).</div>
 <div class="ref-body">
-<p>Consciousness research identifies specific oscillatory frequencies (gamma 12–70 Hz, 
-alpha 7–13 Hz), brain regions (thalamocortical system, precuneus network), and 
+<p>Consciousness research identifies specific oscillatory frequencies (gamma 12--70 Hz, 
+alpha 7--13 Hz), brain regions (thalamocortical system, precuneus network), and 
 connectivity patterns as correlates of conscious experience. The framework does not 
 map its concepts to neural architecture—Ø, ≈, and ⧉ are described experientially, 
 not neurobiologically. This is a deliberate choice (mechanism visibility without 
@@ -623,7 +634,7 @@ address how individual fields merge, separate, or interact at boundaries.</p>
 <div class="ref-card distinct">
 <div class="ref-title">Measuring Nondual Awareness</div>
 <div class="ref-source">Garland, E.L. et al. (2018). "The Nondual Awareness Dimensional Assessment 
-(NADA)." Mindfulness, 9(6), 1765–1779.</div>
+(NADA)." Mindfulness, 9(6), 1765--1779.</div>
 <div class="ref-body">
 <p>The NADA measures nondual awareness along two dimensions: self-transcendence 
 and bliss. It enables empirical comparison across populations and interventions. 
@@ -658,7 +669,7 @@ experimental validation.</p>
 <div class="ref-card distinct">
 <div class="ref-title">The Problem of Self-Report</div>
 <div class="ref-source">Krägeloh, C.U. (2019). "Phenomenological Research Fails to Capture the 
-Experience of Nondual Awareness." Mindfulness, 10, 15–25. 
+Experience of Nondual Awareness." Mindfulness, 10, 15--25. 
 Also: Josipovic, Z. (2025), Frontiers in Psychology.</div>
 <div class="ref-body">
 <p>Academic research struggles with how to study nondual awareness when language 
@@ -1060,23 +1071,23 @@ Brain: From Movement to Consciousness. <em>Frontiers in Psychology</em>, 10, 193
 <li>Ruhnau, P., Hauswald, A. &amp; Weisz, N. (2014). Investigating ongoing brain oscillations 
 and their influence on conscious perception. <em>Frontiers in Psychology</em>, 5, 1230.</li>
 <li>Tononi, G. et al. (2016). Integrated Information Theory. <em>Nature Reviews 
-Neuroscience</em>, 17, 450–461.</li>
+Neuroscience</em>, 17, 450--461.</li>
 </ul>
 
 <h3>Nondual Awareness</h3>
 <ul>
 <li>Josipovic, Z. (2019). Nondual awareness: consciousness-as-such as 
-non-representational reflexivity. <em>Progress in Brain Research</em>, 244, 273–298.</li>
+non-representational reflexivity. <em>Progress in Brain Research</em>, 244, 273--298.</li>
 <li>Josipovic, Z. &amp; Miskovic, V. (2020). Nondual Awareness and Minimal Phenomenal 
 Experience. <em>Frontiers in Psychology</em>, 11, 2087.</li>
-<li>Josipovic, Z. (2021). Implicit–explicit gradient of nondual awareness or 
+<li>Josipovic, Z. (2021). Implicit--explicit gradient of nondual awareness or 
 consciousness as such. <em>Neuroscience of Consciousness</em>, 2021(2), niab031.</li>
 <li>Josipovic, Z. (2025). Without birth, without death—issues in the research of 
 nondual awareness. <em>Frontiers in Psychology</em>, 16, 1665826.</li>
 <li>Krägeloh, C.U. (2019). Phenomenological Research Fails to Capture the Experience 
-of Nondual Awareness. <em>Mindfulness</em>, 10, 15–25.</li>
+of Nondual Awareness. <em>Mindfulness</em>, 10, 15--25.</li>
 <li>Garland, E.L. et al. (2018). The Nondual Awareness Dimensional Assessment (NADA). 
-<em>Mindfulness</em>, 9(6), 1765–1779.</li>
+<em>Mindfulness</em>, 9(6), 1765--1779.</li>
 </ul>
 
 <h3>Inter-Brain Synchronisation</h3>
@@ -1089,24 +1100,24 @@ Consciousness</em>, 2020(1), niaa010.</li>
 <h3>Hedonic Adaptation and Wellbeing</h3>
 <ul>
 <li>Brickman, P. &amp; Campbell, D.T. (1971). Hedonic relativism and planning the good 
-society. In <em>Adaptation-level theory</em>, 287–305.</li>
+society. In <em>Adaptation-level theory</em>, 287--305.</li>
 <li>Diener, E. et al. (2006). Beyond the hedonic treadmill: Revising the adaptation 
-theory of well-being. <em>American Psychologist</em>, 61, 305–314.</li>
+theory of well-being. <em>American Psychologist</em>, 61, 305--314.</li>
 <li>Carrero, J.A. et al. (2024). Running on the Hedonic Treadmill: A Dynamical Model 
 of Happiness. <em>Journal of Happiness Studies</em>, 25, 766.</li>
 <li>Dambrun, M. &amp; Ricard, M. (2011). Self-centeredness and selflessness: A theory of 
-self-based psychological functioning. <em>Review of General Psychology</em>, 15, 138–157.</li>
+self-based psychological functioning. <em>Review of General Psychology</em>, 15, 138--157.</li>
 </ul>
 
 <h3>Dopamine and Anticipation</h3>
 <ul>
 <li>Fotros, A. et al. (2023). Anticipation of Appetitive Operant Action Induces 
-Sustained Dopamine Release. <em>Journal of Neuroscience</em>, 43(21), 3922–3932.</li>
+Sustained Dopamine Release. <em>Journal of Neuroscience</em>, 43(21), 3922--3932.</li>
 <li>Linnet, J. (2014). Neurobiological underpinnings of reward anticipation and 
 outcome evaluation in gambling disorder. <em>Frontiers in Behavioral 
 Neuroscience</em>, 8, 100.</li>
 <li>Schultz, W. (2006). Behavioral theories and the neurophysiology of reward. 
-<em>Annual Review of Psychology</em>, 57, 87–115.</li>
+<em>Annual Review of Psychology</em>, 57, 87--115.</li>
 </ul>
 
 <h3>Cognitive Bias and Debiasing</h3>
@@ -1114,14 +1125,14 @@ Neuroscience</em>, 8, 100.</li>
 <li>Fasolo, B., Heard, C. &amp; Scopelliti, I. (2024). Mitigating cognitive bias to 
 improve organizational decisions. <em>Journal of Management</em>.</li>
 <li>Croskerry, P. et al. (2013). Cognitive debiasing 2: impediments to and strategies 
-for change. <em>BMJ Quality &amp; Safety</em>, 22(Suppl 2), ii65–ii72.</li>
+for change. <em>BMJ Quality &amp; Safety</em>, 22(Suppl 2), ii65--ii72.</li>
 </ul>
 
 <h3>Framework Source</h3>
 <ul>
 <li>Ilamgumaran, V.K. <em>Thinking Without Boundaries: Resonant Cognition and the 
 Return to Null</em>. Enhanced Edition. 
-<a href="https://ilamgumaran.github.io/ThoughtExperiments/">
+<a href="index.html">
 https://ilamgumaran.github.io/ThoughtExperiments/</a></li>
 <li>Swami Vivekananda. <em>The Complete Book of Yoga: Karma Yoga, Bhakti Yoga, 
 Raja Yoga, Jnana Yoga</em>. ISBN-13: 978-9389178784.</li>
