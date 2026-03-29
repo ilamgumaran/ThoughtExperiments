@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,389 +6,290 @@
 <title>Academic Parallels and Applications — Thinking Without Boundaries</title>
 <style>
 :root {
-  --bg: #fafaf8;
+  --bg: #ffffff;
+  --page-bg: #f7f6f3;
   --fg: #1a1a1a;
-  --muted: #6b6b6b;
-  --accent: #2c2c2c;
-  --border: #e0ddd8;
-  --code-bg: #f0eeea;
-  --section-bg: #f5f4f0;
-  --highlight: #3a3a3a;
-  --support: #2a4a3a;
-  --distinct: #4a2a2a;
-  --apply: #2a2a4a;
+  --muted: #5a5a5a;
+  --faint: #888;
+  --line: #d8d4cd;
+  --accent: #1a3a6e;
+  --accent-light: #e8edf6;
+  --highlight: #fffbe6;
+  --code-bg: #f4f2ee;
+  --serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --sans: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
+  --mono: "Menlo", "Consolas", "Courier New", monospace;
+  --maxw: 760px;
+  --radius: 4px;
 }
-
-@media (prefers-color-scheme: dark) {
-:root {
---bg: #161614;
---fg: #e0ddd8;
---muted: #8a8a8a;
---accent: #d4d0c8;
---border: #2e2e2a;
---code-bg: #1e1e1a;
---section-bg: #1a1a18;
---highlight: #c8c4bc;
---support: #6aaa8a;
---distinct: #aa6a6a;
---apply: #7a7aaa;
-}
-}
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--page-bg); color: var(--fg); font: 17px/1.75 var(--serif); -webkit-font-smoothing: antialiased; }
 
-body {
-font-family: ‘Georgia’, ‘Times New Roman’, serif;
-background: var(--bg);
-color: var(--fg);
-line-height: 1.8;
-font-size: 17px;
-}
+.site-nav { background: #fff; border-bottom: 1px solid var(--line); padding: 10px 0; font: 13px/1 var(--sans); position: sticky; top: 0; z-index: 100; }
+.site-nav-inner { max-width: 1040px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
+.site-nav a { color: var(--muted); text-decoration: none; padding: 6px 10px; border-radius: var(--radius); white-space: nowrap; transition: color .15s, background .15s; }
+.site-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.site-nav a.home { font-weight: 600; color: var(--accent); margin-right: 8px; }
+.site-nav .divider { color: var(--line); margin: 0 2px; user-select: none; }
 
-.container {
-max-width: 740px;
-margin: 0 auto;
-padding: 3rem 1.5rem 5rem;
-}
+.page-wrap { max-width: var(--maxw); margin: 0 auto; background: var(--bg); padding: 48px 52px 80px; box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 2px 16px rgba(0,0,0,.06); }
+@media (max-width: 860px) { .page-wrap { padding: 32px 24px 60px; } }
+@media (max-width: 540px) { .page-wrap { padding: 20px 16px 48px; box-shadow: none; } }
 
-h1 {
-font-size: 1.9rem;
-font-weight: normal;
-letter-spacing: -0.02em;
-margin-bottom: 0.25rem;
-line-height: 1.3;
-}
+.article-header { border-bottom: 2px solid var(--fg); padding-bottom: 24px; margin-bottom: 32px; }
+.article-kicker { font: 11px/1 var(--sans); text-transform: uppercase; letter-spacing: .14em; color: var(--faint); margin: 0 0 12px; }
+.article-title { font: bold 2rem/1.15 var(--serif); letter-spacing: -.02em; color: var(--fg); margin: 0 0 10px; }
+.article-subtitle { font: italic 1.05rem/1.5 var(--serif); color: var(--muted); margin: 0 0 16px; }
+.article-meta { font: 13px/1.6 var(--sans); color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; margin-top: 12px; }
+.article-meta strong { color: var(--fg); }
 
-h2 {
-font-size: 1.35rem;
-font-weight: normal;
-margin-top: 3.5rem;
-margin-bottom: 1rem;
-padding-bottom: 0.4rem;
-border-bottom: 1px solid var(--border);
-}
+.toc { border: 1px solid var(--line); background: var(--code-bg); padding: 16px 20px; margin: 0 0 36px; font: 14px/1.7 var(--sans); }
+.toc-title { font: 700 11px/1 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--faint); margin: 0 0 10px; }
+.toc ol, .toc ul { margin: 0; padding-left: 1.5em; }
+.toc li { margin: 3px 0; }
+.toc a { color: var(--accent); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
 
-h3 {
-font-size: 1.1rem;
-font-weight: bold;
-margin-top: 2rem;
-margin-bottom: 0.75rem;
-}
+h1 { font: bold 2rem/1.15 var(--serif); letter-spacing: -.02em; margin: 0 0 10px; }
+h2 { font: bold 1.3rem/1.25 var(--serif); margin: 2.5rem 0 .75rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line); color: var(--fg); }
+h3 { font: bold 1.1rem/1.3 var(--sans); margin: 1.8rem 0 .5rem; color: var(--fg); }
+h4 { font: bold 1rem/1.3 var(--sans); margin: 1.4rem 0 .4rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; font-size: .9rem; }
 
-h4 {
-font-size: 1rem;
-font-weight: bold;
-margin-top: 1.5rem;
-margin-bottom: 0.5rem;
-font-style: italic;
-}
+p { margin: 0 0 1rem; }
+ul, ol { margin: 0 0 1rem 1.4em; padding: 0; }
+li { margin: .3rem 0; }
+pre, code { font: .88rem/1.55 var(--mono); }
+pre { background: var(--code-bg); border: 1px solid var(--line); padding: 12px 14px; overflow-x: auto; margin: 0 0 1rem; border-radius: var(--radius); }
+code { background: var(--code-bg); padding: 1px 4px; border-radius: 2px; }
+pre code { background: none; padding: 0; }
+blockquote { border-left: 3px solid var(--line); margin: 1rem 0 1rem 1.2rem; padding: .5rem .8rem; color: var(--muted); font-style: italic; }
+hr { border: none; border-top: 1px solid var(--line); margin: 2rem 0; }
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { text-decoration: none; }
 
-.subtitle {
-font-style: italic;
-color: var(--muted);
-margin-bottom: 0.25rem;
-font-size: 1.05rem;
-}
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font: 14px/1.5 var(--sans); }
+th { background: var(--code-bg); border: 1px solid var(--line); padding: 8px 12px; text-align: left; font-weight: 700; font-size: .85rem; text-transform: uppercase; letter-spacing: .04em; }
+td { border: 1px solid var(--line); padding: 8px 12px; vertical-align: top; color: var(--muted); }
+td strong { color: var(--fg); }
 
-.author {
-color: var(--muted);
-margin-bottom: 2.5rem;
-font-size: 0.95rem;
-}
-
-p { margin-bottom: 1.15rem; }
-
-ul, ol {
-margin-bottom: 1.15rem;
-padding-left: 1.5rem;
-}
-
-li { margin-bottom: 0.5rem; }
-
-pre {
-background: var(--code-bg);
-padding: 1rem 1.25rem;
-border-radius: 3px;
-overflow-x: auto;
-margin-bottom: 1.15rem;
-font-family: ‘Menlo’, ‘Consolas’, monospace;
-font-size: 0.92rem;
-line-height: 1.6;
-}
-
-blockquote {
-border-left: 2px solid var(--border);
-padding-left: 1.25rem;
-margin-bottom: 1.15rem;
-color: var(--muted);
-font-style: italic;
-}
-
-strong {
-font-weight: bold;
-color: var(--highlight);
-}
-
-hr {
-border: none;
-border-top: 1px solid var(--border);
-margin: 3rem 0;
-}
-
-a {
-color: var(--fg);
-text-decoration: underline;
-text-underline-offset: 2px;
-}
-
-a:hover { color: var(--muted); }
-
-.toc {
-margin: 1.5rem 0 2.5rem;
-padding: 1.25rem 1.5rem;
-background: var(--section-bg);
-border-radius: 3px;
-font-size: 0.92rem;
-}
-
-.toc ul {
-list-style: none;
-padding-left: 0;
-}
-
-.toc li { margin-bottom: 0.3rem; }
+.sec-num { color: var(--faint); font-family: var(--mono); font-size: .9em; margin-right: .5em; }
 
 .ref-card {
-background: var(--section-bg);
-border-radius: 4px;
-padding: 1.25rem 1.5rem;
-margin-bottom: 1.5rem;
-border-left: 3px solid var(--border);
+  background: var(--code-bg);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  margin: 0 0 1.25rem;
+  border-left: 4px solid var(--accent);
+  font: 14px/1.65 var(--sans);
 }
+.ref-card.support { border-left-color: #2a6e3a; }
+.ref-card.distinct { border-left-color: #6e2a2a; }
+.ref-card.apply { border-left-color: var(--accent); }
+.ref-card .ref-title { font-weight: 700; font-size: .95rem; color: var(--fg); margin: 0 0 .25rem; }
+.ref-card .ref-source { font-size: .82rem; color: var(--faint); margin: 0 0 .6rem; font-style: italic; }
+.ref-card .ref-body { font-size: .92rem; line-height: 1.65; color: var(--muted); }
+.ref-card .ref-body p { margin: 0 0 .5rem; color: var(--muted); }
+.ref-card .ref-body p:last-child { margin-bottom: 0; }
 
-.ref-card.support { border-left-color: var(--support); }
-.ref-card.distinct { border-left-color: var(--distinct); }
-.ref-card.apply { border-left-color: var(--apply); }
-
-.ref-card .ref-title {
-font-weight: bold;
-font-size: 0.95rem;
-margin-bottom: 0.25rem;
-}
-
-.ref-card .ref-source {
-font-size: 0.85rem;
-color: var(--muted);
-margin-bottom: 0.5rem;
-font-style: italic;
-}
-
-.ref-card .ref-body {
-font-size: 0.95rem;
-line-height: 1.7;
-}
-
-.mapping-row {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 1rem;
-margin-bottom: 1rem;
-}
-
-.mapping-cell {
-background: var(--section-bg);
-padding: 0.75rem 1rem;
-border-radius: 3px;
-font-size: 0.92rem;
-}
-
-.mapping-cell .label {
-font-size: 0.75rem;
-text-transform: uppercase;
-letter-spacing: 0.08em;
-color: var(--muted);
-margin-bottom: 0.25rem;
-}
+.mapping-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 0 0 1rem; }
+.mapping-cell { background: var(--code-bg); border: 1px solid var(--line); padding: .75rem 1rem; border-radius: var(--radius); font: 13px/1.55 var(--sans); }
+.mapping-cell .label { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: var(--faint); margin: 0 0 .25rem; font-weight: 700; }
+.mapping-cell p { margin: 0; color: var(--muted); font-size: .9rem; }
+.mapping-cell pre { background: none; border: none; padding: 0; margin: 0; font-size: .82rem; }
+@media (max-width: 560px) { .mapping-row { grid-template-columns: 1fr; } }
 
 .tag {
-display: inline-block;
-font-size: 0.7rem;
-text-transform: uppercase;
-letter-spacing: 0.08em;
-padding: 0.15rem 0.5rem;
-border-radius: 2px;
-margin-right: 0.25rem;
-vertical-align: middle;
+  display: inline-block;
+  font: 700 .68rem/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  padding: .15rem .5rem;
+  border-radius: 2px;
+  margin-right: .25rem;
+  vertical-align: middle;
 }
-
-.tag-support { background: var(--support); color: #fff; }
-.tag-distinct { background: var(--distinct); color: #fff; }
-.tag-apply { background: var(--apply); color: #fff; }
+.tag-support { background: #2a6e3a; color: #fff; }
+.tag-distinct { background: #6e2a2a; color: #fff; }
+.tag-apply { background: var(--accent); color: #fff; }
 
 .application-box {
-background: var(--code-bg);
-border-radius: 4px;
-padding: 1.25rem 1.5rem;
-margin-bottom: 1.5rem;
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  margin: 0 0 1.25rem;
+  font: 14px/1.65 var(--sans);
+  color: var(--muted);
 }
-
-.application-box .app-title {
-font-weight: bold;
-margin-bottom: 0.5rem;
-}
-
 .application-box .app-field {
-font-size: 0.85rem;
-color: var(--muted);
-text-transform: uppercase;
-letter-spacing: 0.06em;
-margin-bottom: 0.25rem;
+  font: 700 .75rem/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--faint);
+  margin: .8rem 0 .25rem;
 }
+.application-box .app-field:first-child { margin-top: 0; }
+.application-box p { margin: 0 0 .5rem; }
+.application-box p:last-child { margin-bottom: 0; }
+.application-box strong { color: var(--fg); }
 
-.footer {
-margin-top: 4rem;
-padding-top: 1.5rem;
-border-top: 1px solid var(--border);
-color: var(--muted);
-font-size: 0.85rem;
-text-align: center;
-}
+.footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--faint); font: 12px/1.6 var(--sans); text-align: center; }
 
-.back-link {
-font-size: 0.9rem;
-color: var(--muted);
-margin-bottom: 2rem;
-display: block;
-}
-
-@media (max-width: 600px) {
-body { font-size: 16px; }
-h1 { font-size: 1.5rem; }
-.container { padding: 2rem 1.25rem 3rem; }
-.mapping-row { grid-template-columns: 1fr; }
+@media print {
+  .site-nav { display: none !important; }
+  body { background: white; }
+  .page-wrap { box-shadow: none; padding: 0; }
+  a { color: var(--fg); text-decoration: none; }
 }
 </style>
-
 </head>
 <body>
-<nav style="background:#f5f4f0;border-bottom:1px solid #e0ddd8;padding:10px 20px;font:13px/1 ui-sans-serif,system-ui,sans-serif;flex-wrap:wrap;display:flex;gap:4px;">
-  <a href="index.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">← Framework</a>
-  <a href="ApplicationAcademicParallel.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Academic Parallels</a>
-  <a href="ApplicationDistaction.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Interference (Distraction)</a>
-  <a href="ApplicationWhoAmI.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Identity (Who Am I?)</a>
-  <a href="ComparisonToOtherStudies.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Comparison to Other Studies</a>
-  <a href="StoriesChildOld.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Story: The Quiet Between Bells</a>
-  <a href="StoriesChildSchool.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Story: The Strings at School</a>
-  <a href="StoryChild2.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Story: Quiet Between Bells (Draft)</a>
-  <a href="TamilVersionV1.html" style="color:#6b6b6b;text-decoration:none;margin-right:16px;">Tamil Version</a>
+
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="site-nav-inner">
+    <a href="index.html" class="home">Home / Framework</a>
+    <span class="divider">·</span>
+    <a href="ApplicationAcademicParallel.html" style="font-weight:700;color:var(--accent)">Academic Parallels</a>
+    <span class="divider">·</span>
+    <a href="ApplicationDistaction.html">Interference</a>
+    <span class="divider">·</span>
+    <a href="ApplicationWhoAmI.html">Identity</a>
+    <span class="divider">·</span>
+    <a href="ComparisonToOtherStudies.html">Framework Overview</a>
+    <span class="divider">·</span>
+    <a href="StoriesChildOld.html">Story: Quiet Bells</a>
+    <span class="divider">·</span>
+    <a href="StoriesChildSchool.html">Story: Strings at School</a>
+    <span class="divider">·</span>
+    <a href="StoryChild2.html">Story: Quiet Bells (Draft)</a>
+    <span class="divider">·</span>
+    <a href="TamilVersionV1.html">Tamil</a>
+  </div>
 </nav>
-<div class="container">
 
-<a class="back-link" href="index.html">← Back to Framework</a>
+<div class="page-wrap">
 
-<h1>Academic Parallels and Applications</h1>
-<p class="subtitle">Published Research in Conversation with the Resonant Cognition Framework</p>
-<p class="author">Companion document to <em>Thinking Without Boundaries</em> by Ilamgumaran VK</p>
+<div class="article-header">
+  <p class="article-kicker">Resonant Cognition — Academic Companion</p>
+  <h1 class="article-title">Academic Parallels and Applications</h1>
+  <p class="article-subtitle">Published Research in Conversation with the Resonant Cognition Framework</p>
+  <div class="article-meta">
+    Companion document to <em>Thinking Without Boundaries</em> by <strong>Ilamgumaran VK</strong>
+  </div>
+</div>
 
 <div class="toc">
-<ul>
-<li><a href="#purpose">Purpose of This Document</a></li>
-<li><a href="#part1">Part I — Where Published Research Supports the Framework</a></li>
-<li><a href="#p1-oscillation">1.1 Oscillation as a Fundamental Principle</a></li>
-<li><a href="#p1-resonance">1.2 Inter-Brain Resonance and Shared Experience</a></li>
-<li><a href="#p1-nondual">1.3 Nondual Awareness as Consciousness-as-Such</a></li>
-<li><a href="#p1-hedonic">1.4 Hedonic Adaptation and the Oscillation Cycle</a></li>
-<li><a href="#p1-dopamine">1.5 Anticipation Over Reward</a></li>
-<li><a href="#part2">Part II — Where Published Research Covers Ground the Framework Does Not</a></li>
-<li><a href="#p2-neural">2.1 Neural Correlates and Measurement</a></li>
-<li><a href="#p2-combination">2.2 The Combination Problem</a></li>
-<li><a href="#p2-instruments">2.3 Quantitative Instruments</a></li>
-<li><a href="#p2-clinical">2.4 Clinical and Corrective Debiasing</a></li>
-<li><a href="#p2-methodology">2.5 Phenomenological Methodology</a></li>
-<li><a href="#part3">Part III — Where the Framework Covers Ground Published Research Does Not</a></li>
-<li><a href="#p3-why">3.1 The "Why" Before the "What"</a></li>
-<li><a href="#p3-fulfillment">3.2 Fulfillment as Sensation</a></li>
-<li><a href="#p3-scale">3.3 The Large Curve Insight</a></li>
-<li><a href="#p3-sacrifice">3.4 Sacrifice as Preferred Frequency</a></li>
-<li><a href="#p3-visibility">3.5 Bias Removal Through Mechanism Visibility</a></li>
-<li><a href="#p3-guardrails">3.6 Self-Falsifying Guardrails</a></li>
-<li><a href="#p3-unified">3.7 The Unified Oscillation Symbol</a></li>
-<li><a href="#part4">Part IV — Applications for Researchers</a></li>
-<li><a href="#a-neuro">4.1 Neuroscience of Consciousness</a></li>
-<li><a href="#a-psych">4.2 Psychology and Wellbeing</a></li>
-<li><a href="#a-contemplative">4.3 Contemplative Science</a></li>
-<li><a href="#a-bias">4.4 Cognitive Bias and Decision-Making</a></li>
-<li><a href="#a-philosophy">4.5 Philosophy of Mind</a></li>
-<li><a href="#a-education">4.6 Education and Pedagogy</a></li>
-<li><a href="#a-social">4.7 Social Neuroscience and Empathy</a></li>
-<li><a href="#references">References</a></li>
-</ul>
+  <div class="toc-title">Contents</div>
+  <ul>
+    <li><a href="#purpose">Purpose of This Document</a></li>
+    <li><a href="#part1">Part I — Where Published Research Supports the Framework</a>
+      <ul>
+        <li><a href="#p1-oscillation">1.1 Oscillation as a Fundamental Principle</a></li>
+        <li><a href="#p1-resonance">1.2 Inter-Brain Resonance and Shared Experience</a></li>
+        <li><a href="#p1-nondual">1.3 Nondual Awareness as Consciousness-as-Such</a></li>
+        <li><a href="#p1-hedonic">1.4 Hedonic Adaptation and the Oscillation Cycle</a></li>
+        <li><a href="#p1-dopamine">1.5 Anticipation Over Reward</a></li>
+      </ul>
+    </li>
+    <li><a href="#part2">Part II — Where Published Research Covers Ground the Framework Does Not</a>
+      <ul>
+        <li><a href="#p2-neural">2.1 Neural Correlates and Measurement</a></li>
+        <li><a href="#p2-combination">2.2 The Combination Problem</a></li>
+        <li><a href="#p2-instruments">2.3 Quantitative Instruments</a></li>
+        <li><a href="#p2-clinical">2.4 Clinical and Corrective Debiasing</a></li>
+        <li><a href="#p2-methodology">2.5 Phenomenological Methodology</a></li>
+      </ul>
+    </li>
+    <li><a href="#part3">Part III — Where the Framework Covers Ground Published Research Does Not</a>
+      <ul>
+        <li><a href="#p3-why">3.1 The "Why" Before the "What"</a></li>
+        <li><a href="#p3-fulfillment">3.2 Fulfillment as Sensation</a></li>
+        <li><a href="#p3-scale">3.3 The Large Curve Insight</a></li>
+        <li><a href="#p3-sacrifice">3.4 Sacrifice as Preferred Frequency</a></li>
+        <li><a href="#p3-visibility">3.5 Bias Removal Through Mechanism Visibility</a></li>
+        <li><a href="#p3-guardrails">3.6 Self-Falsifying Guardrails</a></li>
+        <li><a href="#p3-unified">3.7 The Unified Oscillation Symbol</a></li>
+      </ul>
+    </li>
+    <li><a href="#part4">Part IV — Applications for Researchers</a>
+      <ul>
+        <li><a href="#a-neuro">4.1 Neuroscience of Consciousness</a></li>
+        <li><a href="#a-psych">4.2 Psychology and Wellbeing</a></li>
+        <li><a href="#a-contemplative">4.3 Contemplative Science</a></li>
+        <li><a href="#a-bias">4.4 Cognitive Bias and Decision-Making</a></li>
+        <li><a href="#a-philosophy">4.5 Philosophy of Mind</a></li>
+        <li><a href="#a-education">4.6 Education and Pedagogy</a></li>
+        <li><a href="#a-social">4.7 Social Neuroscience and Empathy</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+  </ul>
 </div>
 
 <!-- ===== PURPOSE ===== -->
 
-<h2 id="purpose">Purpose of This Document</h2>
+<h2 id="purpose"><span class="sec-num">§</span>Purpose of This Document</h2>
 
-<p>The Resonant Cognition framework (<em>Thinking Without Boundaries</em>) was developed through 
-direct inquiry into the nature of experience, oscillation, and awareness. It was not derived 
-from academic literature. However, a significant body of published research—across 
-neuroscience, psychology, phenomenology, and philosophy of mind—converges on many of 
+<p>The Resonant Cognition framework (<em>Thinking Without Boundaries</em>) was developed through
+direct inquiry into the nature of experience, oscillation, and awareness. It was not derived
+from academic literature. However, a significant body of published research—across
+neuroscience, psychology, phenomenology, and philosophy of mind—converges on many of
 the same observations from different methodological starting points.</p>
 
 <p>This document serves three functions:</p>
 
 <ol>
-<li><strong>Validation through convergence:</strong> Showing where peer-reviewed research 
-independently supports the framework's claims, giving researchers confidence that 
+<li><strong>Validation through convergence:</strong> Showing where peer-reviewed research
+independently supports the framework's claims, giving researchers confidence that
 the observations rest on empirically grounded terrain.</li>
-<li><strong>Honest gap identification:</strong> Showing what published work covers that the 
-framework deliberately does not, and what the framework covers that published work 
+<li><strong>Honest gap identification:</strong> Showing what published work covers that the
+framework deliberately does not, and what the framework covers that published work
 has not yet addressed.</li>
-<li><strong>Concrete applications:</strong> Demonstrating how researchers across disciplines can 
-use the framework to generate new hypotheses, design experiments, and extend 
+<li><strong>Concrete applications:</strong> Demonstrating how researchers across disciplines can
+use the framework to generate new hypotheses, design experiments, and extend
 their own work.</li>
 </ol>
 
-<p>Throughout this document, <span class="tag tag-support">support</span> marks areas 
-of convergence, <span class="tag tag-distinct">distinct</span> marks areas of divergence 
-or novel contribution, and <span class="tag tag-apply">application</span> marks 
+<p>Throughout this document, <span class="tag tag-support">support</span> marks areas
+of convergence, <span class="tag tag-distinct">distinct</span> marks areas of divergence
+or novel contribution, and <span class="tag tag-apply">application</span> marks
 actionable research directions.</p>
 
 <hr>
 
 <!-- ===== PART I ===== -->
 
-<h2 id="part1">Part I — Where Published Research Supports the Framework</h2>
+<h2 id="part1"><span class="sec-num">I</span>Part I — Where Published Research Supports the Framework</h2>
 
 <h3 id="p1-oscillation">1.1 Oscillation as a Fundamental Principle</h3>
 
-<p>The framework's foundational claim—that oscillation is the structural basis of all 
-experience, not merely a feature of neural activity—finds strong support in recent 
+<p>The framework's foundational claim—that oscillation is the structural basis of all
+experience, not merely a feature of neural activity—finds strong support in recent
 consciousness research.</p>
 
 <div class="ref-card support">
-<div class="ref-title">General Resonance Theory (GRT)</div>
-<div class="ref-source">Hunt, T. & Schooler, J.W. (2019). "The Easy Part of the Hard Problem: 
+<div class="ref-title"><span class="tag tag-support">Support</span> General Resonance Theory (GRT)</div>
+<div class="ref-source">Hunt, T. &amp; Schooler, J.W. (2019). "The Easy Part of the Hard Problem:
 A Resonance Theory of Consciousness." Frontiers in Human Neuroscience, 13, 378.</div>
 <div class="ref-body">
-<p>GRT proposes that resonance—shared vibratory frequency between physical systems—is 
-the basis of consciousness at all scales. The theory holds that all matter vibrates and 
-oscillates, and that consciousness emerges when oscillating systems achieve sufficient 
-shared resonance. This directly parallels the framework's claim that oscillation constitutes 
+<p>GRT proposes that resonance—shared vibratory frequency between physical systems—is
+the basis of consciousness at all scales. The theory holds that all matter vibrates and
+oscillates, and that consciousness emerges when oscillating systems achieve sufficient
+shared resonance. This directly parallels the framework's claim that oscillation constitutes
 being at every level of resolution.</p>
 </div>
 </div>
 
 <div class="ref-card support">
-<div class="ref-title">Cycles Upon Cycles</div>
-<div class="ref-source">Hunt, T. (2025). "Cycles upon Cycles: Oscillations Relevant to the Evolution 
+<div class="ref-title"><span class="tag tag-support">Support</span> Cycles Upon Cycles</div>
+<div class="ref-source">Hunt, T. (2025). "Cycles upon Cycles: Oscillations Relevant to the Evolution
 of Consciousness and Our Universe." Preprints, 202510.1954.</div>
 <div class="ref-body">
-<p>This paper maps oscillatory processes from quantum fluctuations to cosmological cycles, 
-proposing that nested hierarchies of oscillation are a fundamental organizing principle 
-of reality. It argues that cyclic organization is thermodynamically necessary for 
-all open systems. The framework arrives at the same conclusion—that oscillation is 
-not a feature of existence but what existence <em>is</em>—through phenomenological 
+<p>This paper maps oscillatory processes from quantum fluctuations to cosmological cycles,
+proposing that nested hierarchies of oscillation are a fundamental organizing principle
+of reality. It argues that cyclic organization is thermodynamically necessary for
+all open systems. The framework arrives at the same conclusion—that oscillation is
+not a feature of existence but what existence <em>is</em>—through phenomenological
 inquiry rather than physics.</p>
 </div>
 </div>
@@ -397,97 +297,97 @@ inquiry rather than physics.</p>
 <div class="mapping-row">
 <div class="mapping-cell">
 <div class="label">Framework</div>
-<pre style="background:none;padding:0;margin:0;font-size:0.85rem;">… Ø ↺ ⊘ ↺ Ø …
+<pre>… Ø ↺ ⊘ ↺ Ø …
 (the wave is prior)</pre>
 </div>
 <div class="mapping-cell">
 <div class="label">GRT</div>
-<p style="font-size:0.9rem;margin:0;">Nested oscillations from quantum to cosmic scale; 
+<p>Nested oscillations from quantum to cosmic scale;
 "cycles upon cycles" as organizing principle of reality.</p>
 </div>
 </div>
 
 <h3 id="p1-resonance">1.2 Inter-Brain Resonance and Shared Experience</h3>
 
-<p>The framework's concept of co-resonance (≈ᵢ ∥ ≈ⱼ)—shared coherence between 
+<p>The framework's concept of co-resonance (≈ᵢ ∥ ≈ⱼ)—shared coherence between
 systems without communication or merging—is directly supported by social neuroscience.</p>
 
 <div class="ref-card support">
-<div class="ref-title">Inter-Brain Neural Synchronization</div>
-<div class="ref-source">Valencia, A.L. & Froese, T. (2020). "What binds us? Inter-brain neural 
-synchronization and its implications for theories of human consciousness." 
+<div class="ref-title"><span class="tag tag-support">Support</span> Inter-Brain Neural Synchronization</div>
+<div class="ref-source">Valencia, A.L. &amp; Froese, T. (2020). "What binds us? Inter-brain neural
+synchronization and its implications for theories of human consciousness."
 Neuroscience of Consciousness, 2020(1), niaa010. Oxford Academic.</div>
 <div class="ref-body">
-<p>Using hyperscanning methods (simultaneous EEG/fMRI of multiple brains), this study 
-found that phase synchronization occurs across brains during meaningful social 
-interaction. This inter-brain synchronization correlates with reports of social 
-connectedness and experiences of "self-other merging." The authors propose that 
-neural integration across brains may form the basis for a genuinely collective 
+<p>Using hyperscanning methods (simultaneous EEG/fMRI of multiple brains), this study
+found that phase synchronization occurs across brains during meaningful social
+interaction. This inter-brain synchronization correlates with reports of social
+connectedness and experiences of "self-other merging." The authors propose that
+neural integration across brains may form the basis for a genuinely collective
 consciousness—the "we" perspective.</p>
-<p>This maps directly to the framework's ≈ᵢ ∥ ≈ⱼ and its claim that empathy is 
-frequency matching between oscillating systems. Crucially, both the framework and 
-the research note that attempts to force or control the alignment disrupt it—the 
+<p>This maps directly to the framework's ≈ᵢ ∥ ≈ⱼ and its claim that empathy is
+frequency matching between oscillating systems. Crucially, both the framework and
+the research note that attempts to force or control the alignment disrupt it—the
 framework through ⊘ᵢ collapse, the research through disrupted phase synchrony.</p>
 </div>
 </div>
 
 <div class="ref-card support">
-<div class="ref-title">Neural Oscillations and Consciousness</div>
-<div class="ref-source">Cebolla, A.M. & Cheron, G. (2019). "Understanding Neural Oscillations in 
+<div class="ref-title"><span class="tag tag-support">Support</span> Neural Oscillations and Consciousness</div>
+<div class="ref-source">Cebolla, A.M. &amp; Cheron, G. (2019). "Understanding Neural Oscillations in
 the Human Brain: From Movement to Consciousness." Frontiers in Psychology, 10, 1930.</div>
 <div class="ref-body">
-<p>This paper reviews how neural oscillations, particularly in the 12--70 Hz range, 
-underlie conscious experience. It proposes that movement and oscillation may be 
-inescapable in understanding consciousness—that consciousness may require 
-dynamic change rather than static states. This supports the framework's claim 
+<p>This paper reviews how neural oscillations, particularly in the 12–70 Hz range,
+underlie conscious experience. It proposes that movement and oscillation may be
+inescapable in understanding consciousness—that consciousness may require
+dynamic change rather than static states. This supports the framework's claim
 that experience requires contrast and cannot occur in a permanent state.</p>
 </div>
 </div>
 
 <h3 id="p1-nondual">1.3 Nondual Awareness as Consciousness-as-Such</h3>
 
-<p>The framework's description of null-reference awareness (Ø) and resonant cognition 
+<p>The framework's description of null-reference awareness (Ø) and resonant cognition
 (≈) closely parallels an extensive body of research on nondual awareness (NDA).</p>
 
 <div class="ref-card support">
-<div class="ref-title">Nondual Awareness: Consciousness-as-Such</div>
-<div class="ref-source">Josipovic, Z. (2019). "Nondual awareness: consciousness-as-such as 
-non-representational reflexivity." Progress in Brain Research, 244, 273--298. Elsevier.</div>
+<div class="ref-title"><span class="tag tag-support">Support</span> Nondual Awareness: Consciousness-as-Such</div>
+<div class="ref-source">Josipovic, Z. (2019). "Nondual awareness: consciousness-as-such as
+non-representational reflexivity." Progress in Brain Research, 244, 273–298. Elsevier.</div>
 <div class="ref-body">
-<p>Josipovic defines nondual awareness as a non-conceptual, non-propositional awareness 
-that knows itself without relying on mental representations. He proposes an expanded 
-map of consciousness that includes, beyond contents and arousal levels, an 
-"indeterminate substrate" and consciousness-as-such. This consciousness-as-such 
-is phenomenologically, cognitively, and neurobiologically a unique kind—distinct 
+<p>Josipovic defines nondual awareness as a non-conceptual, non-propositional awareness
+that knows itself without relying on mental representations. He proposes an expanded
+map of consciousness that includes, beyond contents and arousal levels, an
+"indeterminate substrate" and consciousness-as-such. This consciousness-as-such
+is phenomenologically, cognitively, and neurobiologically a unique kind—distinct
 from all contents, functions, and states.</p>
-<p>This maps to the framework's Ø · ⧉ ≈ (null-reference, presence, field, resonance). 
-Both describe an awareness that is revealed when mediators are relaxed, not 
+<p>This maps to the framework's Ø · ⧉ ≈ (null-reference, presence, field, resonance).
+Both describe an awareness that is revealed when mediators are relaxed, not
 constructed through effort.</p>
 </div>
 </div>
 
 <div class="ref-card support">
-<div class="ref-title">Nondual Awareness and Minimal Phenomenal Experience</div>
-<div class="ref-source">Josipovic, Z. & Miskovic, V. (2020). "Nondual Awareness and Minimal 
+<div class="ref-title"><span class="tag tag-support">Support</span> Nondual Awareness and Minimal Phenomenal Experience</div>
+<div class="ref-source">Josipovic, Z. &amp; Miskovic, V. (2020). "Nondual Awareness and Minimal
 Phenomenal Experience." Frontiers in Psychology, 11, 2087.</div>
 <div class="ref-body">
-<p>This paper distinguishes nondual awareness from "minimal phenomenal experiences" 
-(states of reduced content). The authors argue that NDA is not simply the 
-absence of content but a positive mode of awareness—present, self-knowing, and 
-non-representational. This parallels the framework's insistence that null (Ø) is 
+<p>This paper distinguishes nondual awareness from "minimal phenomenal experiences"
+(states of reduced content). The authors argue that NDA is not simply the
+absence of content but a positive mode of awareness—present, self-knowing, and
+non-representational. This parallels the framework's insistence that null (Ø) is
 not emptiness but what remains when interference is withdrawn.</p>
 </div>
 </div>
 
 <div class="ref-card support">
-<div class="ref-title">Without Birth, Without Death</div>
-<div class="ref-source">Josipovic, Z. (2025). "Without birth, without death—issues in the research 
+<div class="ref-title"><span class="tag tag-support">Support</span> Without Birth, Without Death</div>
+<div class="ref-source">Josipovic, Z. (2025). "Without birth, without death—issues in the research
 of nondual awareness or consciousness itself." Frontiers in Psychology, 16, 1665826.</div>
 <div class="ref-body">
-<p>Josipovic's most recent paper warns that researchers and participants are 
-increasingly eager to label various states as nondual awareness, when the genuine 
-article is rare and difficult to recognize without conceptual mediation. This maps 
-to the framework's guardrail: claiming arrival at null is itself ⊘ᵢ. Both recognize 
+<p>Josipovic's most recent paper warns that researchers and participants are
+increasingly eager to label various states as nondual awareness, when the genuine
+article is rare and difficult to recognize without conceptual mediation. This maps
+to the framework's guardrail: claiming arrival at null is itself ⊘ᵢ. Both recognize
 that the reification of the state destroys the state.</p>
 </div>
 </div>
@@ -495,82 +395,82 @@ that the reification of the state destroys the state.</p>
 <div class="mapping-row">
 <div class="mapping-cell">
 <div class="label">Framework</div>
-<pre style="background:none;padding:0;margin:0;font-size:0.85rem;">Ø · ⧉ ≈
+<pre>Ø · ⧉ ≈
 (null, presence, field, resonance)</pre>
 </div>
 <div class="mapping-cell">
 <div class="label">Josipovic (NDA)</div>
-<p style="font-size:0.9rem;margin:0;">Non-conceptual, non-representational reflexivity. 
+<p>Non-conceptual, non-representational reflexivity.
 Awareness aware of itself without mediation. Distinct from all contents and states.</p>
 </div>
 </div>
 
 <h3 id="p1-hedonic">1.4 Hedonic Adaptation and the Oscillation Cycle</h3>
 
-<p>The framework's observation that all post-survival action is sensation-seeking—and 
-that the cycle of rest-unrest-rest drives all activity—is supported by decades of 
+<p>The framework's observation that all post-survival action is sensation-seeking—and
+that the cycle of rest-unrest-rest drives all activity—is supported by decades of
 hedonic adaptation research.</p>
 
 <div class="ref-card support">
-<div class="ref-title">The Hedonic Treadmill</div>
-<div class="ref-source">Brickman, P. & Campbell, D.T. (1971). "Hedonic relativism and planning the 
-good society." In Adaptation-level theory: A symposium, 287--305. Academic Press. 
-Subsequently validated in: Diener, E. et al. (2006). "Beyond the hedonic treadmill: 
-Revising the adaptation theory of well-being." American Psychologist, 61, 305--314.</div>
+<div class="ref-title"><span class="tag tag-support">Support</span> The Hedonic Treadmill</div>
+<div class="ref-source">Brickman, P. &amp; Campbell, D.T. (1971). "Hedonic relativism and planning the
+good society." In Adaptation-level theory: A symposium, 287–305. Academic Press.
+Subsequently validated in: Diener, E. et al. (2006). "Beyond the hedonic treadmill:
+Revising the adaptation theory of well-being." American Psychologist, 61, 305–314.</div>
 <div class="ref-body">
-<p>The hedonic treadmill describes a homeostatic mechanism by which subjective 
-well-being returns to baseline after positive or negative events. Sustained 
-pleasure becomes neutral; sustained pain diminishes. The system continually 
-seeks new stimulation. This is the framework's Ø → ⊘ → Ø cycle described in 
-psychological terms: a permanent state becomes imperceptible, driving the 
+<p>The hedonic treadmill describes a homeostatic mechanism by which subjective
+well-being returns to baseline after positive or negative events. Sustained
+pleasure becomes neutral; sustained pain diminishes. The system continually
+seeks new stimulation. This is the framework's Ø → ⊘ → Ø cycle described in
+psychological terms: a permanent state becomes imperceptible, driving the
 organism to seek the next state.</p>
 </div>
 </div>
 
 <div class="ref-card support">
-<div class="ref-title">Dynamical Models of Hedonic Cycling</div>
-<div class="ref-source">Carrero, J.A. et al. (2024). "Running on the Hedonic Treadmill: A Dynamical 
-Model of Happiness Based on an Approach--Avoidance Framework." 
+<div class="ref-title"><span class="tag tag-support">Support</span> Dynamical Models of Hedonic Cycling</div>
+<div class="ref-source">Carrero, J.A. et al. (2024). "Running on the Hedonic Treadmill: A Dynamical
+Model of Happiness Based on an Approach–Avoidance Framework."
 Journal of Happiness Studies, 25, 766.</div>
 <div class="ref-body">
-<p>This paper models happiness as oscillation using dynamical systems mathematics, 
-showing that phases of pleasure and displeasure repeatedly alternate as a 
-structural feature of approach-avoidance motivation. The authors find that 
-self-centred seeking of pleasure maximization induces fluctuating happiness—a 
-formal confirmation of the framework's claim that the wave cannot be stopped 
+<p>This paper models happiness as oscillation using dynamical systems mathematics,
+showing that phases of pleasure and displeasure repeatedly alternate as a
+structural feature of approach-avoidance motivation. The authors find that
+self-centred seeking of pleasure maximization induces fluctuating happiness—a
+formal confirmation of the framework's claim that the wave cannot be stopped
 from within the wave.</p>
 </div>
 </div>
 
 <h3 id="p1-dopamine">1.5 Anticipation Over Reward</h3>
 
-<p>The framework's insight that anticipation is the dominant sensation—not arrival—is 
+<p>The framework's insight that anticipation is the dominant sensation—not arrival—is
 robustly confirmed by dopamine research.</p>
 
 <div class="ref-card support">
-<div class="ref-title">Sustained Dopamine During Anticipation</div>
-<div class="ref-source">Fotros, A. et al. (2023). "Anticipation of Appetitive Operant Action Induces 
-Sustained Dopamine Release in the Nucleus Accumbens." 
-Journal of Neuroscience, 43(21), 3922--3932.</div>
+<div class="ref-title"><span class="tag tag-support">Support</span> Sustained Dopamine During Anticipation</div>
+<div class="ref-source">Fotros, A. et al. (2023). "Anticipation of Appetitive Operant Action Induces
+Sustained Dopamine Release in the Nucleus Accumbens."
+Journal of Neuroscience, 43(21), 3922–3932.</div>
 <div class="ref-body">
-<p>This study directly measured dopamine release during anticipation versus 
-reward receipt. Rats showed sustained dopamine plateau throughout the entire 
-cue period preceding reward—but not at reward delivery. The anticipation, 
+<p>This study directly measured dopamine release during anticipation versus
+reward receipt. Rats showed sustained dopamine plateau throughout the entire
+cue period preceding reward—but not at reward delivery. The anticipation,
 not the outcome, produced the dominant neurochemical signal.</p>
 </div>
 </div>
 
 <div class="ref-card support">
-<div class="ref-title">Reward Prediction and Gambling</div>
-<div class="ref-source">Linnet, J. (2014). "Neurobiological underpinnings of reward anticipation 
-and outcome evaluation in gambling disorder." 
+<div class="ref-title"><span class="tag tag-support">Support</span> Reward Prediction and Gambling</div>
+<div class="ref-source">Linnet, J. (2014). "Neurobiological underpinnings of reward anticipation
+and outcome evaluation in gambling disorder."
 Frontiers in Behavioral Neuroscience, 8, 100.</div>
 <div class="ref-body">
-<p>This review maps dopaminergic dysfunction in gambling to the distinction 
-between reward prediction (anticipation) and reward prediction error 
-(outcome evaluation). It confirms that the dopamine system is primarily 
-an anticipation system—the pursuit, not the arrival, drives behaviour. 
-This is the framework's observation that the gambler seeks the tension, 
+<p>This review maps dopaminergic dysfunction in gambling to the distinction
+between reward prediction (anticipation) and reward prediction error
+(outcome evaluation). It confirms that the dopamine system is primarily
+an anticipation system—the pursuit, not the arrival, drives behaviour.
+This is the framework's observation that the gambler seeks the tension,
 not the resolution.</p>
 </div>
 </div>
@@ -578,12 +478,12 @@ not the resolution.</p>
 <div class="mapping-row">
 <div class="mapping-cell">
 <div class="label">Framework</div>
-<p style="font-size:0.9rem;margin:0;">Anticipation is the primary product. 
+<p>Anticipation is the primary product.
 Resolution resets the cycle. The pursuit is the sensation being sought.</p>
 </div>
 <div class="mapping-cell">
 <div class="label">Neuroscience</div>
-<p style="font-size:0.9rem;margin:0;">Dopamine release is greater during 
+<p>Dopamine release is greater during
 anticipation than reward receipt. Uncertainty amplifies the signal further.</p>
 </div>
 </div>
@@ -592,24 +492,24 @@ anticipation than reward receipt. Uncertainty amplifies the signal further.</p>
 
 <!-- ===== PART II ===== -->
 
-<h2 id="part2">Part II — Where Published Research Covers Ground the Framework Does Not</h2>
+<h2 id="part2"><span class="sec-num">II</span>Part II — Where Published Research Covers Ground the Framework Does Not</h2>
 
-<p>The framework is deliberately non-mechanistic. It describes structure and dynamics 
+<p>The framework is deliberately non-mechanistic. It describes structure and dynamics
 without mapping to biological substrates. Published research fills these gaps.</p>
 
 <h3 id="p2-neural">2.1 Neural Correlates and Measurement</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">Specific Neural Signatures</div>
-<div class="ref-source">Seth, A.K. et al. (2006); Cebolla & Cheron (2019); 
-Ruhnau, Hauswald & Weisz (2014, Frontiers in Psychology).</div>
+<div class="ref-title"><span class="tag tag-distinct">Distinct</span> Specific Neural Signatures</div>
+<div class="ref-source">Seth, A.K. et al. (2006); Cebolla &amp; Cheron (2019);
+Ruhnau, Hauswald &amp; Weisz (2014, Frontiers in Psychology).</div>
 <div class="ref-body">
-<p>Consciousness research identifies specific oscillatory frequencies (gamma 12--70 Hz, 
-alpha 7--13 Hz), brain regions (thalamocortical system, precuneus network), and 
-connectivity patterns as correlates of conscious experience. The framework does not 
-map its concepts to neural architecture—Ø, ≈, and ⧉ are described experientially, 
-not neurobiologically. This is a deliberate choice (mechanism visibility without 
-mechanism specification), but it means the framework cannot generate predictions 
+<p>Consciousness research identifies specific oscillatory frequencies (gamma 12–70 Hz,
+alpha 7–13 Hz), brain regions (thalamocortical system, precuneus network), and
+connectivity patterns as correlates of conscious experience. The framework does not
+map its concepts to neural architecture—Ø, ≈, and ⧉ are described experientially,
+not neurobiologically. This is a deliberate choice (mechanism visibility without
+mechanism specification), but it means the framework cannot generate predictions
 testable by neuroimaging.</p>
 </div>
 </div>
@@ -617,14 +517,14 @@ testable by neuroimaging.</p>
 <h3 id="p2-combination">2.2 The Combination Problem</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">How Micro-Consciousness Combines</div>
-<div class="ref-source">Hunt, T. (2025). Cycles Upon Cycles; 
+<div class="ref-title"><span class="tag tag-distinct">Distinct</span> How Micro-Consciousness Combines</div>
+<div class="ref-source">Hunt, T. (2025). Cycles Upon Cycles;
 Tononi, G. et al. (2016). Integrated Information Theory.</div>
 <div class="ref-body">
-<p>GRT and Integrated Information Theory address how separate oscillating 
-systems combine into unified conscious experience. GRT proposes that shared 
-resonance allows combination without extinction of constituent parts. The 
-framework's field concept (⧉) implies non-local awareness but does not 
+<p>GRT and Integrated Information Theory address how separate oscillating
+systems combine into unified conscious experience. GRT proposes that shared
+resonance allows combination without extinction of constituent parts. The
+framework's field concept (⧉) implies non-local awareness but does not
 address how individual fields merge, separate, or interact at boundaries.</p>
 </div>
 </div>
@@ -632,16 +532,16 @@ address how individual fields merge, separate, or interact at boundaries.</p>
 <h3 id="p2-instruments">2.3 Quantitative Instruments</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">Measuring Nondual Awareness</div>
-<div class="ref-source">Garland, E.L. et al. (2018). "The Nondual Awareness Dimensional Assessment 
-(NADA)." Mindfulness, 9(6), 1765--1779.</div>
+<div class="ref-title"><span class="tag tag-distinct">Distinct</span> Measuring Nondual Awareness</div>
+<div class="ref-source">Garland, E.L. et al. (2018). "The Nondual Awareness Dimensional Assessment
+(NADA)." Mindfulness, 9(6), 1765–1779.</div>
 <div class="ref-body">
-<p>The NADA measures nondual awareness along two dimensions: self-transcendence 
-and bliss. It enables empirical comparison across populations and interventions. 
-The framework explicitly rejects measurement as a guardrail (progress 
-tracking = ⊘ᵢ). This is philosophically consistent—measuring the state may 
-reintroduce the interference the framework describes. But it also means the 
-framework cannot participate in the empirical validation cycle that 
+<p>The NADA measures nondual awareness along two dimensions: self-transcendence
+and bliss. It enables empirical comparison across populations and interventions.
+The framework explicitly rejects measurement as a guardrail (progress
+tracking = ⊘ᵢ). This is philosophically consistent—measuring the state may
+reintroduce the interference the framework describes. But it also means the
+framework cannot participate in the empirical validation cycle that
 peer-reviewed science requires.</p>
 </div>
 </div>
@@ -649,17 +549,17 @@ peer-reviewed science requires.</p>
 <h3 id="p2-clinical">2.4 Clinical and Corrective Debiasing</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">Structured Bias Mitigation</div>
-<div class="ref-source">Fasolo, B., Heard, C. & Scopelliti, I. (2024). "Mitigating cognitive bias 
-to improve organizational decisions." Journal of Management. 
+<div class="ref-title"><span class="tag tag-distinct">Distinct</span> Structured Bias Mitigation</div>
+<div class="ref-source">Fasolo, B., Heard, C. &amp; Scopelliti, I. (2024). "Mitigating cognitive bias
+to improve organizational decisions." Journal of Management.
 Also: Croskerry, P. et al. (2013). "Cognitive debiasing." BMJ Quality &amp; Safety.</div>
 <div class="ref-body">
-<p>Academic debiasing research identifies two approaches: training/awareness 
-(debiasing) and environmental restructuring (choice architecture). These 
-involve active intervention—curricula, warnings, feedback loops, structured 
-decision processes. The framework's approach—recognition alone permits return 
-(↺)—operates at a different level. Published research would classify this as 
-an untested hypothesis about "awareness-based debiasing" that lacks 
+<p>Academic debiasing research identifies two approaches: training/awareness
+(debiasing) and environmental restructuring (choice architecture). These
+involve active intervention—curricula, warnings, feedback loops, structured
+decision processes. The framework's approach—recognition alone permits return
+(↺)—operates at a different level. Published research would classify this as
+an untested hypothesis about "awareness-based debiasing" that lacks
 experimental validation.</p>
 </div>
 </div>
@@ -667,17 +567,17 @@ experimental validation.</p>
 <h3 id="p2-methodology">2.5 Phenomenological Methodology</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">The Problem of Self-Report</div>
-<div class="ref-source">Krägeloh, C.U. (2019). "Phenomenological Research Fails to Capture the 
-Experience of Nondual Awareness." Mindfulness, 10, 15--25. 
+<div class="ref-title"><span class="tag tag-distinct">Distinct</span> The Problem of Self-Report</div>
+<div class="ref-source">Krägeloh, C.U. (2019). "Phenomenological Research Fails to Capture the
+Experience of Nondual Awareness." Mindfulness, 10, 15–25.
 Also: Josipovic, Z. (2025), Frontiers in Psychology.</div>
 <div class="ref-body">
-<p>Academic research struggles with how to study nondual awareness when language 
-inevitably distorts the experience. Josipovic warns that participants and researchers 
-eagerly label various states as nondual awareness without genuine recognition. 
-The framework acknowledges this through ⊘ₗ (linguistic interference) but does 
-not offer a methodology for third-person verification. How would a researcher 
-distinguish someone genuinely in resonant cognition from someone who has 
+<p>Academic research struggles with how to study nondual awareness when language
+inevitably distorts the experience. Josipovic warns that participants and researchers
+eagerly label various states as nondual awareness without genuine recognition.
+The framework acknowledges this through ⊘ₗ (linguistic interference) but does
+not offer a methodology for third-person verification. How would a researcher
+distinguish someone genuinely in resonant cognition from someone who has
 merely learned the vocabulary?</p>
 </div>
 </div>
@@ -686,22 +586,22 @@ merely learned the vocabulary?</p>
 
 <!-- ===== PART III ===== -->
 
-<h2 id="part3">Part III — Where the Framework Covers Ground Published Research Does Not</h2>
+<h2 id="part3"><span class="sec-num">III</span>Part III — Where the Framework Covers Ground Published Research Does Not</h2>
 
-<p>These are areas where the framework makes claims or provides perspectives 
+<p>These are areas where the framework makes claims or provides perspectives
 not found in the academic literature reviewed.</p>
 
 <h3 id="p3-why">3.1 The "Why" Before the "What"</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">Original Contribution</div>
+<div class="ref-title"><span class="tag tag-distinct">Original Contribution</span></div>
 <div class="ref-body">
-<p>Academic work describes oscillation, measures it, and correlates it. GRT maps 
-cycles from quantum to cosmic scale. Neural oscillation research identifies 
+<p>Academic work describes oscillation, measures it, and correlates it. GRT maps
+cycles from quantum to cosmic scale. Neural oscillation research identifies
 frequency bands. But almost none asks <em>why the wave moves at all</em>.</p>
-<p>The framework begins there: contrast is the precondition for experience, not a 
-discovery within experience. Oscillation is not explained by a prior cause—it 
-is what "existing" means. No published paper in the reviewed literature makes 
+<p>The framework begins there: contrast is the precondition for experience, not a
+discovery within experience. Oscillation is not explained by a prior cause—it
+is what "existing" means. No published paper in the reviewed literature makes
 this foundational move as its starting point.</p>
 </div>
 </div>
@@ -709,16 +609,16 @@ this foundational move as its starting point.</p>
 <h3 id="p3-fulfillment">3.2 Fulfillment as Sensation, Not a Separate Category</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">Original Contribution</div>
+<div class="ref-title"><span class="tag tag-distinct">Original Contribution</span></div>
 <div class="ref-body">
-<p>Psychology maintains a categorical distinction between hedonic wellbeing 
-(pleasure-based) and eudaimonic wellbeing (meaning-based). Research programmes 
+<p>Psychology maintains a categorical distinction between hedonic wellbeing
+(pleasure-based) and eudaimonic wellbeing (meaning-based). Research programmes
 and measurement instruments are built around this division.</p>
-<p>The framework dissolves this: fulfillment registers as felt experience, activates 
-the same reward circuitry, and fades if sustained without interruption. It is 
-sensation at a different frequency, not a different kind. No published paper in 
-the reviewed literature makes this collapse explicitly. The Self-Centred/Selflessness 
-Happiness Model (Dambrun &amp; Ricard, 2011) approaches it by distinguishing 
+<p>The framework dissolves this: fulfillment registers as felt experience, activates
+the same reward circuitry, and fades if sustained without interruption. It is
+sensation at a different frequency, not a different kind. No published paper in
+the reviewed literature makes this collapse explicitly. The Self-Centred/Selflessness
+Happiness Model (Dambrun &amp; Ricard, 2011) approaches it by distinguishing
 fluctuating from stable happiness, but retains the hedonic/eudaimonic distinction.</p>
 </div>
 </div>
@@ -726,15 +626,15 @@ fluctuating from stable happiness, but retains the hedonic/eudaimonic distinctio
 <h3 id="p3-scale">3.3 The Large Curve Insight</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">Original Contribution</div>
+<div class="ref-title"><span class="tag tag-distinct">Original Contribution</span></div>
 <div class="ref-body">
-<p>The framework proposes that what appears as stillness may be oscillation at a 
-wavelength too vast for human perception—a curve so large it appears as a 
-straight line from within a human lifespan. This implies that null (Ø) is not 
+<p>The framework proposes that what appears as stillness may be oscillation at a
+wavelength too vast for human perception—a curve so large it appears as a
+straight line from within a human lifespan. This implies that null (Ø) is not
 absence of pattern but pattern at a resolution beyond ordinary detection.</p>
-<p>GRT discusses nested hierarchies across scale but never proposes this specific 
-inversion: that the "ground state" of awareness may itself be oscillation 
-at cosmological wavelength. This is a genuinely novel contribution with 
+<p>GRT discusses nested hierarchies across scale but never proposes this specific
+inversion: that the "ground state" of awareness may itself be oscillation
+at cosmological wavelength. This is a genuinely novel contribution with
 no direct parallel in the reviewed literature.</p>
 <pre>
 Gross perception:   ∿∿∿∿∿∿  (easily detected)
@@ -747,15 +647,15 @@ Null perception:    ————————  (wavelength beyond detection)
 <h3 id="p3-sacrifice">3.4 Sacrifice as Preferred Frequency</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">Original Contribution</div>
+<div class="ref-title"><span class="tag tag-distinct">Original Contribution</span></div>
 <div class="ref-body">
-<p>Published psychology treats sacrifice, discipline, and austerity through 
-self-regulation and willpower models—effortful override of preference. 
-The framework proposes that what appears as sacrifice from one perspective is 
-the practitioner's <em>preferred oscillation</em>. The monk does not overcome 
-the desire for comfort; the absence of discipline is more uncomfortable 
+<p>Published psychology treats sacrifice, discipline, and austerity through
+self-regulation and willpower models—effortful override of preference.
+The framework proposes that what appears as sacrifice from one perspective is
+the practitioner's <em>preferred oscillation</em>. The monk does not overcome
+the desire for comfort; the absence of discipline is more uncomfortable
 than discipline itself. Mastery shifts the baseline.</p>
-<p>This removes moral hierarchy from the oscillation without removing discernment. 
+<p>This removes moral hierarchy from the oscillation without removing discernment.
 No published framework reviewed makes this specific move.</p>
 </div>
 </div>
@@ -763,19 +663,19 @@ No published framework reviewed makes this specific move.</p>
 <h3 id="p3-visibility">3.5 Bias Removal Through Mechanism Visibility</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">Original Contribution</div>
+<div class="ref-title"><span class="tag tag-distinct">Original Contribution</span></div>
 <div class="ref-body">
-<p>All published debiasing research is <em>corrective</em>: train people, warn 
-them, restructure their choices. The framework proposes that seeing the 
-<em>mechanism</em> of bias—recognizing that one is oscillating at a particular 
-frequency shaped by inheritance and grip—is itself the debiasing. 
-Recognition alone permits ↺. Nothing is corrected; the pattern becomes 
+<p>All published debiasing research is <em>corrective</em>: train people, warn
+them, restructure their choices. The framework proposes that seeing the
+<em>mechanism</em> of bias—recognizing that one is oscillating at a particular
+frequency shaped by inheritance and grip—is itself the debiasing.
+Recognition alone permits ↺. Nothing is corrected; the pattern becomes
 transparent.</p>
 <pre>
 Academic approach:  bias detected → intervention → correction
 Framework approach: bias mechanism seen → grip loosens → ↺ (natural return)
 </pre>
-<p>This approach has not been experimentally tested but represents a 
+<p>This approach has not been experimentally tested but represents a
 fundamentally different theory of how bias dissolves.</p>
 </div>
 </div>
@@ -783,13 +683,13 @@ fundamentally different theory of how bias dissolves.</p>
 <h3 id="p3-guardrails">3.6 Self-Falsifying Guardrails</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">Original Contribution</div>
+<div class="ref-title"><span class="tag tag-distinct">Original Contribution</span></div>
 <div class="ref-body">
-<p>The framework builds in structural conditions under which the framework 
-itself becomes interference: attempting to teach it produces ⊘ᵢ + ⊘ₗ, 
-attempting to hold it produces ⊘, claiming permanent arrival produces ⊘ᵢ. 
-No published consciousness framework reviewed includes such self-falsification 
-conditions. Most frameworks attempt to be robust; this one attempts to be 
+<p>The framework builds in structural conditions under which the framework
+itself becomes interference: attempting to teach it produces ⊘ᵢ + ⊘ₗ,
+attempting to hold it produces ⊘, claiming permanent arrival produces ⊘ᵢ.
+No published consciousness framework reviewed includes such self-falsification
+conditions. Most frameworks attempt to be robust; this one attempts to be
 transparent about its own potential for misuse.</p>
 </div>
 </div>
@@ -797,15 +697,15 @@ transparent about its own potential for misuse.</p>
 <h3 id="p3-unified">3.7 The Unified Oscillation Symbol</h3>
 
 <div class="ref-card distinct">
-<div class="ref-title">Original Contribution</div>
+<div class="ref-title"><span class="tag tag-distinct">Original Contribution</span></div>
 <div class="ref-body">
-<p>Josipovic treats nondual awareness as "a unique kind" distinct from phenomenal 
-contents. GRT treats resonance as a mechanism that produces consciousness. 
-Both maintain a structural distinction between awareness and what awareness 
+<p>Josipovic treats nondual awareness as "a unique kind" distinct from phenomenal
+contents. GRT treats resonance as a mechanism that produces consciousness.
+Both maintain a structural distinction between awareness and what awareness
 observes.</p>
-<p>The framework goes further: even the distinction between null (Ø) and 
-resonance (≈) collapses at sufficient scale. They are phases of the same 
-wave. The observer and the observed are the same oscillation, 
+<p>The framework goes further: even the distinction between null (Ø) and
+resonance (≈) collapses at sufficient scale. They are phases of the same
+wave. The observer and the observed are the same oscillation,
 differentiated only by the grip that was claiming otherwise.</p>
 <pre>
 … Ø ↺ ⊘ ↺ Ø …
@@ -818,38 +718,38 @@ differentiated only by the grip that was claiming otherwise.</p>
 
 <!-- ===== PART IV ===== -->
 
-<h2 id="part4">Part IV — Applications for Researchers</h2>
+<h2 id="part4"><span class="sec-num">IV</span>Part IV — Applications for Researchers</h2>
 
-<p>The following examples show how researchers in specific disciplines can use 
-the framework to generate new hypotheses, design experiments, and extend 
-existing work. Each example identifies the research gap, the framework concept 
+<p>The following examples show how researchers in specific disciplines can use
+the framework to generate new hypotheses, design experiments, and extend
+existing work. Each example identifies the research gap, the framework concept
 that addresses it, and a concrete study design.</p>
 
 <h3 id="a-neuro">4.1 Neuroscience of Consciousness</h3>
 
 <div class="application-box">
 <div class="app-field">Research gap</div>
-<p>GRT maps oscillatory hierarchies but does not explain why oscillation 
-occurs at all. Neural correlate studies identify <em>which</em> frequencies 
+<p>GRT maps oscillatory hierarchies but does not explain why oscillation
+occurs at all. Neural correlate studies identify <em>which</em> frequencies
 accompany consciousness but not <em>why</em> consciousness requires variation.</p>
 
 <div class="app-field">Framework concept</div>
-<p>Contrast as the condition for experience: a permanent state becomes 
+<p>Contrast as the condition for experience: a permanent state becomes
 imperceptible. The nervous system requires change to register anything.</p>
 
 <div class="app-field">Study design</div>
-<p><strong>Hypothesis:</strong> Sustained identical neural stimulation at any 
-frequency will produce diminishing conscious experience over time, 
-regardless of frequency band, because consciousness requires contrast 
+<p><strong>Hypothesis:</strong> Sustained identical neural stimulation at any
+frequency will produce diminishing conscious experience over time,
+regardless of frequency band, because consciousness requires contrast
 rather than any particular oscillatory signature.</p>
-<p><strong>Method:</strong> Use transcranial alternating current stimulation (tACS) 
-at fixed frequencies (alpha, beta, gamma) while measuring subjective 
-reports and neural markers of awareness. Vary the duration from seconds 
-to minutes. Predict: sustained identical stimulation at even the 
-"optimal" consciousness frequency will show adaptation—supporting 
+<p><strong>Method:</strong> Use transcranial alternating current stimulation (tACS)
+at fixed frequencies (alpha, beta, gamma) while measuring subjective
+reports and neural markers of awareness. Vary the duration from seconds
+to minutes. Predict: sustained identical stimulation at even the
+"optimal" consciousness frequency will show adaptation—supporting
 the framework's claim that contrast, not frequency, is fundamental.</p>
-<p><strong>Contribution:</strong> This would test whether consciousness requires 
-<em>change in oscillation</em> rather than <em>oscillation at a particular 
+<p><strong>Contribution:</strong> This would test whether consciousness requires
+<em>change in oscillation</em> rather than <em>oscillation at a particular
 frequency</em>—a distinction the current literature does not make.</p>
 </div>
 
@@ -857,29 +757,29 @@ frequency</em>—a distinction the current literature does not make.</p>
 
 <div class="application-box">
 <div class="app-field">Research gap</div>
-<p>Hedonic and eudaimonic wellbeing are measured and studied as distinct 
-constructs. Research programmes, interventions, and measurement 
-instruments maintain this division. But does it hold at the 
+<p>Hedonic and eudaimonic wellbeing are measured and studied as distinct
+constructs. Research programmes, interventions, and measurement
+instruments maintain this division. But does it hold at the
 neurochemical level?</p>
 
 <div class="app-field">Framework concept</div>
-<p>Fulfillment is sensation at a different frequency, not a different 
-category. All action post-survival is sensation-seeking at varying 
+<p>Fulfillment is sensation at a different frequency, not a different
+category. All action post-survival is sensation-seeking at varying
 time scales.</p>
 
 <div class="app-field">Study design</div>
-<p><strong>Hypothesis:</strong> Eudaimonic experiences (meaning, purpose, mastery) 
-show the same hedonic adaptation curves as hedonic experiences 
-(pleasure, comfort, novelty), differing only in cycle length—not in 
+<p><strong>Hypothesis:</strong> Eudaimonic experiences (meaning, purpose, mastery)
+show the same hedonic adaptation curves as hedonic experiences
+(pleasure, comfort, novelty), differing only in cycle length—not in
 kind.</p>
-<p><strong>Method:</strong> Longitudinal experience sampling of individuals pursuing 
-meaning-based goals (volunteering, artistic mastery, spiritual practice) 
-alongside pleasure-based goals. Measure subjective wellbeing at 
-intervals from days to months. Predict: both show adaptation to 
-baseline, but eudaimonic activities adapt on longer cycles. The 
+<p><strong>Method:</strong> Longitudinal experience sampling of individuals pursuing
+meaning-based goals (volunteering, artistic mastery, spiritual practice)
+alongside pleasure-based goals. Measure subjective wellbeing at
+intervals from days to months. Predict: both show adaptation to
+baseline, but eudaimonic activities adapt on longer cycles. The
 structure is identical; the frequency differs.</p>
-<p><strong>Contribution:</strong> If confirmed, this would challenge the 
-hedonic/eudaimonic dichotomy foundational to positive psychology 
+<p><strong>Contribution:</strong> If confirmed, this would challenge the
+hedonic/eudaimonic dichotomy foundational to positive psychology
 and suggest a unified oscillation model of wellbeing.</p>
 </div>
 
@@ -887,32 +787,32 @@ and suggest a unified oscillation model of wellbeing.</p>
 
 <div class="application-box">
 <div class="app-field">Research gap</div>
-<p>Josipovic (2025) warns that self-reports of nondual awareness are 
-unreliable because participants learn the vocabulary and label 
-ordinary states as NDA. How can genuine nondual awareness be 
+<p>Josipovic (2025) warns that self-reports of nondual awareness are
+unreliable because participants learn the vocabulary and label
+ordinary states as NDA. How can genuine nondual awareness be
 distinguished from conceptual imitation?</p>
 
 <div class="app-field">Framework concept</div>
-<p>The framework's collapse conditions: if someone is tracking 
-progress, they are in ⊘ᵢ. If they are explaining the state, they 
-are in ⊘ₗ. Genuine resonant cognition has no observer reporting 
+<p>The framework's collapse conditions: if someone is tracking
+progress, they are in ⊘ᵢ. If they are explaining the state, they
+are in ⊘ₗ. Genuine resonant cognition has no observer reporting
 on it—because the observer-observed split is itself interference.</p>
 
 <div class="app-field">Study design</div>
-<p><strong>Hypothesis:</strong> Genuine nondual awareness will correlate with 
-<em>reduced</em> self-referential processing (default mode network 
-deactivation), while conceptual imitation of NDA will show 
-<em>increased</em> self-referential processing (monitoring whether 
+<p><strong>Hypothesis:</strong> Genuine nondual awareness will correlate with
+<em>reduced</em> self-referential processing (default mode network
+deactivation), while conceptual imitation of NDA will show
+<em>increased</em> self-referential processing (monitoring whether
 one is "in the state").</p>
-<p><strong>Method:</strong> Compare long-term meditators and newcomers trained 
-in NDA vocabulary. Use fMRI to measure default mode network 
-activity during reported NDA states. Predict: newcomers show 
-paradoxical DMN activation during "NDA" reports (they are 
-monitoring). Long-term practitioners show DMN deactivation 
-(genuine observer-observed dissolution). This operationalises 
+<p><strong>Method:</strong> Compare long-term meditators and newcomers trained
+in NDA vocabulary. Use fMRI to measure default mode network
+activity during reported NDA states. Predict: newcomers show
+paradoxical DMN activation during "NDA" reports (they are
+monitoring). Long-term practitioners show DMN deactivation
+(genuine observer-observed dissolution). This operationalises
 the framework's distinction between ≈ and ⊘ᵢ.</p>
-<p><strong>Contribution:</strong> Provides a neurobiological criterion for 
-distinguishing genuine from imitative nondual awareness—addressing 
+<p><strong>Contribution:</strong> Provides a neurobiological criterion for
+distinguishing genuine from imitative nondual awareness—addressing
 Josipovic's key concern about participant report validity.</p>
 </div>
 
@@ -920,34 +820,34 @@ Josipovic's key concern about participant report validity.</p>
 
 <div class="application-box">
 <div class="app-field">Research gap</div>
-<p>All published debiasing interventions are corrective (training, 
-warnings, choice architecture). No study has tested whether 
-<em>awareness of the mechanism of bias</em>—without corrective 
+<p>All published debiasing interventions are corrective (training,
+warnings, choice architecture). No study has tested whether
+<em>awareness of the mechanism of bias</em>—without corrective
 instruction—reduces biased decision-making.</p>
 
 <div class="app-field">Framework concept</div>
-<p>Bias removal through mechanism visibility. The framework claims 
-that seeing the structural origin of a bias (inherited frequency + 
+<p>Bias removal through mechanism visibility. The framework claims
+that seeing the structural origin of a bias (inherited frequency +
 identity attachment + grip) dissolves the bias without correction.</p>
 
 <div class="app-field">Study design</div>
-<p><strong>Hypothesis:</strong> Teaching participants the <em>structural mechanism</em> 
-of bias (how preferences become identity, how identity becomes 
-perceptual filter) reduces bias as effectively as teaching specific 
+<p><strong>Hypothesis:</strong> Teaching participants the <em>structural mechanism</em>
+of bias (how preferences become identity, how identity becomes
+perceptual filter) reduces bias as effectively as teaching specific
 debiasing strategies—and with greater transfer to novel situations.</p>
-<p><strong>Method:</strong> Three groups. Group A receives standard debiasing 
-training (strategy-based). Group B receives mechanism-awareness 
-training (the framework's approach: understanding how frequency 
-fixation + identity attachment + inherited patterning produces 
-bias, without corrective strategies). Group C receives no training 
-(control). All groups are tested on a battery of cognitive bias 
+<p><strong>Method:</strong> Three groups. Group A receives standard debiasing
+training (strategy-based). Group B receives mechanism-awareness
+training (the framework's approach: understanding how frequency
+fixation + identity attachment + inherited patterning produces
+bias, without corrective strategies). Group C receives no training
+(control). All groups are tested on a battery of cognitive bias
 tasks including novel bias types not covered in training.</p>
-<p><strong>Prediction:</strong> Group A outperforms on trained bias types. 
-Group B shows broader transfer to novel biases. The mechanism 
-is different: Group A learns to correct specific errors; Group B 
+<p><strong>Prediction:</strong> Group A outperforms on trained bias types.
+Group B shows broader transfer to novel biases. The mechanism
+is different: Group A learns to correct specific errors; Group B
 learns to see the <em>process</em> of error formation, which generalises.</p>
-<p><strong>Contribution:</strong> If confirmed, this introduces a new category 
-of debiasing intervention—"mechanism transparency"—distinct from 
+<p><strong>Contribution:</strong> If confirmed, this introduces a new category
+of debiasing intervention—"mechanism transparency"—distinct from
 both debiasing and choice architecture.</p>
 </div>
 
@@ -955,30 +855,30 @@ both debiasing and choice architecture.</p>
 
 <div class="application-box">
 <div class="app-field">Research gap</div>
-<p>The hard problem of consciousness asks why physical processes give 
-rise to subjective experience. Current approaches (physicalism, 
-panpsychism, dualism) all assume a distinction between the 
+<p>The hard problem of consciousness asks why physical processes give
+rise to subjective experience. Current approaches (physicalism,
+panpsychism, dualism) all assume a distinction between the
 physical and the experiential that must then be bridged.</p>
 
 <div class="app-field">Framework concept</div>
-<p>The framework proposes that oscillation <em>is</em> experience—not that 
-it produces or correlates with experience. At sufficient scale, 
-null (Ø) and resonance (≈) converge. The observer and observed are 
-the same oscillation. There is no bridge needed because there 
+<p>The framework proposes that oscillation <em>is</em> experience—not that
+it produces or correlates with experience. At sufficient scale,
+null (Ø) and resonance (≈) converge. The observer and observed are
+the same oscillation. There is no bridge needed because there
 are not two sides.</p>
 
 <div class="app-field">Philosophical application</div>
-<p>The framework offers a position distinct from standard panpsychism 
-(which attributes experience to all matter) and from emergentism 
-(which derives experience from complexity). It proposes that 
-experience is not a property of oscillating systems but is 
-<em>what oscillation is when not claimed by an observer</em>. The grip 
-(⊘ᵢ) creates the apparent division between subject and object. 
-Without the grip, there is oscillation—which is neither physical 
+<p>The framework offers a position distinct from standard panpsychism
+(which attributes experience to all matter) and from emergentism
+(which derives experience from complexity). It proposes that
+experience is not a property of oscillating systems but is
+<em>what oscillation is when not claimed by an observer</em>. The grip
+(⊘ᵢ) creates the apparent division between subject and object.
+Without the grip, there is oscillation—which is neither physical
 nor mental but prior to both categories.</p>
-<p>Philosophers working on the combination problem, the hard problem, 
-or the relationship between panpsychism and non-dualism could 
-explore whether the framework's "grip" concept offers a parsimonious 
+<p>Philosophers working on the combination problem, the hard problem,
+or the relationship between panpsychism and non-dualism could
+explore whether the framework's "grip" concept offers a parsimonious
 alternative to current bridge theories.</p>
 </div>
 
@@ -986,33 +886,33 @@ alternative to current bridge theories.</p>
 
 <div class="application-box">
 <div class="app-field">Research gap</div>
-<p>Educational psychology studies motivation, engagement, and 
-attention through cognitive and behavioural models. The role 
-of inherited perceptual biases in learning—and the possibility 
-of teaching students to see the <em>mechanism</em> of their own 
+<p>Educational psychology studies motivation, engagement, and
+attention through cognitive and behavioural models. The role
+of inherited perceptual biases in learning—and the possibility
+of teaching students to see the <em>mechanism</em> of their own
 cognitive filters—is underexplored.</p>
 
 <div class="app-field">Framework concept</div>
-<p>The framework's identity inquiry (Layer 1 functional identity 
-vs. Layer 2 divisive identity) and its children's story application 
-("The Strings at School") demonstrate how cognitive-emotional 
-patterns can be made visible to young learners without 
+<p>The framework's identity inquiry (Layer 1 functional identity
+vs. Layer 2 divisive identity) and its children's story application
+("The Strings at School") demonstrate how cognitive-emotional
+patterns can be made visible to young learners without
 psychological jargon.</p>
 
 <div class="app-field">Study design</div>
-<p><strong>Hypothesis:</strong> Teaching children to recognise "strings" 
-(automatic emotional-cognitive pulls) as patterns rather than 
-commands improves social-emotional outcomes and reduces 
+<p><strong>Hypothesis:</strong> Teaching children to recognise "strings"
+(automatic emotional-cognitive pulls) as patterns rather than
+commands improves social-emotional outcomes and reduces
 reactive behaviour.</p>
-<p><strong>Method:</strong> Implement a classroom programme based on the 
-framework's stories and interference-recognition approach. 
-Compare with standard social-emotional learning (SEL) 
-curriculum. Measure: reactive behaviour incidents, self-reported 
-emotional regulation, peer relationship quality, ability to 
+<p><strong>Method:</strong> Implement a classroom programme based on the
+framework's stories and interference-recognition approach.
+Compare with standard social-emotional learning (SEL)
+curriculum. Measure: reactive behaviour incidents, self-reported
+emotional regulation, peer relationship quality, ability to
 distinguish banter from harm.</p>
-<p><strong>Contribution:</strong> Tests whether mechanism-visibility (seeing 
-the "strings") is more effective than technique-based emotional 
-regulation (deep breathing, counting to ten) for age-appropriate 
+<p><strong>Contribution:</strong> Tests whether mechanism-visibility (seeing
+the "strings") is more effective than technique-based emotional
+regulation (deep breathing, counting to ten) for age-appropriate
 populations.</p>
 </div>
 
@@ -1020,34 +920,34 @@ populations.</p>
 
 <div class="application-box">
 <div class="app-field">Research gap</div>
-<p>Inter-brain synchronisation research (Valencia &amp; Froese, 2020) 
-has demonstrated neural coupling during social interaction but 
-has not investigated the role of <em>identity grip</em> in disrupting 
-synchronisation. Current models focus on sensory and motor 
+<p>Inter-brain synchronisation research (Valencia &amp; Froese, 2020)
+has demonstrated neural coupling during social interaction but
+has not investigated the role of <em>identity grip</em> in disrupting
+synchronisation. Current models focus on sensory and motor
 coupling, not on ownership and control dynamics.</p>
 
 <div class="app-field">Framework concept</div>
-<p>The framework predicts that co-resonance (≈ᵢ ∥ ≈ⱼ) degrades 
-when either party shifts from resonance to ownership (⊘ᵢ)—attempting 
-to control, fix, or possess the other's frequency. Love becomes 
+<p>The framework predicts that co-resonance (≈ᵢ ∥ ≈ⱼ) degrades
+when either party shifts from resonance to ownership (⊘ᵢ)—attempting
+to control, fix, or possess the other's frequency. Love becomes
 interference when one system tries to stabilise the other.</p>
 
 <div class="app-field">Study design</div>
-<p><strong>Hypothesis:</strong> Inter-brain neural synchronisation decreases 
-when one participant shifts from empathic listening to 
+<p><strong>Hypothesis:</strong> Inter-brain neural synchronisation decreases
+when one participant shifts from empathic listening to
 advice-giving, problem-solving, or emotional control of the other.</p>
-<p><strong>Method:</strong> Hyperscanning (dual EEG) during dyadic conversations. 
-Phase 1: open empathic listening (predicted high synchrony). 
-Phase 2: one participant instructed to "help" by giving advice, 
-correcting, or fixing (predicted synchrony drop). Phase 3: return 
-to open listening (predicted synchrony recovery). Code verbal 
+<p><strong>Method:</strong> Hyperscanning (dual EEG) during dyadic conversations.
+Phase 1: open empathic listening (predicted high synchrony).
+Phase 2: one participant instructed to "help" by giving advice,
+correcting, or fixing (predicted synchrony drop). Phase 3: return
+to open listening (predicted synchrony recovery). Code verbal
 behaviour for control/ownership markers.</p>
-<p><strong>Prediction:</strong> The shift from parallel presence (≈ᵢ ∥ ≈ⱼ) 
-to identity-based intervention (⊘ᵢ) will show measurable 
-desynchronisation—operationalising the framework's claim that 
+<p><strong>Prediction:</strong> The shift from parallel presence (≈ᵢ ∥ ≈ⱼ)
+to identity-based intervention (⊘ᵢ) will show measurable
+desynchronisation—operationalising the framework's claim that
 ownership disrupts co-resonance.</p>
-<p><strong>Contribution:</strong> Extends inter-brain synchronisation research 
-from sensory/motor coupling to identity and ownership dynamics, 
+<p><strong>Contribution:</strong> Extends inter-brain synchronisation research
+from sensory/motor coupling to identity and ownership dynamics,
 opening a new dimension of social neuroscience investigation.</p>
 </div>
 
@@ -1055,92 +955,90 @@ opening a new dimension of social neuroscience investigation.</p>
 
 <!-- ===== REFERENCES ===== -->
 
-<h2 id="references">References</h2>
+<h2 id="references"><span class="sec-num">§</span>References</h2>
 
-<p>The following works are cited in this document. They represent the primary 
+<p>The following works are cited in this document. They represent the primary
 academic sources that converge with or diverge from the Resonant Cognition framework.</p>
 
 <h3>Consciousness and Oscillation</h3>
 <ul>
-<li>Hunt, T. &amp; Schooler, J.W. (2019). The Easy Part of the Hard Problem: A Resonance 
+<li>Hunt, T. &amp; Schooler, J.W. (2019). The Easy Part of the Hard Problem: A Resonance
 Theory of Consciousness. <em>Frontiers in Human Neuroscience</em>, 13, 378.</li>
-<li>Hunt, T. (2025). Cycles upon Cycles: Oscillations Relevant to the Evolution of 
+<li>Hunt, T. (2025). Cycles upon Cycles: Oscillations Relevant to the Evolution of
 Consciousness and Our Universe. <em>Preprints</em>, 202510.1954.</li>
-<li>Cebolla, A.M. &amp; Cheron, G. (2019). Understanding Neural Oscillations in the Human 
+<li>Cebolla, A.M. &amp; Cheron, G. (2019). Understanding Neural Oscillations in the Human
 Brain: From Movement to Consciousness. <em>Frontiers in Psychology</em>, 10, 1930.</li>
-<li>Ruhnau, P., Hauswald, A. &amp; Weisz, N. (2014). Investigating ongoing brain oscillations 
+<li>Ruhnau, P., Hauswald, A. &amp; Weisz, N. (2014). Investigating ongoing brain oscillations
 and their influence on conscious perception. <em>Frontiers in Psychology</em>, 5, 1230.</li>
-<li>Tononi, G. et al. (2016). Integrated Information Theory. <em>Nature Reviews 
-Neuroscience</em>, 17, 450--461.</li>
+<li>Tononi, G. et al. (2016). Integrated Information Theory. <em>Nature Reviews
+Neuroscience</em>, 17, 450–461.</li>
 </ul>
 
 <h3>Nondual Awareness</h3>
 <ul>
-<li>Josipovic, Z. (2019). Nondual awareness: consciousness-as-such as 
-non-representational reflexivity. <em>Progress in Brain Research</em>, 244, 273--298.</li>
-<li>Josipovic, Z. &amp; Miskovic, V. (2020). Nondual Awareness and Minimal Phenomenal 
+<li>Josipovic, Z. (2019). Nondual awareness: consciousness-as-such as
+non-representational reflexivity. <em>Progress in Brain Research</em>, 244, 273–298.</li>
+<li>Josipovic, Z. &amp; Miskovic, V. (2020). Nondual Awareness and Minimal Phenomenal
 Experience. <em>Frontiers in Psychology</em>, 11, 2087.</li>
-<li>Josipovic, Z. (2021). Implicit--explicit gradient of nondual awareness or 
+<li>Josipovic, Z. (2021). Implicit–explicit gradient of nondual awareness or
 consciousness as such. <em>Neuroscience of Consciousness</em>, 2021(2), niab031.</li>
-<li>Josipovic, Z. (2025). Without birth, without death—issues in the research of 
+<li>Josipovic, Z. (2025). Without birth, without death—issues in the research of
 nondual awareness. <em>Frontiers in Psychology</em>, 16, 1665826.</li>
-<li>Krägeloh, C.U. (2019). Phenomenological Research Fails to Capture the Experience 
-of Nondual Awareness. <em>Mindfulness</em>, 10, 15--25.</li>
-<li>Garland, E.L. et al. (2018). The Nondual Awareness Dimensional Assessment (NADA). 
-<em>Mindfulness</em>, 9(6), 1765--1779.</li>
+<li>Krägeloh, C.U. (2019). Phenomenological Research Fails to Capture the Experience
+of Nondual Awareness. <em>Mindfulness</em>, 10, 15–25.</li>
+<li>Garland, E.L. et al. (2018). The Nondual Awareness Dimensional Assessment (NADA).
+<em>Mindfulness</em>, 9(6), 1765–1779.</li>
 </ul>
 
 <h3>Inter-Brain Synchronisation</h3>
 <ul>
-<li>Valencia, A.L. &amp; Froese, T. (2020). What binds us? Inter-brain neural synchronization 
-and its implications for theories of human consciousness. <em>Neuroscience of 
+<li>Valencia, A.L. &amp; Froese, T. (2020). What binds us? Inter-brain neural synchronization
+and its implications for theories of human consciousness. <em>Neuroscience of
 Consciousness</em>, 2020(1), niaa010.</li>
 </ul>
 
 <h3>Hedonic Adaptation and Wellbeing</h3>
 <ul>
-<li>Brickman, P. &amp; Campbell, D.T. (1971). Hedonic relativism and planning the good 
-society. In <em>Adaptation-level theory</em>, 287--305.</li>
-<li>Diener, E. et al. (2006). Beyond the hedonic treadmill: Revising the adaptation 
-theory of well-being. <em>American Psychologist</em>, 61, 305--314.</li>
-<li>Carrero, J.A. et al. (2024). Running on the Hedonic Treadmill: A Dynamical Model 
+<li>Brickman, P. &amp; Campbell, D.T. (1971). Hedonic relativism and planning the good
+society. In <em>Adaptation-level theory</em>, 287–305.</li>
+<li>Diener, E. et al. (2006). Beyond the hedonic treadmill: Revising the adaptation
+theory of well-being. <em>American Psychologist</em>, 61, 305–314.</li>
+<li>Carrero, J.A. et al. (2024). Running on the Hedonic Treadmill: A Dynamical Model
 of Happiness. <em>Journal of Happiness Studies</em>, 25, 766.</li>
-<li>Dambrun, M. &amp; Ricard, M. (2011). Self-centeredness and selflessness: A theory of 
-self-based psychological functioning. <em>Review of General Psychology</em>, 15, 138--157.</li>
+<li>Dambrun, M. &amp; Ricard, M. (2011). Self-centeredness and selflessness: A theory of
+self-based psychological functioning. <em>Review of General Psychology</em>, 15, 138–157.</li>
 </ul>
 
 <h3>Dopamine and Anticipation</h3>
 <ul>
-<li>Fotros, A. et al. (2023). Anticipation of Appetitive Operant Action Induces 
-Sustained Dopamine Release. <em>Journal of Neuroscience</em>, 43(21), 3922--3932.</li>
-<li>Linnet, J. (2014). Neurobiological underpinnings of reward anticipation and 
-outcome evaluation in gambling disorder. <em>Frontiers in Behavioral 
+<li>Fotros, A. et al. (2023). Anticipation of Appetitive Operant Action Induces
+Sustained Dopamine Release. <em>Journal of Neuroscience</em>, 43(21), 3922–3932.</li>
+<li>Linnet, J. (2014). Neurobiological underpinnings of reward anticipation and
+outcome evaluation in gambling disorder. <em>Frontiers in Behavioral
 Neuroscience</em>, 8, 100.</li>
-<li>Schultz, W. (2006). Behavioral theories and the neurophysiology of reward. 
-<em>Annual Review of Psychology</em>, 57, 87--115.</li>
+<li>Schultz, W. (2006). Behavioral theories and the neurophysiology of reward.
+<em>Annual Review of Psychology</em>, 57, 87–115.</li>
 </ul>
 
 <h3>Cognitive Bias and Debiasing</h3>
 <ul>
-<li>Fasolo, B., Heard, C. &amp; Scopelliti, I. (2024). Mitigating cognitive bias to 
+<li>Fasolo, B., Heard, C. &amp; Scopelliti, I. (2024). Mitigating cognitive bias to
 improve organizational decisions. <em>Journal of Management</em>.</li>
-<li>Croskerry, P. et al. (2013). Cognitive debiasing 2: impediments to and strategies 
-for change. <em>BMJ Quality &amp; Safety</em>, 22(Suppl 2), ii65--ii72.</li>
+<li>Croskerry, P. et al. (2013). Cognitive debiasing 2: impediments to and strategies
+for change. <em>BMJ Quality &amp; Safety</em>, 22(Suppl 2), ii65–ii72.</li>
 </ul>
 
 <h3>Framework Source</h3>
 <ul>
-<li>Ilamgumaran, V.K. <em>Thinking Without Boundaries: Resonant Cognition and the 
-Return to Null</em>. Enhanced Edition. 
-<a href="index.html">
-https://ilamgumaran.github.io/ThoughtExperiments/</a></li>
-<li>Swami Vivekananda. <em>The Complete Book of Yoga: Karma Yoga, Bhakti Yoga, 
+<li>Ilamgumaran, V.K. <em>Thinking Without Boundaries: Resonant Cognition and the
+Return to Null</em>. Enhanced Edition.
+<a href="index.html">https://ilamgumaran.github.io/ThoughtExperiments/</a></li>
+<li>Swami Vivekananda. <em>The Complete Book of Yoga: Karma Yoga, Bhakti Yoga,
 Raja Yoga, Jnana Yoga</em>. ISBN-13: 978-9389178784.</li>
 </ul>
 
 <div class="footer">
-Single-file static site<br>
-No scripts · No tracking · Read-only
+Single-file static site · No scripts · No tracking · Read-only
 </div>
 
 </div>

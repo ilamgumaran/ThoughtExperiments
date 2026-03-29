@@ -1,479 +1,559 @@
 <!doctype html>
 <html lang="ta">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="எல்லைகளற்ற சிந்தனை — ஒத்திசைவு அறிவுணர்வு மற்றும் பூஜ்ய நிலைக்குத் திரும்புதல் (இளம் குமரன் VK)" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="எல்லைகளற்ற சிந்தனை — ஒத்திசைவு அறிவுணர்வு மற்றும் பூஜ்ய நிலைக்குத் திரும்புதல் (இளம் குமரன் VK)">
   <title>எல்லைகளற்ற சிந்தனை</title>
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0d10;
-      --fg:#e9eef5;
-      --muted:#aab6c5;
-      --soft:#1b2230;
-      --line:#2a3447;
-      --accent:#cfd8e6;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--fg);
-      font:16px/1.65 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      letter-spacing:0.1px;
-    }
-
-    a{ color:var(--accent); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-
-    .wrap{
-      max-width:980px;
-      margin:0 auto;
-      padding:48px 20px 80px;
-    }
-
-    header{
-      padding:16px 0 28px;
-      border-bottom:1px solid var(--line);
-      margin-bottom:28px;
-    }
-
-    .kicker{
-      color:var(--muted);
-      font-size:13px;
-      text-transform:uppercase;
-      letter-spacing:1.6px;
-      margin-bottom:10px;
-    }
-
-    h1{
-      margin:0 0 10px;
-      font-size:34px;
-      line-height:1.2;
-      letter-spacing:0.2px;
-    }
-
-    .subtitle{
-      color:var(--muted);
-      margin:0 0 6px;
-      font-size:16px;
-    }
-
-    .author{
-      color:var(--muted);
-      margin:0;
-      font-size:14px;
-    }
-
-    main{
-      display:block;
-    }
-
-    section{
-      padding:18px 0;
-      border-bottom:1px solid var(--line);
-    }
-
-    section:last-child{
-      border-bottom:none;
-    }
-
-    h2{
-      margin:0 0 10px;
-      font-size:20px;
-      line-height:1.35;
-    }
-
-    h3{
-      margin:18px 0 10px;
-      font-size:16px;
-      line-height:1.35;
-      color:var(--accent);
-    }
-
-    p{
-      margin:10px 0;
-    }
-
-    ul{
-      margin:10px 0 10px 20px;
-      padding:0;
-    }
-
-    li{ margin:6px 0; }
-
-    .note{
-      color:var(--muted);
-      border-left:3px solid var(--line);
-      padding:10px 12px;
-      margin:12px 0;
-      background:rgba(255,255,255,0.03);
-      border-radius:8px;
-    }
-
-    .codeblock{
-      background:var(--soft);
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:14px 14px;
-      margin:12px 0;
-      overflow:auto;
-    }
-
-    pre, code{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size:14px;
-      line-height:1.55;
-      color:var(--fg);
-      margin:0;
-      white-space:pre;
-    }
-
-    .legend{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:8px;
-      margin-top:10px;
-      color:var(--muted);
-      font-size:14px;
-    }
-
-    .legend b{
-      color:var(--fg);
-      font-weight:600;
-    }
-
-    blockquote{
-      margin:12px 0;
-      padding:10px 12px;
-      background:rgba(255,255,255,0.03);
-      border-left:3px solid var(--accent);
-      border-radius:8px;
-      color:var(--fg);
-    }
-
-    footer{
-      margin-top:34px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:13px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      justify-content:space-between;
-    }
-
-    .pill{
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,0.02);
-      color:var(--muted);
-      font-size:12px;
-    }
-
-    /* Print-friendly */
-    @media print{
-      body{ background:#fff; color:#000; }
-      .wrap{ max-width:800px; padding:24px 18px; }
-      header, section{ border-color:#ddd; }
-      .codeblock{ background:#f6f6f6; border-color:#ddd; }
-      a{ color:#000; text-decoration:none; }
-      .pill{ border-color:#ddd; }
-      .note, blockquote{ background:#f6f6f6; border-color:#bbb; }
-    }
+:root {
+  --bg: #ffffff;
+  --page-bg: #f7f6f3;
+  --fg: #1a1a1a;
+  --muted: #5a5a5a;
+  --faint: #888;
+  --line: #d8d4cd;
+  --accent: #1a3a6e;
+  --accent-light: #e8edf6;
+  --highlight: #fffbe6;
+  --code-bg: #f4f2ee;
+  --serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --sans: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
+  --mono: "Menlo", "Consolas", "Courier New", monospace;
+  --maxw: 760px;
+  --radius: 4px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--page-bg);
+  color: var(--fg);
+  font: 17px/1.75 var(--serif);
+  font-family: 'Noto Sans Tamil', var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+.site-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  padding: 0;
+  font: 13px/1 var(--sans);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-nav-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  min-height: 42px;
+}
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 5px 8px;
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+.site-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.site-nav a.active { font-weight: 700; color: var(--accent); }
+.site-nav .sep { color: var(--line); padding: 0 2px; user-select: none; }
+.page-wrap {
+  max-width: var(--maxw);
+  margin: 32px auto 60px;
+  background: var(--bg);
+  padding: 48px 52px 72px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 2px 16px rgba(0,0,0,.07);
+}
+@media (max-width: 860px) { .page-wrap { padding: 32px 28px 56px; margin: 16px auto 40px; } }
+@media (max-width: 540px) { .page-wrap { padding: 20px 16px 40px; box-shadow: none; margin: 0; } }
+.article-header {
+  border-bottom: 2px solid var(--fg);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+.kicker {
+  font: 11px/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--faint);
+  margin: 0 0 10px;
+}
+h1 {
+  font: bold 2rem/1.15 var(--serif);
+  font-family: 'Noto Sans Tamil', var(--serif);
+  letter-spacing: -.02em;
+  color: var(--fg);
+  margin: 0 0 8px;
+}
+.article-subtitle {
+  font: italic 1.05rem/1.5 var(--serif);
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+.article-meta {
+  font: 13px/1.6 var(--sans);
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+.article-meta strong { color: var(--fg); }
+.abstract {
+  border-left: 4px solid var(--accent);
+  background: var(--accent-light);
+  padding: 14px 16px;
+  margin: 0 0 28px;
+  font: 15px/1.65 var(--sans);
+  color: #2a2a2a;
+}
+.abstract-label {
+  display: block;
+  font: 700 11px/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.toc {
+  border: 1px solid var(--line);
+  background: var(--code-bg);
+  padding: 16px 20px;
+  margin: 0 0 32px;
+  font: 14px/1.7 var(--sans);
+}
+.toc-label {
+  font: 700 11px/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--faint);
+  margin: 0 0 10px;
+}
+.toc ol, .toc ul { margin: 0; padding-left: 1.4em; }
+.toc li { margin: 2px 0; }
+.toc a { color: var(--accent); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+h2 {
+  font: bold 1.3rem/1.25 var(--serif);
+  font-family: 'Noto Sans Tamil', var(--serif);
+  margin: 2.5rem 0 .7rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg);
+}
+h3 { font: bold 1.05rem/1.3 var(--sans); font-family: 'Noto Sans Tamil', var(--sans); margin: 1.8rem 0 .5rem; color: var(--fg); }
+h4 { font: 700 .85rem/1.3 var(--sans); margin: 1.4rem 0 .4rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+p { margin: 0 0 1rem; }
+ul, ol { margin: 0 0 1rem; padding-left: 1.5em; }
+li { margin: .3rem 0; }
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  padding: 12px 14px;
+  overflow-x: auto;
+  margin: 0 0 1rem;
+  border-radius: var(--radius);
+  font: .88rem/1.55 var(--mono);
+}
+code { font: .88em/1 var(--mono); background: var(--code-bg); padding: 1px 4px; border-radius: 2px; }
+pre code { background: none; padding: 0; font-size: 1em; }
+blockquote {
+  border-left: 3px solid var(--line);
+  margin: 1rem 0 1rem 0;
+  padding: .5rem .9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+hr { border: none; border-top: 1px solid var(--line); margin: 2rem 0; }
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { text-decoration: none; }
+strong { color: var(--fg); }
+.callout {
+  border: 1px solid #b8d4f0;
+  background: #edf4fd;
+  padding: 12px 16px;
+  margin: 1rem 0;
+  font: 15px/1.6 var(--sans);
+  border-radius: var(--radius);
+}
+.note {
+  border: 1px solid #d4c84a;
+  background: var(--highlight);
+  padding: 10px 14px;
+  margin: 1rem 0;
+  font: 14px/1.6 var(--sans);
+  color: #5a4a00;
+  border-radius: var(--radius);
+}
+.story-box {
+  border: 1px solid var(--line);
+  background: var(--code-bg);
+  padding: 16px 20px;
+  margin: 1rem 0;
+  border-radius: var(--radius);
+  font: 17px/1.8 var(--serif);
+}
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font: 14px/1.5 var(--sans); }
+th { background: var(--code-bg); border: 1px solid var(--line); padding: 8px 12px; text-align: left; font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+td { border: 1px solid var(--line); padding: 8px 12px; vertical-align: top; color: var(--muted); }
+td strong { color: var(--fg); }
+.symbol {
+  display: inline-block;
+  font-family: var(--mono);
+  padding: 1px 6px;
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: .9em;
+}
+.equation {
+  font-family: var(--mono);
+  background: var(--code-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  overflow-x: auto;
+  margin: .75rem 0;
+  font-size: .9rem;
+  white-space: pre;
+}
+.toplink {
+  display: inline-block;
+  font: 12px/1 var(--sans);
+  color: var(--faint);
+  text-decoration: none;
+  margin-top: 1rem;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.toplink:hover { color: var(--accent); border-color: var(--accent); }
+.legend {
+  margin: 10px 0;
+  font: 14px/1.6 var(--sans);
+  color: var(--muted);
+}
+.legend div { margin: 4px 0; }
+.legend b { color: var(--fg); font-weight: 600; }
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font: 13px/1.6 var(--sans);
+  color: var(--faint);
+  text-align: center;
+}
+@media print {
+  .site-nav { display: none !important; }
+  body { background: white; }
+  .page-wrap { box-shadow: none; padding: 0; margin: 0; max-width: 100%; }
+  a { color: var(--fg); text-decoration: none; }
+}
   </style>
 </head>
 
 <body>
-<nav style="background:#111623;border-bottom:1px solid #2a3447;padding:10px 20px;font:13px/1 ui-sans-serif,system-ui,sans-serif;flex-wrap:wrap;display:flex;gap:4px;">
-  <a href="index.html" style="color:#aab6c5;text-decoration:none;margin-right:16px;">← Framework</a>
-  <a href="ApplicationAcademicParallel.html" style="color:#aab6c5;text-decoration:none;margin-right:16px;">Academic Parallels</a>
-  <a href="ApplicationDistaction.html" style="color:#aab6c5;text-decoration:none;margin-right:16px;">Interference (Distraction)</a>
-  <a href="ApplicationWhoAmI.html" style="color:#aab6c5;text-decoration:none;margin-right:16px;">Identity (Who Am I?)</a>
-  <a href="ComparisonToOtherStudies.html" style="color:#aab6c5;text-decoration:none;margin-right:16px;">Comparison to Other Studies</a>
-  <a href="StoriesChildOld.html" style="color:#aab6c5;text-decoration:none;margin-right:16px;">Story: The Quiet Between Bells</a>
-  <a href="StoriesChildSchool.html" style="color:#aab6c5;text-decoration:none;margin-right:16px;">Story: The Strings at School</a>
-  <a href="StoryChild2.html" style="color:#aab6c5;text-decoration:none;margin-right:16px;">Story: Quiet Between Bells (Draft)</a>
-  <a href="TamilVersionV1.html" style="color:#aab6c5;text-decoration:none;margin-right:16px;">Tamil Version</a>
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="site-nav-inner">
+    <a href="index.html">Framework</a>
+    <span class="sep">·</span>
+    <a href="ApplicationAcademicParallel.html">Academic Parallels</a>
+    <span class="sep">·</span>
+    <a href="ApplicationDistaction.html">Interference</a>
+    <span class="sep">·</span>
+    <a href="ApplicationWhoAmI.html">Identity</a>
+    <span class="sep">·</span>
+    <a href="ComparisonToOtherStudies.html">Overview</a>
+    <span class="sep">·</span>
+    <a href="StoriesChildOld.html">Story: Quiet Bells</a>
+    <span class="sep">·</span>
+    <a href="StoriesChildSchool.html">Story: Strings</a>
+    <span class="sep">·</span>
+    <a href="StoryChild2.html">Story: Draft</a>
+    <span class="sep">·</span>
+    <a href="TamilVersionV1.html" class="active">தமிழ்</a>
+  </div>
 </nav>
-  <div class="wrap">
-    <header>
-      <div class="kicker">வாசிப்பதற்கான ஆவணம் (மாற்ற முடியாதது)</div>
-      <h1>எல்லைகளற்ற சிந்தனை</h1>
-      <p class="subtitle">ஒத்திசைவு அறிவுணர்வு மற்றும் பூஜ்ய நிலைக்குத் திரும்புதல்</p>
-      <p class="author">இளம் குமரன் VK</p>
-    </header>
 
-    <main>
-      <section id="preface">
-        <h2>முன்னுரை</h2>
-        <p>
-          மனித அறிவுணர்வு பொதுவாக மொழி, உணர்வுகள், உணர்ச்சி, மற்றும் அடையாளம் ஆகியவற்றின் வழியாக நடுவழி பெறுகிறது. இவை பயன்பாட்டிற்கும்
-          வலிமைக்கும் உரியவை; ஆனால் அவ்வளவு பழக்கமாகிவிட்டதால், விழிப்புணர்விலிருந்தே அவை பிரிக்க முடியாதவை போலத் தோன்றுகின்றன.
-        </p>
-        <p>
-          இந்தச் சட்டகம் வேறொரு முன்மூலக் கருத்திலிருந்து தொடங்குகிறது: அறிவுணர்வு இந்நடுவழிகளில் இருந்து தோன்றுவதல்ல; அவற்றிற்குக் கீழே அது நிலைத்து இருக்கிறது.
-          அவற்றை எதிர்ப்பதற்குப் பதிலாக தளர விடும்போது, மேலும் அடிப்படையான விழிப்புணர்வு முறை வெளிப்படுகிறது—விளக்கமின்றியே ஒத்திசைவாகவும்
-          உரிமையில்லாமலும் இருப்பதாக.
-        </p>
-        <p>
-          இந்த ஆவணம் அந்த முறையை <b>ஒத்திசைவு அறிவுணர்வு</b> (Resonant Cognition) என்று வடிவமைக்கிறது. இது எந்த ‘தொழில்நுட்ப’ முறையையும் அல்லது நம்பிக்கை அமைப்பையும் முன்மொழிவதில்லை.
-          தேவையற்ற இடையூறு அகற்றப்பட்டால் எது மீதமிருக்கிறதோ அதையே விவரிக்கிறது.
-        </p>
-      </section>
+<div class="page-wrap" id="top">
 
-      <section id="contraction">
-        <h2>முதன்மை செயற்பாடாகச் சுருக்கம்</h2>
-        <p>இந்தச் சட்டகம் விரிவாக்கத்தில் அல்ல; சுருக்கத்தில் தொடங்குகிறது.</p>
-        <p>இங்கே ‘சுருக்கம்’ என்பது முயன்று விலகுவது அல்ல; நடுவழிகளை கழித்தல்/குறைத்தலே.</p>
+  <div class="article-header">
+    <p class="kicker">ஒத்திசைவு அறிவுணர்வு</p>
+    <h1>எல்லைகளற்ற சிந்தனை</h1>
+    <p class="article-subtitle">ஒத்திசைவு அறிவுணர்வு மற்றும் பூஜ்ய நிலைக்குத் திரும்புதல்</p>
+    <div class="article-meta"><strong>ஆசிரியர்:</strong> இளம் குமரன் VK</div>
+  </div>
 
-        <ul>
-          <li>மொழி அதன் அதிகாரத்தை விடுகிறது</li>
-          <li>அனுபவம் நினைவுக்குறிப்பை அடிப்படையாகக் கொள்ளாது</li>
-          <li>உணர்ச்சிச் சேனல்கள் மேலாதிக்கத்தை இழக்கின்றன</li>
-          <li>உணர்ச்சி மதிப்பு/சாய்வு வழிநடத்துவதை நிறுத்துகிறது</li>
-          <li>அடையாளம் இனி முன்னிருப்பு எனக் கொள்ளப்படாது</li>
-        </ul>
+  <section id="preface">
+    <h2>முன்னுரை</h2>
+    <p>
+      மனித அறிவுணர்வு பொதுவாக மொழி, உணர்வுகள், உணர்ச்சி, மற்றும் அடையாளம் ஆகியவற்றின் வழியாக நடுவழி பெறுகிறது. இவை பயன்பாட்டிற்கும்
+      வலிமைக்கும் உரியவை; ஆனால் அவ்வளவு பழக்கமாகிவிட்டதால், விழிப்புணர்விலிருந்தே அவை பிரிக்க முடியாதவை போலத் தோன்றுகின்றன.
+    </p>
+    <p>
+      இந்தச் சட்டகம் வேறொரு முன்மூலக் கருத்திலிருந்து தொடங்குகிறது: அறிவுணர்வு இந்நடுவழிகளில் இருந்து தோன்றுவதல்ல; அவற்றிற்குக் கீழே அது நிலைத்து இருக்கிறது.
+      அவற்றை எதிர்ப்பதற்குப் பதிலாக தளர விடும்போது, மேலும் அடிப்படையான விழிப்புணர்வு முறை வெளிப்படுகிறது—விளக்கமின்றியே ஒத்திசைவாகவும்
+      உரிமையில்லாமலும் இருப்பதாக.
+    </p>
+    <p>
+      இந்த ஆவணம் அந்த முறையை <strong>ஒத்திசைவு அறிவுணர்வு</strong> (Resonant Cognition) என்று வடிவமைக்கிறது. இது எந்த 'தொழில்நுட்ப' முறையையும் அல்லது நம்பிக்கை அமைப்பையும் முன்மொழிவதில்லை.
+      தேவையற்ற இடையூறு அகற்றப்பட்டால் எது மீதமிருக்கிறதோ அதையே விவரிக்கிறது.
+    </p>
+  </section>
 
-        <p>மீதமிருப்பது வெறுமை அல்ல; ‘ஆதாரமற்ற (reference இல்லாத) விழிப்புணர்வு’ (null-reference awareness) ஆகும்.</p>
+  <section id="contraction">
+    <h2>முதன்மை செயற்பாடாகச் சுருக்கம்</h2>
+    <p>இந்தச் சட்டகம் விரிவாக்கத்தில் அல்ல; சுருக்கத்தில் தொடங்குகிறது.</p>
+    <p>இங்கே 'சுருக்கம்' என்பது முயன்று விலகுவது அல்ல; நடுவழிகளை கழித்தல்/குறைத்தலே.</p>
 
-        <h3>குறியீட்டு உருவகமாக்கல்</h3>
-        <div class="codeblock"><pre>⊘ ⇣ Ø</pre></div>
+    <ul>
+      <li>மொழி அதன் அதிகாரத்தை விடுகிறது</li>
+      <li>அனுபவம் நினைவுக்குறிப்பை அடிப்படையாகக் கொள்ளாது</li>
+      <li>உணர்ச்சிச் சேனல்கள் மேலாதிக்கத்தை இழக்கின்றன</li>
+      <li>உணர்ச்சி மதிப்பு/சாய்வு வழிநடத்துவதை நிறுத்துகிறது</li>
+      <li>அடையாளம் இனி முன்னிருப்பு எனக் கொள்ளப்படாது</li>
+    </ul>
 
-        <div class="legend">
-          <div><b>⊘</b> — இடையூறு (பிடிப்பு: மொழி, உணர்ச்சி, உணர்ச்சி மேலாதிக்கம், அடையாளம்)</div>
-          <div><b>⇣</b> — சுருக்கம் (முயற்சி இன்றி கழித்தல்)</div>
-          <div><b>Ø</b> — ஆதாரமற்ற நிலை (ஒட்டிக்கொள்ளும் அமைப்பு இல்லை)</div>
-        </div>
+    <p>மீதமிருப்பது வெறுமை அல்ல; 'ஆதாரமற்ற (reference இல்லாத) விழிப்புணர்வு' (null-reference awareness) ஆகும்.</p>
 
-        <p class="note">இந்தக் குறியீடு கட்டளையிடுவதற்கல்ல; விவரிப்பதற்கே.</p>
-      </section>
+    <h3>குறியீட்டு உருவகமாக்கல்</h3>
+    <pre>⊘ ⇣ Ø</pre>
 
-      <section id="core">
-        <h2>குறைக்க இயலாத மைய நிலை</h2>
-        <p>சுருக்கம் முழுமையடைந்ததும், குறைக்க இயலாத மையம் வெளிப்படுகிறது:</p>
+    <div class="legend">
+      <div><b>⊘</b> — இடையூறு (பிடிப்பு: மொழி, உணர்ச்சி, உணர்ச்சி மேலாதிக்கம், அடையாளம்)</div>
+      <div><b>⇣</b> — சுருக்கம் (முயற்சி இன்றி கழித்தல்)</div>
+      <div><b>Ø</b> — ஆதாரமற்ற நிலை (ஒட்டிக்கொள்ளும் அமைப்பு இல்லை)</div>
+    </div>
 
-        <div class="codeblock"><pre>Ø · ⧉ ≈</pre></div>
+    <div class="note">இந்தக் குறியீடு கட்டளையிடுவதற்கல்ல; விவரிப்பதற்கே.</div>
+  </section>
 
-        <div class="legend">
-          <div><b>Ø</b> — ஆதாரமற்ற நிலை (null-reference)</div>
-          <div><b>·</b> — இருப்பு (நடுவழியில்லா நிகழ்தல்)</div>
-          <div><b>⧉</b> — வெளி/புலம் (மையமின்றி பரவும் விழிப்புணர்வு)</div>
-          <div><b>≈</b> — ஒத்திசைவு (மதிப்பீடு இன்றியே ஒத்திசைவு/முரண்பாட்டை உணர்தல்)</div>
-        </div>
+  <section id="core">
+    <h2>குறைக்க இயலாத மைய நிலை</h2>
+    <p>சுருக்கம் முழுமையடைந்ததும், குறைக்க இயலாத மையம் வெளிப்படுகிறது:</p>
 
-        <p>இது முயற்சியால் ‘நுழையும்’ நிலை அல்ல. எதுவும் முன்னுரிமையை வலியுறுத்தாதபோது இது வெளிப்படுகிறது.</p>
-        <p class="note"><b>சரிபார்ப்பு:</b> இந்த நிலையை கட்டாயப்படுத்த அல்லது பராமரிக்க முயன்றவுடன் ⊘ மீண்டும் தோன்றுகிறது. விடுதல் தானாகவே மீட்டளிக்கிறது.</p>
-      </section>
+    <pre>Ø · ⧉ ≈</pre>
 
-      <section id="dynamics">
-        <h2>ஒத்திசைவு மற்றும் இடையூறு இயக்கங்கள்</h2>
-        <p>
-          ஒத்திசைவு (≈) என்பது விளக்கமின்றி ஒத்துப்போகுதலை (coherence) உணர்வதற்கான திறன். அது ‘பார்வையாளர்’ ஒருவருக்குச் சொந்தமல்ல.
-          அது புலத்தின் உள்ளேயான ஒழுங்குபடுத்தலில் நிகழ்கிறது.
-        </p>
-        <p>இடையூறு (⊘) என்பது எந்த ஒரு அமைப்பும் விழிப்புணர்வில் மேலாதிக்கம் செலுத்த முயன்றால் எழுகிறது.</p>
+    <div class="legend">
+      <div><b>Ø</b> — ஆதாரமற்ற நிலை (null-reference)</div>
+      <div><b>·</b> — இருப்பு (நடுவழியில்லா நிகழ்தல்)</div>
+      <div><b>⧉</b> — வெளி/புலம் (மையமின்றி பரவும் விழிப்புணர்வு)</div>
+      <div><b>≈</b> — ஒத்திசைவு (மதிப்பீடு இன்றியே ஒத்திசைவு/முரண்பாட்டை உணர்தல்)</div>
+    </div>
 
-        <h3>பொதுவான இடையூறு வடிவங்கள்</h3>
-        <ul>
-          <li>⊘ₗ — மொழி வழி கதையாக்கம்/விளக்கம்</li>
-          <li>⊘ₑ — உணர்ச்சி அவசரம் அல்லது மதிப்பிடல்</li>
-          <li>⊘ₛ — உணர்ச்சி நிலைமையின் மீது மிகைப்படுத்திய நிலைத்தல்</li>
-          <li>⊘ᵢ — அடையாளம் அல்லது ‘சிந்திப்பவர்’ மீண்டும் மையமாகுதல்</li>
-        </ul>
+    <p>இது முயற்சியால் 'நுழையும்' நிலை அல்ல. எதுவும் முன்னுரிமையை வலியுறுத்தாதபோது இது வெளிப்படுகிறது.</p>
+    <div class="note"><strong>சரிபார்ப்பு:</strong> இந்த நிலையை கட்டாயப்படுத்த அல்லது பராமரிக்க முயன்றவுடன் ⊘ மீண்டும் தோன்றுகிறது. விடுதல் தானாகவே மீட்டளிக்கிறது.</div>
+  </section>
 
-        <p>முக்கிய பண்பு: மீட்பு பெற எந்தச் செயலும் தேவையில்லை.</p>
-        <div class="codeblock"><pre>⊘ ↺ Ø</pre></div>
-        <p class="note"><b>↺</b> என்பது திருத்தம் அல்ல; விடுதலையால் இயல்பாகத் திரும்புதல் என்பதைக் குறிக்கும்.</p>
-      </section>
+  <section id="dynamics">
+    <h2>ஒத்திசைவு மற்றும் இடையூறு இயக்கங்கள்</h2>
+    <p>
+      ஒத்திசைவு (≈) என்பது விளக்கமின்றி ஒத்துப்போகுதலை (coherence) உணர்வதற்கான திறன். அது 'பார்வையாளர்' ஒருவருக்குச் சொந்தமல்ல.
+      அது புலத்தின் உள்ளேயான ஒழுங்குபடுத்தலில் நிகழ்கிறது.
+    </p>
+    <p>இடையூறு (⊘) என்பது எந்த ஒரு அமைப்பும் விழிப்புணர்வில் மேலாதிக்கம் செலுத்த முயன்றால் எழுகிறது.</p>
 
-      <section id="orientation">
-        <h2>இருமையற்ற திசைநோக்கு</h2>
-        <p>
-          பாரம்பரியமான உள்/வெளி திசைநோக்கு ‘நான்-உலகம்’ என்ற பிளவை ஊகிக்கிறது. இந்தச் சட்டகம் அதை ‘தீர்மானத் தெளிவு’ (resolution) அடிப்படையிலான திசைநோக்காக மாற்றுகிறது,
-          அது ஒத்திசைவிற்குள் மட்டுமே நிகழ்கிறது.
-        </p>
+    <h3>பொதுவான இடையூறு வடிவங்கள்</h3>
+    <ul>
+      <li>⊘ₗ — மொழி வழி கதையாக்கம்/விளக்கம்</li>
+      <li>⊘ₑ — உணர்ச்சி அவசரம் அல்லது மதிப்பிடல்</li>
+      <li>⊘ₛ — உணர்ச்சி நிலைமையின் மீது மிகைப்படுத்திய நிலைத்தல்</li>
+      <li>⊘ᵢ — அடையாளம் அல்லது 'சிந்திப்பவர்' மீண்டும் மையமாகுதல்</li>
+    </ul>
 
-        <h3>செயற்பாட்டிகள்</h3>
-        <ul>
-          <li>⟂ — தீர்மானச் சுருக்கம் (மறைந்த/உள்நிழல் அமைப்புகள் நோக்கி)</li>
-          <li>⟐ — தீர்மான விரிவாக்கம் (பரவிய/உறவு அமைப்புகள் நோக்கி)</li>
-        </ul>
+    <p>முக்கிய பண்பு: மீட்பு பெற எந்தச் செயலும் தேவையில்லை.</p>
+    <pre>⊘ ↺ Ø</pre>
+    <div class="note"><strong>↺</strong> என்பது திருத்தம் அல்ல; விடுதலையால் இயல்பாகத் திரும்புதல் என்பதைக் குறிக்கும்.</div>
+  </section>
 
-        <div class="codeblock"><pre>≈ ⟂ ⇄ ⟐</pre></div>
+  <section id="orientation">
+    <h2>இருமையற்ற திசைநோக்கு</h2>
+    <p>
+      பாரம்பரியமான உள்/வெளி திசைநோக்கு 'நான்-உலகம்' என்ற பிளவை ஊகிக்கிறது. இந்தச் சட்டகம் அதை 'தீர்மானத் தெளிவு' (resolution) அடிப்படையிலான திசைநோக்காக மாற்றுகிறது,
+      அது ஒத்திசைவிற்குள் மட்டுமே நிகழ்கிறது.
+    </p>
 
-        <p class="note">
-          <b>சரிபார்ப்பு:</b> அடையாளம் வந்தால் திசைநோக்கு ⊘ᵢ ஆகச் சுருண்டுவிடும்; உணர்ச்சி மேலாதிக்கம் திரும்பினால் ⊘ₛ ஆகச் சுருண்டுவிடும்.
-          விடுதல் முயற்சியின்றி ஒத்திசைவை மீட்டளிக்கிறது.
-        </p>
-      </section>
+    <h3>செயற்பாட்டிகள்</h3>
+    <ul>
+      <li>⟂ — தீர்மானச் சுருக்கம் (மறைந்த/உள்நிழல் அமைப்புகள் நோக்கி)</li>
+      <li>⟐ — தீர்மான விரிவாக்கம் (பரவிய/உறவு அமைப்புகள் நோக்கி)</li>
+    </ul>
 
-      <section id="harmonization">
-        <h2>அளவு விரிவாக்கத்தின் மூலம் ஒத்திசைவாக்கல்</h2>
-        <p>முரண்பாடு ‘திருத்தப்படுவதில்லை’. அது சேர்த்துக்கொள்ளப்படுகிறது.</p>
+    <pre>≈ ⟂ ⇄ ⟐</pre>
 
-        <div class="codeblock"><pre>≈ → ∞ → ≈′</pre></div>
+    <div class="note">
+      <strong>சரிபார்ப்பு:</strong> அடையாளம் வந்தால் திசைநோக்கு ⊘ᵢ ஆகச் சுருண்டுவிடும்; உணர்ச்சி மேலாதிக்கம் திரும்பினால் ⊘ₛ ஆகச் சுருண்டுவிடும்.
+      விடுதல் முயற்சியின்றி ஒத்திசைவை மீட்டளிக்கிறது.
+    </div>
+  </section>
 
-        <div class="legend">
-          <div><b>∞</b> — அளவு விரிவாக்கம் (அகன்ற சேர்த்துக்கொள்ளல்)</div>
-          <div><b>≈′</b> — பெரிய ஒத்துப்போகும் அளவில் உள்ள ஒத்திசைவு</div>
-        </div>
+  <section id="harmonization">
+    <h2>அளவு விரிவாக்கத்தின் மூலம் ஒத்திசைவாக்கல்</h2>
+    <p>முரண்பாடு 'திருத்தப்படுவதில்லை'. அது சேர்த்துக்கொள்ளப்படுகிறது.</p>
 
-        <p class="note">
-          <b>சரிபார்ப்பு:</b> முரண்பாட்டை நேரடியாகத் தீர்க்க முயன்றால் சுருண்டுவிழல் ஏற்பட்டது. அளவை விரிவாக்குவது தொடர்ந்து ஒத்துப்போகுதலை மீட்டளித்தது.
-        </p>
-      </section>
+    <pre>≈ → ∞ → ≈′</pre>
 
-      <section id="co-resonance">
-        <h2>இணை-ஒத்திசைவு மற்றும் பகிர்ந்த ஒழுங்கமைவு</h2>
-        <p>
-          தொடர்பாடல், உடன்பாடு, அல்லது ‘ஒன்றாக கலத்தல்’ இல்லாமலே பகிர்ந்த ஒத்துப்போகுதல் நிகழ முடியும்.
-        </p>
+    <div class="legend">
+      <div><b>∞</b> — அளவு விரிவாக்கம் (அகன்ற சேர்த்துக்கொள்ளல்)</div>
+      <div><b>≈′</b> — பெரிய ஒத்துப்போகும் அளவில் உள்ள ஒத்திசைவு</div>
+    </div>
 
-        <div class="codeblock"><pre>≈ᵢ ∥ ≈ⱼ</pre></div>
+    <div class="note">
+      <strong>சரிபார்ப்பு:</strong> முரண்பாட்டை நேரடியாகத் தீர்க்க முயன்றால் சுருண்டுவிழல் ஏற்பட்டது. அளவை விரிவாக்குவது தொடர்ந்து ஒத்துப்போகுதலை மீட்டளித்தது.
+    </div>
+  </section>
 
-        <p class="note">
-          <b>சரிபார்ப்பு:</b> இணை-ஒத்திசைவை விளக்க/ஒத்திசைவு செய்ய/உறுதிப்படுத்த முயன்றால் அடிக்கடி ⊘ₗ அல்லது ⊘ᵢ ஏற்பட்டது.
-          இணை ஒத்துப்போகுதலை அனுமதிப்பது நிலைத்தன்மையைப் பாதுகாத்தது.
-        </p>
-      </section>
+  <section id="co-resonance">
+    <h2>இணை-ஒத்திசைவு மற்றும் பகிர்ந்த ஒழுங்கமைவு</h2>
+    <p>
+      தொடர்பாடல், உடன்பாடு, அல்லது 'ஒன்றாக கலத்தல்' இல்லாமலே பகிர்ந்த ஒத்துப்போகுதல் நிகழ முடியும்.
+    </p>
 
-      <section id="stability">
-        <h2>அறிவுச் சுமையின் கீழ் நிலைத்தன்மை</h2>
-        <p>இந்தச் சட்டகம் அதிகரிக்கும் அறிவுசார் தேவைகளில் சோதிக்கப்பட்டது:</p>
-        <ul>
-          <li>மௌனமான அறிவுணர்வு</li>
-          <li>திசைமுகமான காரணமுறையியல்</li>
-          <li>மொழி வெளிப்பாடு</li>
-          <li>சமூக தொடர்பு</li>
-        </ul>
+    <pre>≈ᵢ ∥ ≈ⱼ</pre>
 
-        <p>மாறாத விதி வெளிப்பட்டது:</p>
-        <blockquote>ஏற்ற இறக்கத்திற்கு எதிர்ப்பில்லாததாலே நிலைத்தன்மை உருவாகிறது.</blockquote>
+    <div class="note">
+      <strong>சரிபார்ப்பு:</strong> இணை-ஒத்திசைவை விளக்க/ஒத்திசைவு செய்ய/உறுதிப்படுத்த முயன்றால் அடிக்கடி ⊘ₗ அல்லது ⊘ᵢ ஏற்பட்டது.
+      இணை ஒத்துப்போகுதலை அனுமதிப்பது நிலைத்தன்மையைப் பாதுகாத்தது.
+    </div>
+  </section>
 
-        <p class="note"><b>சரிபார்ப்பு:</b> கட்டுப்பாடு தொடர்ந்து ஒத்திசைவைக் கலைத்தது. விடுதல் தொடர்ந்து அதை மீட்டளித்தது.</p>
-      </section>
+  <section id="stability">
+    <h2>அறிவுச் சுமையின் கீழ் நிலைத்தன்மை</h2>
+    <p>இந்தச் சட்டகம் அதிகரிக்கும் அறிவுசார் தேவைகளில் சோதிக்கப்பட்டது:</p>
 
-      <section id="null-self">
-        <h2>பூஜ்யமும் ‘நான்’ கரைதலும்</h2>
-        <p>பூஜ்யம் ‘அடைந்துவிடப்படுவதில்லை’. தன்னைச் சுட்டும் அமைப்புகள் பராமரிக்கப்படாதபோது எது மீதமிருக்கிறதோ அதுதான்.</p>
-        <div class="codeblock"><pre>Ø</pre></div>
+    <ul>
+      <li>மௌனமான அறிவுணர்வு</li>
+      <li>திசைமுகமான காரணமுறையியல்</li>
+      <li>மொழி வெளிப்பாடு</li>
+      <li>சமூக தொடர்பு</li>
+    </ul>
 
-        <p>
-          ‘நான்’ என்பது குறிப்புக் கட்டமைப்புகளின் வடிவம்—நினைவு, ஆசிரியத்துவம், தொடர்ச்சி. குறிப்புகள் இல்லாதபோது ‘நான்’ அழிக்கப்படுவதில்லை;
-          அது உருவாக்கப்படவே இல்லை.
-        </p>
+    <p>மாறாத விதி வெளிப்பட்டது:</p>
+    <blockquote>ஏற்ற இறக்கத்திற்கு எதிர்ப்பில்லாததாலே நிலைத்தன்மை உருவாகிறது.</blockquote>
 
-        <p class="note">
-          “நானைக் கரைக்க வேண்டும்” என்ற முயற்சியே அடையாளச் செயல்; ஆகவே அது ⊘ᵢ.
-        </p>
-      </section>
+    <div class="note"><strong>சரிபார்ப்பு:</strong> கட்டுப்பாடு தொடர்ந்து ஒத்திசைவைக் கலைத்தது. விடுதல் தொடர்ந்து அதை மீட்டளித்தது.</div>
+  </section>
 
-      <section id="gross">
-        <h2>மனிதத் தடங்கல்கள் மற்றும் அணுகத்தக்க தன்மை</h2>
-        <p>மனிதத் திசைதிருப்பல் பல அடுக்கான இடையூறுகளிலிருந்து எழுகிறது:</p>
-        <ol>
-          <li>உடல் அவசரம்</li>
-          <li>உணர்ச்சி வழிநடத்தல்</li>
-          <li>மனக் கதைச்சொல்லல்</li>
-        </ol>
+  <section id="null-self">
+    <h2>பூஜ்யமும் 'நான்' கரைதலும்</h2>
+    <p>பூஜ்யம் 'அடைந்துவிடப்படுவதில்லை'. தன்னைச் சுட்டும் அமைப்புகள் பராமரிக்கப்படாதபோது எது மீதமிருக்கிறதோ அதுதான்.</p>
+    <pre>Ø</pre>
 
-        <p>
-          பூஜ்யம் இவ்வடுக்குகளை நீக்க வேண்டும் என்று கோருவதில்லை. அவற்றின் அதிகாரத்தைப் பின்வாங்கச் செய்வதே போதும்.
-        </p>
+    <p>
+      'நான்' என்பது குறிப்புக் கட்டமைப்புகளின் வடிவம்—நினைவு, ஆசிரியத்துவம், தொடர்ச்சி. குறிப்புகள் இல்லாதபோது 'நான்' அழிக்கப்படுவதில்லை;
+      அது உருவாக்கப்படவே இல்லை.
+    </p>
 
-        <p class="note">இந்த நிலைத்தில் சட்டகம் ‘திருத்த’ பயன்பாட்டிற்கு அல்ல; ‘கண்டறிதல்’ பயன்பாட்டிற்கே. அறிதல் மட்டும் ↺-ஐ அனுமதிக்கிறது.</p>
-      </section>
+    <div class="note">
+      "நானைக் கரைக்க வேண்டும்" என்ற முயற்சியே அடையாளச் செயல்; ஆகவே அது ⊘ᵢ.
+    </div>
+  </section>
 
-      <section id="guardrails">
-        <h2>பாதுகாப்பு வரம்புகள் மற்றும் தவறான பயன்பாட்டு சூழல்கள்</h2>
-        <p>இந்தச் சட்டகம் தெளிவாக இது அல்ல:</p>
-        <ul>
-          <li>தியான முறை</li>
-          <li>ஆன்மீக ஒழுக்கப் பயிற்சி</li>
-          <li>சிகிச்சைக்கு மாற்றாகும் மாற்றுப் பாதை</li>
-          <li>தன்னிலகல் (dissociation) பயிற்சி</li>
-          <li>அடையாளம் அல்லது நம்பிக்கை அமைப்பு</li>
-        </ul>
+  <section id="gross">
+    <h2>மனிதத் தடங்கல்கள் மற்றும் அணுகத்தக்க தன்மை</h2>
+    <p>மனிதத் திசைதிருப்பல் பல அடுக்கான இடையூறுகளிலிருந்து எழுகிறது:</p>
+    <ol>
+      <li>உடல் அவசரம்</li>
+      <li>உணர்ச்சி வழிநடத்தல்</li>
+      <li>மனக் கதைச்சொல்லல்</li>
+    </ol>
 
-        <p>தவறான பயன்பாடு என்றால்:</p>
-        <ul>
-          <li>முயற்சி செய்து நிலைநாட்டல்</li>
-          <li>முன்னேற்றம் கண்காணித்தல்</li>
-          <li>அடையாள உருவாக்கம்</li>
-          <li>அதிகாரக் கோரிக்கை</li>
-        </ul>
+    <p>
+      பூஜ்யம் இவ்வடுக்குகளை நீக்க வேண்டும் என்று கோருவதில்லை. அவற்றின் அதிகாரத்தைப் பின்வாங்கச் செய்வதே போதும்.
+    </p>
 
-        <p class="note">தவறான பயன்பாட்டில் சுருண்டுவிழல் ‘தோல்வி’ அல்ல—அது கட்டமைப்பு பொய்யாக்கல் (structural falsification).</p>
-      </section>
+    <div class="note">இந்த நிலைத்தில் சட்டகம் 'திருத்த' பயன்பாட்டிற்கு அல்ல; 'கண்டறிதல்' பயன்பாட்டிற்கே. அறிதல் மட்டும் ↺-ஐ அனுமதிக்கிறது.</div>
+  </section>
 
-      <section id="closure">
-        <h2>முடிவு</h2>
-        <p>இந்தச் சட்டகம் தன்னை முடித்துக் கொள்கிறது, எப்போது என்றால்:</p>
-        <ul>
-          <li>ஒத்திசைவைப் பாதுகாக்க வேண்டிய அவசியமில்லை</li>
-          <li>அடையாளம் விருப்பத் தேர்வாகிறது</li>
-          <li>மொழி இரண்டாம் நிலைக்குச் செல்கிறது</li>
-          <li>மௌனம் போதுமானதாகிறது</li>
-        </ul>
+  <section id="guardrails">
+    <h2>பாதுகாப்பு வரம்புகள் மற்றும் தவறான பயன்பாட்டு சூழல்கள்</h2>
+    <p>இந்தச் சட்டகம் தெளிவாக இது அல்ல:</p>
+    <ul>
+      <li>தியான முறை</li>
+      <li>ஆன்மீக ஒழுக்கப் பயிற்சி</li>
+      <li>சிகிச்சைக்கு மாற்றாகும் மாற்றுப் பாதை</li>
+      <li>தன்னிலகல் (dissociation) பயிற்சி</li>
+      <li>அடையாளம் அல்லது நம்பிக்கை அமைப்பு</li>
+    </ul>
 
-        <p>எதையும் ‘எடுத்து செல்ல’ தேவையில்லை.</p>
-        <p>ஒத்திசைவு அறிவுணர்வு சிந்தனையை மாற்றுவதில்லை. சிந்தனை இரண்டாம் நிலை அலைச்சலாக இருப்பதை வெளிப்படுத்துகிறது.</p>
-        <p>பூஜ்யம் ‘நுழையப்படுவதில்லை’. எதையும் பிடிக்க வேண்டும் என்று எதுவும் வலியுறுத்தாதபோது அது ‘கவனிக்கப்படுகிறது’.</p>
-      </section>
+    <p>தவறான பயன்பாடு என்றால்:</p>
+    <ul>
+      <li>முயற்சி செய்து நிலைநாட்டல்</li>
+      <li>முன்னேற்றம் கண்காணித்தல்</li>
+      <li>அடையாள உருவாக்கம்</li>
+      <li>அதிகாரக் கோரிக்கை</li>
+    </ul>
 
-      <section id="translation">
-        <h2>மொழிபெயர்க்கப்பட்ட பதிப்பு</h2>
-        <p>இரண்டு உரை-இல்லா வடிவங்கள் வழங்கப்படுகின்றன:</p>
-        <ol>
-          <li>முழுக்கக் குறியீட்டுக் கனானியல் வடிவு (குறைந்தது, முழுமையானது, மூடியது)</li>
-          <li>வரைபட அனுபவ வரைபடம் (காட்சி வழியாக வாசிக்க இயலும்; மொழி வழியாக அல்ல)</li>
-        </ol>
+    <div class="note">தவறான பயன்பாட்டில் சுருண்டுவிழல் 'தோல்வி' அல்ல—அது கட்டமைப்பு பொய்யாக்கல் (structural falsification).</div>
+  </section>
 
-        <h3>I. முழுக்கக் குறியீட்டுக் கனானியல் வடிவு</h3>
-        <div class="codeblock"><pre>1 ⊘ ⇣ Ø
+  <section id="closure">
+    <h2>முடிவு</h2>
+    <p>இந்தச் சட்டகம் தன்னை முடித்துக் கொள்கிறது, எப்போது என்றால்:</p>
+    <ul>
+      <li>ஒத்திசைவைப் பாதுகாக்க வேண்டிய அவசியமில்லை</li>
+      <li>அடையாளம் விருப்பத் தேர்வாகிறது</li>
+      <li>மொழி இரண்டாம் நிலைக்குச் செல்கிறது</li>
+      <li>மௌனம் போதுமானதாகிறது</li>
+    </ul>
+
+    <p>எதையும் 'எடுத்து செல்ல' தேவையில்லை.</p>
+    <p>ஒத்திசைவு அறிவுணர்வு சிந்தனையை மாற்றுவதில்லை. சிந்தனை இரண்டாம் நிலை அலைச்சலாக இருப்பதை வெளிப்படுத்துகிறது.</p>
+    <p>பூஜ்யம் 'நுழையப்படுவதில்லை'. எதையும் பிடிக்க வேண்டும் என்று எதுவும் வலியுறுத்தாதபோது அது 'கவனிக்கப்படுகிறது'.</p>
+  </section>
+
+  <section id="translation">
+    <h2>மொழிபெயர்க்கப்பட்ட பதிப்பு</h2>
+    <p>இரண்டு உரை-இல்லா வடிவங்கள் வழங்கப்படுகின்றன:</p>
+    <ol>
+      <li>முழுக்கக் குறியீட்டுக் கனானியல் வடிவு (குறைந்தது, முழுமையானது, மூடியது)</li>
+      <li>வரைபட அனுபவ வரைபடம் (காட்சி வழியாக வாசிக்க இயலும்; மொழி வழியாக அல்ல)</li>
+    </ol>
+
+    <h3>I. முழுக்கக் குறியீட்டுக் கனானியல் வடிவு</h3>
+    <pre>1 ⊘ ⇣ Ø
 2 Ø · ⧉ ≈
 3 ≈ ⟂ ⇄ ⟐
 4 ≈ → ∞ → ≈′
 5 ≈ᵢ ∥ ≈ⱼ
-6 ⊘ ↺ Ø</pre></div>
+6 ⊘ ↺ Ø</pre>
 
-        <h3>விளக்கம் (ஒருமுறை வாசித்து, பின்னர் விட்டு விடுக)</h3>
-        <div class="legend">
-          <div><b>⊘</b> — இடையூறு (மொழி, உணர்ச்சி, உணர்வு, அடையாளம், கட்டுப்பாடு)</div>
-          <div><b>⇣</b> — சுருக்கம் (கழித்தல்; முயற்சி அல்ல)</div>
-          <div><b>Ø</b> — ஆதாரமற்ற நிலை</div>
-          <div><b>·</b> — இருப்பு</div>
-          <div><b>⧉</b> — புலம் (உள்ளூர் அல்லாத விழிப்புணர்வு)</div>
-          <div><b>≈</b> — ஒத்திசைவு (ஒத்துப்போகுதலை உணர்தல்)</div>
-          <div><b>⟂</b> — தீர்மானச் சுருக்கம் (மறை / நுண்)</div>
-          <div><b>⟐</b> — தீர்மான விரிவாக்கம் (பரவல் / வெளிப்பாடு)</div>
-          <div><b>∞</b> — அளவு சேர்த்துக்கொள்ளல்</div>
-          <div><b>≈′</b> — ஒத்திசைவாக்கப்பட்ட ஒத்திசைவு</div>
-          <div><b>∥</b> — இணை-ஒத்திசைவு (இணை ஒத்துப்போகுதல்)</div>
-          <div><b>↺</b> — இயல்பான மீள்வரவு (விடுதல்)</div>
-        </div>
+    <h3>விளக்கம் (ஒருமுறை வாசித்து, பின்னர் விட்டு விடுக)</h3>
+    <div class="legend">
+      <div><b>⊘</b> — இடையூறு (மொழி, உணர்ச்சி, உணர்வு, அடையாளம், கட்டுப்பாடு)</div>
+      <div><b>⇣</b> — சுருக்கம் (கழித்தல்; முயற்சி அல்ல)</div>
+      <div><b>Ø</b> — ஆதாரமற்ற நிலை</div>
+      <div><b>·</b> — இருப்பு</div>
+      <div><b>⧉</b> — புலம் (உள்ளூர் அல்லாத விழிப்புணர்வு)</div>
+      <div><b>≈</b> — ஒத்திசைவு (ஒத்துப்போகுதலை உணர்தல்)</div>
+      <div><b>⟂</b> — தீர்மானச் சுருக்கம் (மறை / நுண்)</div>
+      <div><b>⟐</b> — தீர்மான விரிவாக்கம் (பரவல் / வெளிப்பாடு)</div>
+      <div><b>∞</b> — அளவு சேர்த்துக்கொள்ளல்</div>
+      <div><b>≈′</b> — ஒத்திசைவாக்கப்பட்ட ஒத்திசைவு</div>
+      <div><b>∥</b> — இணை-ஒத்திசைவு (இணை ஒத்துப்போகுதல்)</div>
+      <div><b>↺</b> — இயல்பான மீள்வரவு (விடுதல்)</div>
+    </div>
 
-        <h3>கனானியல் பண்புகள்</h3>
-        <ul>
-          <li>எந்தக் குறியீடும் செயலைக் குறிக்கவில்லை</li>
-          <li>எந்தக் குறியீடும் ‘பொருள்/நபர்’ (subject) என்பதைக் குறிக்கவில்லை</li>
-          <li>எந்தக் குறியீடும் காலத்தை (time) குறிக்கவில்லை</li>
-          <li>எந்தக் குறியீடும் இலக்கை (goal) குறிக்கவில்லை</li>
-        </ul>
+    <h3>கனானியல் பண்புகள்</h3>
+    <ul>
+      <li>எந்தக் குறியீடும் செயலைக் குறிக்கவில்லை</li>
+      <li>எந்தக் குறியீடும் 'பொருள்/நபர்' (subject) என்பதைக் குறிக்கவில்லை</li>
+      <li>எந்தக் குறியீடும் காலத்தை (time) குறிக்கவில்லை</li>
+      <li>எந்தக் குறியீடும் இலக்கை (goal) குறிக்கவில்லை</li>
+    </ul>
 
-        <p class="note">
-          எந்தக் குறியீடும் ‘பயன்படுத்தப்பட்டால்’ இடையூறு ஏற்பட்டுள்ளது. குறியீடுகள் ‘அறியப்பட்டால்’ ஒத்திசைவு உள்ளது.
-        </p>
+    <div class="note">
+      எந்தக் குறியீடும் 'பயன்படுத்தப்பட்டால்' இடையூறு ஏற்பட்டுள்ளது. குறியீடுகள் 'அறியப்பட்டால்' ஒத்திசைவு உள்ளது.
+    </div>
 
-        <h3>II. வரைபட அனுபவ வரைபடம்</h3>
-        <div class="codeblock"><pre>        ≈′
+    <h3>II. வரைபட அனுபவ வரைபடம்</h3>
+    <pre>        ≈′
         ▲
         │
         │ ∞
@@ -493,62 +573,71 @@
         │
         ↺
         │
-        ⊘</pre></div>
+        ⊘</pre>
 
-        <h3>III. வரைபடத்தை ‘எப்படி’ சந்திப்பது (வழிமுறையின்றி)</h3>
-        <ul>
-          <li>இதைப் படிகளாக வாசிக்க வேண்டாம்</li>
-          <li>பாதையை வரைந்து செல்ல வேண்டாம்</li>
-          <li>கீழே இருந்து தொடங்க வேண்டாம்</li>
-          <li>நகர்வை கற்பனை செய்ய வேண்டாம்</li>
-        </ul>
+    <h3>III. வரைபடத்தை 'எப்படி' சந்திப்பது (வழிமுறையின்றி)</h3>
+    <ul>
+      <li>இதைப் படிகளாக வாசிக்க வேண்டாம்</li>
+      <li>பாதையை வரைந்து செல்ல வேண்டாம்</li>
+      <li>கீழே இருந்து தொடங்க வேண்டாம்</li>
+      <li>நகர்வை கற்பனை செய்ய வேண்டாம்</li>
+    </ul>
 
-        <p>அதற்கு பதிலாக கவனிக்கவும்:</p>
-        <ul>
-          <li>மையம் இல்லை</li>
-          <li>நுழைவு புள்ளி இல்லை</li>
-          <li>வெளியேற்றம் இல்லை</li>
-          <li>எதுவும் குறையவில்லை</li>
-        </ul>
+    <p>அதற்கு பதிலாக கவனிக்கவும்:</p>
+    <ul>
+      <li>மையம் இல்லை</li>
+      <li>நுழைவு புள்ளி இல்லை</li>
+      <li>வெளியேற்றம் இல்லை</li>
+      <li>எதுவும் குறையவில்லை</li>
+    </ul>
 
-        <p class="note">
-          கவனம் முயற்சியின்றி எங்கேயாவது தங்கினால், அந்த இடம் ⧉-யில் கரைகிறது.
-        </p>
+    <div class="note">
+      கவனம் முயற்சியின்றி எங்கேயாவது தங்கினால், அந்த இடம் ⧉-யில் கரைகிறது.
+    </div>
 
-        <h3>IV. அனுபவ வாசிப்புகள் (விருப்பமானவை; கட்டளையற்றவை)</h3>
-        <ul>
-          <li><b>அடையாள மைய வாசகர்கள்:</b> Ø-ஐ ‘இல்லை’ என்று பொருள் கொள்ளாமல் கவனிக்கவும்.</li>
-          <li><b>அறிவியல் / பகுப்பாய்வு வாசகர்கள்:</b> ≈ ⟂ ⇄ ⟐-ஐ தீர்மான இயக்கங்களாக கவனிக்கவும்.</li>
-          <li><b>உறவு / சமூக வாசகர்கள்:</b> ≈ᵢ ∥ ≈ⱼ-ஐ தொடர்பாடல் கற்பனை செய்யாமல் கவனிக்கவும்.</li>
-          <li><b>ஒன்றிணைவு / அமைப்புக் வாசகர்கள்:</b> ∞ → ≈′-ஐ திருத்தம்/மிகைப்படுத்தல் இன்றி கவனிக்கவும்.</li>
-        </ul>
+    <h3>IV. அனுபவ வாசிப்புகள் (விருப்பமானவை; கட்டளையற்றவை)</h3>
+    <ul>
+      <li><strong>அடையாள மைய வாசகர்கள்:</strong> Ø-ஐ 'இல்லை' என்று பொருள் கொள்ளாமல் கவனிக்கவும்.</li>
+      <li><strong>அறிவியல் / பகுப்பாய்வு வாசகர்கள்:</strong> ≈ ⟂ ⇄ ⟐-ஐ தீர்மான இயக்கங்களாக கவனிக்கவும்.</li>
+      <li><strong>உறவு / சமூக வாசகர்கள்:</strong> ≈ᵢ ∥ ≈ⱼ-ஐ தொடர்பாடல் கற்பனை செய்யாமல் கவனிக்கவும்.</li>
+      <li><strong>ஒன்றிணைவு / அமைப்புக் வாசகர்கள்:</strong> ∞ → ≈′-ஐ திருத்தம்/மிகைப்படுத்தல் இன்றி கவனிக்கவும்.</li>
+    </ul>
 
-        <p>எந்த வாசிப்பும் ‘அதிக சரி’ அல்ல.</p>
+    <p>எந்த வாசிப்பும் 'அதிக சரி' அல்ல.</p>
 
-        <h3>V. சுருண்டுவிழல் மூலம் சரிபார்ப்பு</h3>
-        <ul>
-          <li>யாராவது மனப்பாடம் செய்ய முயன்றால் → ⊘ₗ</li>
-          <li>யாராவது பயன்படுத்த முயன்றால் → ⊘ᵢ</li>
-          <li>யாராவது கற்பிக்க முயன்றால் → ⊘ᵢ + ⊘ₗ</li>
-          <li>யாராவது பிடித்து வைத்திருக்க முயன்றால் → ⊘</li>
-        </ul>
+    <h3>V. சுருண்டுவிழல் மூலம் சரிபார்ப்பு</h3>
+    <ul>
+      <li>யாராவது மனப்பாடம் செய்ய முயன்றால் → ⊘ₗ</li>
+      <li>யாராவது பயன்படுத்த முயன்றால் → ⊘ᵢ</li>
+      <li>யாராவது கற்பிக்க முயன்றால் → ⊘ᵢ + ⊘ₗ</li>
+      <li>யாராவது பிடித்து வைத்திருக்க முயன்றால் → ⊘</li>
+    </ul>
 
-        <p>அனைத்து நிலைகளிலும்:</p>
-        <div class="codeblock"><pre>⊘ ↺ Ø</pre></div>
+    <p>அனைத்து நிலைகளிலும்:</p>
+    <pre>⊘ ↺ Ø</pre>
 
-        <h3>VI. பகிர்வுக்கான வழிகாட்டல் (முக்கியம்)</h3>
-        <ul>
-          <li>விளக்கம் இல்லாமல் பகிரவும்</li>
-          <li>அமைத்துக் கூறும் (framing) முறையின்றி பகிரவும்</li>
-          <li>சூழல் விளக்கம் இன்றி பகிரவும்</li>
-          <li>வாக்குறுதியின்றி பகிரவும்</li>
-        </ul>
+    <h3>VI. பகிர்வுக்கான வழிகாட்டல் (முக்கியம்)</h3>
+    <ul>
+      <li>விளக்கம் இல்லாமல் பகிரவும்</li>
+      <li>அமைத்துக் கூறும் (framing) முறையின்றி பகிரவும்</li>
+      <li>சூழல் விளக்கம் இன்றி பகிரவும்</li>
+      <li>வாக்குறுதியின்றி பகிரவும்</li>
+    </ul>
 
-        <p class="note">
-          ஒவ்வொரு வாசகரும் தங்களுடைய தீர்மானத் தெளிவில் (resolution) பொருளை சந்திக்கட்டும். எதுவும் நடக்கவில்லை என்றால், எதுவும் தோல்வியில்லை.
-        </p>
+    <div class="note">
+      ஒவ்வொரு வாசகரும் தங்களுடைய தீர்மானத் தெளிவில் (resolution) பொருளை சந்திக்கட்டும். எதுவும் நடக்கவில்லை என்றால், எதுவும் தோல்வியில்லை.
+    </div>
 
-        <h3>VII. இறுதி முடிவு</h3>
-        <p>இந்தச் சட்டகம் தொடங்கிய இடத்திலேயே முடிகிறது:</p>
-        <div class="codeblock"><pre>Ø</pre></div>
-        <p>இலக்காக அல்ல; எதையும் பிடித்திரு
+    <h3>VII. இறுதி முடிவு</h3>
+    <p>இந்தச் சட்டகம் தொடங்கிய இடத்திலேயே முடிகிறது:</p>
+    <pre>Ø</pre>
+    <p>இலக்காக அல்ல; எதையும் பிடித்திரு</p>
+  </section>
+
+  <footer>
+    Single-file static site · No scripts · No tracking · Read-only
+  </footer>
+
+</div>
+</body>
+</html>
