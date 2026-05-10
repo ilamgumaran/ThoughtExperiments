@@ -1,18 +1,18 @@
 # AGENTS
 
-The Resonant Cognition Framework -- applied content (stories, applications, Tamil edition) for educational and developmental use.
+The Resonant Cognition Framework -- the cognition foundation that informs the HIO family. Psychology-of-mind theory: how attention, identity, desire, and interference shape experience.
 
 **Read this in full before editing.** Content here addresses children, trauma, and neurodivergence. The bar for changes is higher than the universal floor; see HIO routing below.
 
 ## Family
 
-This repo is part of the HIO repo family. The central spec is at [`software-engineering-hio-agent-framework/multi-repo-orchestration/`](https://github.com/ilamgumaran/software-engineering-hio-agent-framework/tree/main/multi-repo-orchestration).
+This repo is the **upstream cognition foundation** of the HIO repo family. The central multi-repo spec is at [`software-engineering-hio-agent-framework/multi-repo-orchestration/`](https://github.com/ilamgumaran/software-engineering-hio-agent-framework/tree/main/multi-repo-orchestration).
 
 | Repo | Relationship |
 |---|---|
-| [`thought-org-with-human-ai-hybrid`](https://github.com/ilamgumaran/thought-org-with-human-ai-hybrid) | Conceptual kin -- HIO philosophical framework; this repo's vocabulary is independent but related |
-| [`software-engineering-hio-agent-framework`](https://github.com/ilamgumaran/software-engineering-hio-agent-framework) | Governance host -- multi-repo spec lives there |
-| [`software-engineer-core-structure`](https://github.com/ilamgumaran/software-engineer-core-structure) | Sibling in the family; no direct dependency |
+| [`thought-org-with-human-ai-hybrid`](https://github.com/ilamgumaran/thought-org-with-human-ai-hybrid) | Downstream -- the generalized HIO Framework, built on cognition principles owned here |
+| [`software-engineer-core-structure`](https://github.com/ilamgumaran/software-engineer-core-structure) | Two layers downstream -- HIO applied to engineering organizations |
+| [`software-engineering-hio-agent-framework`](https://github.com/ilamgumaran/software-engineering-hio-agent-framework) | Three layers downstream -- the day-to-day agentic toolkit; multi-repo spec hosted there |
 
 ## Purpose and scope
 
@@ -20,7 +20,7 @@ This repo carries the applied content of the Resonant Cognition Framework -- sto
 
 **In scope:** Story HTML files, application HTML files, comparative studies, language-specific editions, content metadata, the framework expansion roadmap.
 
-**Out of scope:** Engineering tooling, agent runtime configuration, code, build artifacts. The philosophical framework that this content applies is in `thought-org-with-human-ai-hybrid` (related but independent vocabulary).
+**Out of scope:** Engineering tooling, agent runtime configuration, code, build artifacts. The HIO orchestration framework that builds on these cognition principles lives in `thought-org-with-human-ai-hybrid`.
 
 ## Key concepts owned here
 
@@ -30,13 +30,13 @@ This repo carries the applied content of the Resonant Cognition Framework -- sto
 - Comparative analysis with academic studies (Hunt, Metzinger, Husserl, enactivism)
 - Edge-case awareness: trauma, neurodivergence, age ranges, dissociation
 
-The vocabulary here is *not* the same as HIO. \"Organic intelligence\" / \"inorganic intelligence\" belong to HIO; \"Resonance\" / \"Contraction\" / \"Null\" belong here. Both are valid in their own contexts; do not collapse them.
+The vocabulary here is *not* the same as HIO. "Organic intelligence" / "inorganic intelligence" belong to HIO; "Resonance" / "Contraction" / "Null" belong here. Both are valid in their own contexts; do not collapse them. The relationship is **HIO is built on the cognition principles this repo articulates** -- it is not a re-naming.
 
 ## How to make changes
 
 - Branch from `main` using a descriptive feature branch name
 - Tag every story with: age range, themes, safety flags (trauma, peer-conflict, loss, identity-dissolution)
-- Cross-link to `thought-org-with-human-ai-hybrid` only when introducing a concept canonical there; otherwise use this repo's own vocabulary
+- Cross-link to `thought-org-with-human-ai-hybrid` only when introducing a concept that becomes canonical there; otherwise use this repo's own vocabulary
 - Markdown for docs; semantic HTML for stories (no inline scripts, no unusual link structures)
 - Translations require a native-fluent OI reviewer
 
@@ -92,8 +92,9 @@ For org-wide rules, see [security-and-safety](https://github.com/ilamgumaran/sof
 
 | Need | Look at |
 |---|---|
-| Philosophical framework (HIO methodology) | [`thought-org-with-human-ai-hybrid`](https://github.com/ilamgumaran/thought-org-with-human-ai-hybrid) |
-| Multi-repo orchestration -- registry, spec, governance | [`multi-repo-orchestration/`](https://github.com/ilamgumaran/software-engineering-hio-agent-framework/tree/main/multi-repo-orchestration) |
+| Generalized HIO Framework (downstream) | [`thought-org-with-human-ai-hybrid`](https://github.com/ilamgumaran/thought-org-with-human-ai-hybrid) |
+| Engineering org applied to HIO (two layers downstream) | [`software-engineer-core-structure`](https://github.com/ilamgumaran/software-engineer-core-structure) |
+| Day-to-day agentic toolkit and multi-repo spec | [`software-engineering-hio-agent-framework`](https://github.com/ilamgumaran/software-engineering-hio-agent-framework) |
 | Framework expansion roadmap (canonical) | [`TODO.md`](TODO.md) |
 | Tamil edition | [`TamilVersionV1.html`](TamilVersionV1.html) |
 | Comparative analysis with academic work | [`ComparisonToOtherStudies.html`](ComparisonToOtherStudies.html) |
