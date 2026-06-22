@@ -1,3 +1,17 @@
+---
+book: "Book 3: The First Light"
+chapter: 4
+title: "The Hollow"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "hunger"
+  - "need"
+  - "first desire"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 4: The Hollow
 
 ---

@@ -1,3 +1,17 @@
+---
+book: "Book 1: The Strings Inside"
+chapter: 3
+title: "The Loudest String"
+age_range: "9-12"
+protagonist: "Kavi Rajan"
+themes:
+  - "anger"
+  - "fairness"
+  - "peer-conflict"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 3: The Loudest String
 
 ---

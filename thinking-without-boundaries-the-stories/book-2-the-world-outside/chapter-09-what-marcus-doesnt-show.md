@@ -1,3 +1,18 @@
+---
+book: "Book 2: The World Outside"
+chapter: 9
+title: "What Marcus Doesn't Show"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "hidden pain"
+  - "family change"
+  - "peer-conflict"
+safety_flags:
+  - "peer-conflict"
+  - "loss"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 9: What Marcus Doesn't Show
 
 ---

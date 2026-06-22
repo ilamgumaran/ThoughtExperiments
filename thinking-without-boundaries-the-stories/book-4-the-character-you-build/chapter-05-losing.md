@@ -1,3 +1,17 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 5
+title: "Losing"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "failure"
+  - "learning"
+  - "identity"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 5: Losing
 
 ---

@@ -1,3 +1,16 @@
+---
+book: "Book 1: The Strings Inside"
+chapter: 2
+title: "The Invisible Strings"
+age_range: "9-12"
+protagonist: "Kavi Rajan"
+themes:
+  - "naming internal patterns"
+  - "invisible pulls"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 2: The Invisible Strings
 
 ---

@@ -1,3 +1,17 @@
+---
+book: "Book 1: The Strings Inside"
+chapter: 11
+title: "The Perfect Seconds"
+age_range: "9-12"
+protagonist: "Kavi Rajan"
+themes:
+  - "joy"
+  - "awe"
+  - "natural quiet"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 11: The Perfect Seconds
 
 ---

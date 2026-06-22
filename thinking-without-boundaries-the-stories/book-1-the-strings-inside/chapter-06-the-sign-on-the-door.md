@@ -1,3 +1,17 @@
+---
+book: "Book 1: The Strings Inside"
+chapter: 6
+title: "The Sign on the Door"
+age_range: "9-12"
+protagonist: "Kavi Rajan"
+themes:
+  - "labels"
+  - "identity"
+  - "school dynamics"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 6: The Sign on the Door
 
 ---

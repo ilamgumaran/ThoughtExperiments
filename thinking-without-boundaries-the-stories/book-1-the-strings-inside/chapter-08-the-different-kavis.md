@@ -1,3 +1,17 @@
+---
+book: "Book 1: The Strings Inside"
+chapter: 8
+title: "The Different Kavis"
+age_range: "9-12"
+protagonist: "Kavi Rajan"
+themes:
+  - "friendship"
+  - "contextual self"
+  - "resonance"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 8: The Different Kavis
 
 ---

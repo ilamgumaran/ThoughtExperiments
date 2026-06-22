@@ -1,3 +1,17 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 10
+title: "The Slow Build"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "character"
+  - "slow change"
+  - "small choices"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 10: The Slow Build
 
 ---

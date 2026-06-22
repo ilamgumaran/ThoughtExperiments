@@ -1,3 +1,17 @@
+---
+book: "Book 2: The World Outside"
+chapter: 8
+title: "Kindness Isn't Quiet"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "kindness"
+  - "courage"
+  - "peer support"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 8: Kindness Isn't Quiet
 
 ---

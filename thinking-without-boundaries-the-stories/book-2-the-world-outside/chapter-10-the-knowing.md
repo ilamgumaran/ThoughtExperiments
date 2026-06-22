@@ -1,3 +1,17 @@
+---
+book: "Book 2: The World Outside"
+chapter: 10
+title: "The Knowing"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "discernment"
+  - "manipulation"
+  - "peer-conflict"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 10: The Knowing
 
 ---

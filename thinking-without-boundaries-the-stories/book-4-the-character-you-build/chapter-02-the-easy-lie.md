@@ -1,3 +1,17 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 2
+title: "The Easy Lie"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "honesty"
+  - "shortcuts"
+  - "alignment"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 2: The Easy Lie
 
 ---

@@ -1,3 +1,16 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 11
+title: "Passing It On"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "teaching"
+  - "shared understanding"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 11: Passing It On
 
 ---

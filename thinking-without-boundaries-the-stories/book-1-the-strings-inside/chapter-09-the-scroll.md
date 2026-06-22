@@ -1,3 +1,16 @@
+---
+book: "Book 1: The Strings Inside"
+chapter: 9
+title: "The Scroll"
+age_range: "9-12"
+protagonist: "Kavi Rajan"
+themes:
+  - "digital pull"
+  - "attention capture"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 9: The Scroll
 
 ---

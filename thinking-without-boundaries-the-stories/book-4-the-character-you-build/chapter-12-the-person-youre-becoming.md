@@ -1,3 +1,17 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 12
+title: "The Person You're Becoming"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "integration"
+  - "becoming"
+  - "future self"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 12: The Person You're Becoming
 
 ---

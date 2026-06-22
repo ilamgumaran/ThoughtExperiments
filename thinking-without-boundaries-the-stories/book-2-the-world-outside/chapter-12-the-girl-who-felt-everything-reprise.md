@@ -1,3 +1,17 @@
+---
+book: "Book 2: The World Outside"
+chapter: 12
+title: "The Girl Who Felt Everything (Reprise)"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "integration"
+  - "protectiveness"
+  - "choice under fire"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 12: The Girl Who Felt Everything (Reprise)
 
 ---

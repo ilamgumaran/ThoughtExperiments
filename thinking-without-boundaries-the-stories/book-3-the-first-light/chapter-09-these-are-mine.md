@@ -1,3 +1,16 @@
+---
+book: "Book 3: The First Light"
+chapter: 9
+title: "These Are Mine"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "body ownership"
+  - "agency"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 9: These Are Mine
 
 ---

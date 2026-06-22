@@ -1,3 +1,17 @@
+---
+book: "Book 3: The First Light"
+chapter: 10
+title: "Again"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "pattern"
+  - "expectation"
+  - "cause and effect"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 10: Again
 
 ---

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Thinking Without Boundaries story library: books, chapter guides, and safety metadata for the Resonant Cognition story series.">
+  <title>Stories — Thinking Without Boundaries</title>
+  <style>
+:root {
+  --bg: #ffffff;
+  --page-bg: #f7f6f3;
+  --fg: #1a1a1a;
+  --muted: #5a5a5a;
+  --faint: #888;
+  --line: #d8d4cd;
+  --accent: #1a3a6e;
+  --accent-light: #e8edf6;
+  --code-bg: #f4f2ee;
+  --serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --sans: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
+  --maxw: 900px;
+  --radius: 4px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--page-bg);
+  color: var(--fg);
+  font: 17px/1.7 var(--serif);
+  -webkit-font-smoothing: antialiased;
+}
+.site-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  font: 13px/1 var(--sans);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-nav-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  min-height: 42px;
+}
+.site-nav a { color: var(--muted); text-decoration: none; padding: 5px 8px; border-radius: var(--radius); white-space: nowrap; }
+.site-nav a:hover { color: var(--accent); background: var(--accent-light); }
+.site-nav a.active { font-weight: 700; color: var(--accent); }
+.site-nav .sep { color: var(--line); padding: 0 2px; user-select: none; }
+.page-wrap {
+  max-width: var(--maxw);
+  margin: 32px auto 60px;
+  background: var(--bg);
+  padding: 44px 48px 64px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 2px 16px rgba(0,0,0,.07);
+}
+@media (max-width: 860px) { .page-wrap { padding: 30px 24px 52px; margin: 16px auto 40px; } }
+@media (max-width: 540px) { .page-wrap { padding: 20px 16px 40px; box-shadow: none; margin: 0; } }
+.article-header {
+  border-bottom: 2px solid var(--fg);
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+.kicker {
+  font: 11px/1 var(--sans);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--faint);
+  margin: 0 0 10px;
+}
+h1 { font: bold 2rem/1.15 var(--serif); letter-spacing: -.02em; margin: 0 0 8px; color: var(--fg); }
+h2 { font: bold 1.2rem/1.25 var(--serif); margin: 2rem 0 .7rem; padding-bottom: .4rem; border-bottom: 1px solid var(--line); }
+p { margin: 0 0 1rem; }
+a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+a:hover { text-decoration: none; }
+.lede { color: var(--muted); font: 15px/1.65 var(--sans); max-width: 720px; }
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.book-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--code-bg);
+  padding: 14px 16px;
+  font: 14px/1.55 var(--sans);
+}
+.book-card h2 {
+  border: 0;
+  margin: 0 0 6px;
+  padding: 0;
+  font: 700 1rem/1.25 var(--sans);
+}
+.meta { color: var(--faint); font-size: .82rem; margin-bottom: 8px; }
+.book-card ul { margin: .6rem 0 0; padding-left: 1.2em; }
+.book-card li { margin: .2rem 0; }
+.note {
+  border-left: 4px solid var(--accent);
+  background: var(--accent-light);
+  padding: 12px 14px;
+  margin: 20px 0 0;
+  font: 14px/1.6 var(--sans);
+  color: #2a2a2a;
+}
+footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font: 13px/1.6 var(--sans); color: var(--faint); text-align: center; }
+  </style>
+</head>
+<body>
+<nav class="site-nav" aria-label="Site navigation">
+  <div class="site-nav-inner">
+    <a href="index.html">Framework</a>
+    <span class="sep">·</span>
+    <a href="stories.html" class="active">Stories</a>
+    <span class="sep">·</span>
+    <a href="ApplicationAcademicParallel.html">Academic Parallels</a>
+    <span class="sep">·</span>
+    <a href="ApplicationDistaction.html">Interference</a>
+    <span class="sep">·</span>
+    <a href="ApplicationWhoAmI.html">Identity</a>
+    <span class="sep">·</span>
+    <a href="ApplicationExtremeStates.html">Extreme States</a>
+    <span class="sep">·</span>
+    <a href="ComparisonToOtherStudies.html">Overview</a>
+    <span class="sep">·</span>
+    <a href="TamilVersionV1.html">தமிழ்</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="article-header">
+    <p class="kicker">Thinking Without Boundaries</p>
+    <h1>Story Library</h1>
+    <p class="lede">The completed chapter files now carry age, theme, safety, protagonist, and review metadata so story recommendations and future edits can respect the repo safety rules.</p>
+  </div>
+
+  <div class="book-grid">
+    <section class="book-card">
+      <h2>Book 1: The Strings Inside</h2>
+      <div class="meta">Ages 9-12 · Kavi Rajan · 12 chapters</div>
+      <p>Internal awareness, body signals, labels, shame, boredom, digital pull, and the extra second before reaction.</p>
+      <ul>
+        <li><a href="thinking-without-boundaries-the-stories/book-1-the-strings-inside/chapter-01-the-morning-hum.md">Start Book 1</a></li>
+        <li><a href="thinking-without-boundaries-the-stories/book-1-the-strings-inside/chapter-12-the-strings-dont-go-away.md">Final chapter</a></li>
+      </ul>
+    </section>
+
+    <section class="book-card">
+      <h2>Book 2: The World Outside</h2>
+      <div class="meta">Ages 10-13 · Nila Sundaram · 12 chapters</div>
+      <p>Empathy, justice, peer conflict, attention-seeking, discernment, and caring without becoming the reaction.</p>
+      <ul>
+        <li><a href="thinking-without-boundaries-the-stories/book-2-the-world-outside/BOOK-2-GUIDE.md">Book 2 guide</a></li>
+        <li><a href="thinking-without-boundaries-the-stories/book-2-the-world-outside/chapter-01-the-girl-who-felt-everything.md">Start Book 2</a></li>
+      </ul>
+    </section>
+
+    <section class="book-card">
+      <h2>Book 3: The First Light</h2>
+      <div class="meta">Adult/educator guided · Unnamed infant · 12 chapters</div>
+      <p>A phenomenological prequel about sensation, pattern, language, name, and the formation of self.</p>
+      <ul>
+        <li><a href="thinking-without-boundaries-the-stories/book-3-the-first-light/BOOK-3-GUIDE.md">Book 3 guide</a></li>
+        <li><a href="thinking-without-boundaries-the-stories/book-3-the-first-light/chapter-01-bright.md">Start Book 3</a></li>
+      </ul>
+    </section>
+
+    <section class="book-card">
+      <h2>Book 4: The Character You Build</h2>
+      <div class="meta">Ages 10-13 · Aran Rajan · 12 chapters</div>
+      <p>Middle school, honesty, patience, discipline, integrity, gratitude, and character as small choices over time.</p>
+      <ul>
+        <li><a href="thinking-without-boundaries-the-stories/book-4-the-character-you-build/BOOK-4-GUIDE.md">Book 4 guide</a></li>
+        <li><a href="thinking-without-boundaries-the-stories/book-4-the-character-you-build/chapter-01-everything-is-bigger.md">Start Book 4</a></li>
+      </ul>
+    </section>
+
+    <section class="book-card">
+      <h2>Book 5: The Space Between</h2>
+      <div class="meta">Concept guide · Kavi and Nila, age 11</div>
+      <p>Alternating perspectives about misreading, resonance, and what happens when two aware people try to connect.</p>
+      <ul>
+        <li><a href="thinking-without-boundaries-the-stories/book-5-the-space-between/BOOK-5-GUIDE.md">Book 5 guide</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="note">
+    Story prose remains unchanged in this cleanup. Metadata was added to support safety review, recommendations, and future navigation.
+  </div>
+
+  <footer>
+    Single-file static site · No tracking · Read-only
+  </footer>
+</div>
+</body>
+</html>

@@ -1,3 +1,17 @@
+---
+book: "Book 3: The First Light"
+chapter: 2
+title: "The Everywhere Sound"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "hearing"
+  - "voice"
+  - "first filter"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 2: The Everywhere Sound
 
 ---

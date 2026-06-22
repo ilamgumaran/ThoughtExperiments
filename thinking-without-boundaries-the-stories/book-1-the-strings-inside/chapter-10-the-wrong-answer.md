@@ -1,3 +1,17 @@
+---
+book: "Book 1: The Strings Inside"
+chapter: 10
+title: "The Wrong Answer"
+age_range: "9-12"
+protagonist: "Kavi Rajan"
+themes:
+  - "failure"
+  - "shame"
+  - "identity"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 10: The Wrong Answer
 
 ---

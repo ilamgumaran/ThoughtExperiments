@@ -1,3 +1,17 @@
+---
+book: "Book 2: The World Outside"
+chapter: 2
+title: "The Laughter That Isn't Funny"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "laughter"
+  - "harm"
+  - "peer-conflict"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 2: The Laughter That Isn't Funny
 
 ---

@@ -1,3 +1,16 @@
+---
+book: "Book 1: The Strings Inside"
+chapter: 7
+title: "The Boredom Door"
+age_range: "9-12"
+protagonist: "Kavi Rajan"
+themes:
+  - "boredom"
+  - "energy without direction"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 7: The Boredom Door
 
 ---

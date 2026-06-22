@@ -1,3 +1,17 @@
+---
+book: "Book 3: The First Light"
+chapter: 6
+title: "The Air Changes"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "temperature"
+  - "sensation"
+  - "awe"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 6: The Air Changes
 
 ---

@@ -1,3 +1,17 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 4
+title: "The Quiet Stand"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "quiet courage"
+  - "belonging"
+  - "peer-conflict"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 4: The Quiet Stand
 
 ---
