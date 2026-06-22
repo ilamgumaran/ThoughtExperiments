@@ -1,3 +1,16 @@
+---
+book: "Book 3: The First Light"
+chapter: 11
+title: "The Sound That Stays"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "proto-language"
+  - "shared meaning"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 11: The Sound That Stays
 
 ---

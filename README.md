@@ -26,6 +26,7 @@ This repo does *not* depend on the others. The others depend on this one (concep
 | Path | What it is |
 |---|---|
 | [`index.html`](index.html) | Web entry point to the framework |
+| [`stories.html`](stories.html) | Public story-library index for the completed books and Book 5 guide |
 | [`thinking-without-boundaries-the-stories/`](thinking-without-boundaries-the-stories/) | Stories that teach the framework experientially |
 | `Stories*.html`, `Application*.html` | Individual story and application pages |
 | [`ComparisonToOtherStudies.html`](ComparisonToOtherStudies.html) | How the framework relates to academic work in cognition, neuroscience, contemplative traditions |

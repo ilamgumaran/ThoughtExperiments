@@ -1,3 +1,16 @@
+---
+book: "Book 1: The Strings Inside"
+chapter: 1
+title: "The Morning Hum"
+age_range: "9-12"
+protagonist: "Kavi Rajan"
+themes:
+  - "awareness of internal signals"
+  - "pre-thought body cues"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 1: The Morning Hum
 
 ---

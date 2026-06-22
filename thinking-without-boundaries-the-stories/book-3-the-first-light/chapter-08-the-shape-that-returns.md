@@ -1,3 +1,17 @@
+---
+book: "Book 3: The First Light"
+chapter: 8
+title: "The Shape That Returns"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "faces"
+  - "recognition"
+  - "mirroring"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 8: The Shape That Returns
 
 ---

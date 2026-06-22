@@ -1,3 +1,17 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 3
+title: "The Long Way"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "patience"
+  - "practice"
+  - "discomfort"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 3: The Long Way
 
 ---

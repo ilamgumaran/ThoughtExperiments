@@ -1,3 +1,18 @@
+---
+book: "Book 2: The World Outside"
+chapter: 4
+title: "The Line Between Funny and Mean"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "humor"
+  - "meanness"
+  - "discernment"
+  - "peer-conflict"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 4: The Line Between Funny and Mean
 
 ---

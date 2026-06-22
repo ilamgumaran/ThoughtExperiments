@@ -1,3 +1,16 @@
+---
+book: "Book 3: The First Light"
+chapter: 3
+title: "The Edge of Me"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "touch"
+  - "body boundary"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 3: The Edge of Me
 
 ---

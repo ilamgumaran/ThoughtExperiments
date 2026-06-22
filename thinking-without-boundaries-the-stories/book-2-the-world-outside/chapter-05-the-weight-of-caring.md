@@ -1,3 +1,16 @@
+---
+book: "Book 2: The World Outside"
+chapter: 5
+title: "The Weight of Caring"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "empathy boundaries"
+  - "caring without absorbing"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 5: The Weight of Caring
 
 ---

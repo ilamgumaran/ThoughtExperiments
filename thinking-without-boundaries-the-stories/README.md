@@ -4,9 +4,9 @@ A novel series that explores how children learn to understand themselves, others
 
 ## The Premise
 
-Two siblings — **Kavi** (age 9) and **Meera** (age 12) — navigate elementary and middle school life in a diverse suburban neighborhood. Through everyday situations — friendship drama, classroom boredom, unfairness, loss, digital life, family tensions — they begin noticing something most adults have stopped seeing: the invisible forces that pull their attention, shape their reactions, and quietly tell them who they're supposed to be.
+Children and families move through ordinary moments — school, friendship, embarrassment, boredom, unfairness, loss, digital life, family tension — and begin noticing something most adults have stopped seeing: the invisible forces that pull attention, shape reactions, and quietly tell people who they are supposed to be.
 
-They don't learn from textbooks. They learn from watching, questioning, and sometimes getting it completely wrong.
+They do not learn from textbooks. They learn from watching, questioning, and sometimes getting it completely wrong.
 
 ## The Series
 
@@ -16,14 +16,24 @@ They don't learn from textbooks. They learn from watching, questioning, and some
 Kavi starts noticing that something tugs at him before he even thinks. When he's scared, angry, bored, or excited — there's a pull, like an invisible string, that moves him before he decides to move. What are these strings? Why do they pull? And what happens if you just... notice them without following?
 
 ### Book 2: The World Outside
-*Ages 10-13 | Meera's perspective (age 12)*
+*Ages 10-13 | Nila's perspective (age 10)*
 
-Meera is learning that the world has rules nobody wrote down. Who sits with whom at lunch. What you're allowed to say. What makes someone "cool" or "weird." She starts asking: who decided these rules? Are they real, or did everyone just agree to pretend? And what happens to the people who don't fit?
+Nila feels everything in the room and burns hot when something is unfair. She learns that caring does not always mean reacting, and that not every signal needs to become a fire.
 
-### Book 3: The Space Between
-*Ages 11-14 | Both perspectives*
+### Book 3: The First Light
+*Adult/educator guided | Infant consciousness, birth through 14 months*
 
-Kavi and Meera discover that the most interesting things happen in the gaps — between what someone says and what they mean, between being bored and paying attention, between who you think you are and who you actually are. They learn that the space between is not empty. It's where everything begins.
+This book moves before language and identity. It follows raw experience as sensation, pattern, voice, body, and eventually name begin to form a self.
+
+### Book 4: The Character You Build
+*Ages 10-13 | Aran's perspective (age 11)*
+
+Aran discovers that character is not a trait you either have or lack. It is something built through small choices, especially the ones no one sees.
+
+### Book 5: The Space Between
+*Concept guide | Kavi and Nila, age 11*
+
+Kavi sees inward. Nila sees outward. Book 5 explores what happens when two aware people try to actually understand each other, and discover that awareness alone is not the same as connection.
 
 ## What This Series Is
 
@@ -42,9 +52,11 @@ Kavi and Meera discover that the most interesting things happen in the gaps — 
 
 ## Structure
 
-Each book contains **12 chapters**, each chapter exploring one core question through a story arc. Chapters are standalone enough to discuss individually but build on each other.
+Each completed book contains **12 chapters**, each chapter exploring one core question through a story arc. Chapters are standalone enough to discuss individually but build on each other. Book 5 currently has a concept and chapter guide.
 
 Each chapter ends with a **"Still Thinking?"** section — not answers, but follow-up questions the reader can sit with.
+
+Each chapter markdown file includes a metadata header with age range, themes, safety flags, protagonist, and review status. This keeps story recommendations and future review workflows aligned with the repo safety rules in `AGENTS.md`.
 
 ## Characters
 

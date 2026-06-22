@@ -1,3 +1,17 @@
+---
+book: "Book 2: The World Outside"
+chapter: 7
+title: "The Empty Stage"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "performance"
+  - "attention"
+  - "audience"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 7: The Empty Stage
 
 ---

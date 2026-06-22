@@ -1,3 +1,16 @@
+---
+book: "Book 3: The First Light"
+chapter: 1
+title: "Bright"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "first sight"
+  - "undifferentiated experience"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 1: Bright
 
 ---

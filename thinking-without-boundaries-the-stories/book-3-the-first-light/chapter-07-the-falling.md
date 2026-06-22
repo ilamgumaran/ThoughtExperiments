@@ -1,3 +1,17 @@
+---
+book: "Book 3: The First Light"
+chapter: 7
+title: "The Falling"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "sleep"
+  - "letting go"
+  - "solitude"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 7: The Falling
 
 ---

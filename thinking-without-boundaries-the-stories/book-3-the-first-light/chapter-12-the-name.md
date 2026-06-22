@@ -1,3 +1,18 @@
+---
+book: "Book 3: The First Light"
+chapter: 12
+title: "The Name"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "name"
+  - "self"
+  - "what is gained and lost"
+safety_flags:
+  - "identity-dissolution"
+  - "loss"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 12: The Name
 
 ---

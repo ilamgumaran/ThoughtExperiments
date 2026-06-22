@@ -1,3 +1,17 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 6
+title: "The Promise"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "discipline"
+  - "self-respect"
+  - "promise keeping"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 6: The Promise
 
 ---

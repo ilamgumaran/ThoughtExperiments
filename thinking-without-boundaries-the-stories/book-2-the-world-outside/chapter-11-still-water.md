@@ -1,3 +1,17 @@
+---
+book: "Book 2: The World Outside"
+chapter: 11
+title: "Still Water"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "stillness"
+  - "winter break"
+  - "calm underneath"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 11: Still Water
 
 ---

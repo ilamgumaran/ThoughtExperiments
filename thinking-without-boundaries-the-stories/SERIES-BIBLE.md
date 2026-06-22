@@ -1,5 +1,7 @@
 # Series Bible — Thinking Without Boundaries: The Stories
 
+> **Status note:** The framework-to-story translation guide and writing rules in this file remain canonical. The original three-book thematic map is retained as planning history; current chapter maps live in the book-specific guide files and chapter metadata.
+
 ## Core Philosophy
 
 This series translates the Resonant Cognition framework into lived experience through fiction. The framework is never named, quoted, or referenced. Instead, its principles emerge naturally through what the characters notice, feel, and question.
@@ -36,17 +38,27 @@ This series translates the Resonant Cognition framework into lived experience th
 - He doesn't have words for what he notices — he describes it through metaphor and sensation.
 - Example: "There's this thing that happens in my stomach when the teacher calls on someone and I'm afraid it's going to be me. It's like a fist closing. Not a real fist. But my body doesn't know that."
 
-**Book 2 (Meera, age 12):**
-- Longer sentences. More analytical. She's starting to think about thinking.
-- She notices contradictions and gets frustrated by them.
-- Internal monologue swings between sharp observation and self-doubt.
-- She's acquiring vocabulary for internal experience but doesn't trust it yet.
-- Example: "Suki laughed at the joke like everyone else, but I could see her hand tighten on her backpack strap. That's the thing about middle school — everyone is performing, and somehow I'm the weird one for noticing."
+**Book 2 (Nila, age 10):**
+- Visceral and emotion-first. She feels before she explains.
+- Her metaphors are body-based: fire, weight, waves, electricity.
+- Internal monologue swings between fierce certainty and sudden vulnerability.
+- She learns that caring does not always mean reacting.
 
-**Book 3 (Both perspectives, alternating):**
-- The voices are more mature — Kavi is 10 by now, Meera is 13.
-- Chapters alternate perspectives on shared events.
-- The same moment described by both siblings reveals how differently they experience it.
+**Book 3 (The First Light, infant consciousness):**
+- The prose style evolves with consciousness.
+- Early chapters are fragmentary and pre-linguistic; later chapters become more coherent as pattern, language, and name arrive.
+- The narrator is experience itself, not an adult explaining a child.
+
+**Book 4 (Aran, age 11):**
+- Medium-length, constructive sentences.
+- Aran thinks through mechanical metaphors: wobble, alignment, torque, fit.
+- The voice is practical and reflective, focused on what a choice feels like before it becomes character.
+
+**Book 5 (Kavi and Nila, age 11):**
+- Alternating perspectives.
+- Kavi's chapters remain sensory, image-driven, and inward-facing.
+- Nila's chapters remain visceral, action-oriented, and outward-facing.
+- Shared moments should reveal the gap between two accurate but incomplete interiors.
 
 ### Scene Construction
 
@@ -78,7 +90,9 @@ Every chapter follows this structure (invisible to the reader):
 
 ---
 
-## Thematic Map by Book
+## Original Thematic Map by Book
+
+This map reflects the original three-book planning model. It is useful background, but the current canon is the expanded book set documented in the book-specific guides.
 
 ### Book 1: The Strings Inside — Core Questions
 

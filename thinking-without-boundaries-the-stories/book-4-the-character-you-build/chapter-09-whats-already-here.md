@@ -1,3 +1,17 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 9
+title: "What's Already Here"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "gratitude"
+  - "noticing"
+  - "wanting"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 9: What's Already Here
 
 ---

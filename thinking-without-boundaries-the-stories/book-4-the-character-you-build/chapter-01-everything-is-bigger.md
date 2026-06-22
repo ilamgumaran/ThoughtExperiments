@@ -1,3 +1,16 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 1
+title: "Everything Is Bigger"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "middle school transition"
+  - "overwhelm"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 1: Everything Is Bigger
 
 ---

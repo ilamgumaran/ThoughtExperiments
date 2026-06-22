@@ -1,3 +1,16 @@
+---
+book: "Book 3: The First Light"
+chapter: 5
+title: "The Mouth Knows"
+age_range: "Adult/educator guided"
+protagonist: "Unnamed infant"
+themes:
+  - "taste"
+  - "oral exploration"
+safety_flags:
+  - "identity-dissolution"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 5: The Mouth Knows
 
 ---

@@ -1,3 +1,16 @@
+---
+book: "Book 2: The World Outside"
+chapter: 1
+title: "The Girl Who Felt Everything"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "empathy"
+  - "emotional sensitivity"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 1: The Girl Who Felt Everything
 
 ---

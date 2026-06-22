@@ -1,3 +1,16 @@
+---
+book: "Book 1: The Strings Inside"
+chapter: 4
+title: "The Quiet Between"
+age_range: "9-12"
+protagonist: "Kavi Rajan"
+themes:
+  - "quiet between reactions"
+  - "stillness"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 4: The Quiet Between
 
 ---

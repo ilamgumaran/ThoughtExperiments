@@ -1,3 +1,16 @@
+---
+book: "Book 4: The Character You Build"
+chapter: 7
+title: "When Nobody Is Watching"
+age_range: "10-13"
+protagonist: "Aran Rajan"
+themes:
+  - "integrity"
+  - "private choices"
+safety_flags:
+  []
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 7: When Nobody Is Watching
 
 ---

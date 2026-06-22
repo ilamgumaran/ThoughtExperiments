@@ -1,3 +1,17 @@
+---
+book: "Book 2: The World Outside"
+chapter: 6
+title: "The Justice Fire"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "justice"
+  - "fairness"
+  - "reactivity"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 6: The Justice Fire
 
 ---

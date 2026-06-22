@@ -1,3 +1,17 @@
+---
+book: "Book 2: The World Outside"
+chapter: 3
+title: "The Attention Magnet"
+age_range: "10-13"
+protagonist: "Nila Sundaram"
+themes:
+  - "attention-seeking"
+  - "reaction patterns"
+  - "peer-conflict"
+safety_flags:
+  - "peer-conflict"
+review_status: "metadata-only; story prose unchanged"
+---
 # Chapter 3: The Attention Magnet
 
 ---
